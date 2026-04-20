@@ -1702,6 +1702,10 @@
         padding: 22px 0 72px;
       }
 
+      .hero {
+        padding: 18px 0 28px;
+      }
+
       .section-head {
         gap: 14px;
         margin-bottom: 24px;
@@ -1713,8 +1717,8 @@
       }
 
       .hero-title {
-        font-size: clamp(34px, 11vw, 50px);
-        line-height: 1;
+        font-size: clamp(32px, 10.4vw, 46px);
+        line-height: 1.02;
         letter-spacing: -0.06em;
       }
 
@@ -1730,8 +1734,8 @@
       .hero-copy p,
       .section-head p,
       .cta-banner p {
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.68;
       }
 
       .hero-actions {
@@ -1769,6 +1773,13 @@
         grid-template-columns: 1fr;
       }
 
+      .grid-3,
+      .grid-4,
+      .grid-2,
+      .award-grid {
+        gap: 14px;
+      }
+
       .stat,
       .metric-card,
       .award-card,
@@ -1782,7 +1793,18 @@
       .stat strong,
       .metric-card strong,
       .price {
-        font-size: 30px;
+        font-size: 28px;
+      }
+
+      .service-card h3,
+      .feature-card h3,
+      .project-card h3,
+      .package-card h3,
+      .contact-card h3,
+      .form-card h3,
+      .testimonial-card h3 {
+        font-size: 20px;
+        line-height: 1.22;
       }
 
       .detail-item {
@@ -1799,12 +1821,35 @@
       }
 
       .bottom-dock {
-        display: none;
+        display: block;
+        bottom: 12px;
+        width: calc(100% - 16px);
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .bottom-dock-copy strong {
+        font-size: 13px;
+      }
+
+      .bottom-dock-copy span {
+        font-size: 11px;
+        line-height: 1.45;
       }
 
       .bottom-dock-actions,
       .bottom-dock-inner {
         width: 100%;
+      }
+
+      .bottom-dock-inner {
+        gap: 10px;
+      }
+
+      .bottom-dock-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
       }
 
       .browser {
@@ -1845,33 +1890,33 @@
       }
 
       .score strong {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .project-visual strong,
       .hero-screen h3 {
-        font-size: 24px;
+        font-size: 22px;
         max-width: 100%;
       }
 
       .project-visual {
-        min-height: 200px;
-        padding: 18px;
+        min-height: 180px;
+        padding: 16px;
       }
 
       .quote-block p,
       .cta-banner h2 {
-        font-size: clamp(26px, 8vw, 34px);
+        font-size: clamp(24px, 7vw, 30px);
       }
 
       .faq-btn {
-        font-size: 16px;
-        padding: 18px;
+        font-size: 15px;
+        padding: 16px;
         align-items: start;
       }
 
       .faq-body {
-        padding: 0 18px 18px;
+        padding: 0 16px 16px;
         font-size: 14px;
       }
 
@@ -1900,7 +1945,7 @@
       }
 
       .hero-title {
-        font-size: clamp(30px, 10.6vw, 42px);
+        font-size: clamp(28px, 10vw, 38px);
       }
 
       .hero-copy p,
@@ -1917,9 +1962,10 @@
       }
 
       .btn {
-        min-height: 52px;
-        padding: 14px 16px;
-        border-radius: 16px;
+        min-height: 48px;
+        padding: 13px 14px;
+        border-radius: 14px;
+        font-size: 13px;
       }
 
       .hero-tags span,
@@ -1945,7 +1991,7 @@
       .hero-screen h3,
       .project-visual strong,
       .glass-screen h3 {
-        font-size: 21px;
+        font-size: 19px;
       }
 
       .trust-strip {
@@ -1959,6 +2005,27 @@
       .footer-links {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .bottom-dock {
+        bottom: 10px;
+        width: calc(100% - 12px);
+        padding: 8px;
+        border-radius: 16px;
+      }
+
+      .bottom-dock-copy {
+        display: none;
+      }
+
+      .bottom-dock-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .bottom-dock-actions .btn {
+        min-height: 44px;
+        padding: 12px 10px;
+        font-size: 12px;
       }
     }
   </style>
