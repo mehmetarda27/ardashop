@@ -1621,13 +1621,16 @@
     }
 
     @media (max-width: 920px) {
+      .container {
+        width: min(100% - 20px, 1280px);
+      }
+
       .nav {
         display: none;
         position: absolute;
         top: calc(100% + 12px);
         right: 0;
-        left: auto;
-        min-width: 260px;
+        left: 0;
         padding: 12px;
         border-radius: 24px;
         background: rgba(11, 8, 20, 0.96);
@@ -1650,8 +1653,28 @@
     }
 
     @media (max-width: 720px) {
+      body {
+        overflow-x: clip;
+      }
+
       .header-inner {
-        min-height: 76px;
+        min-height: 72px;
+        gap: 10px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+        font-size: 18px;
+      }
+
+      .brand-copy strong {
+        font-size: 14px;
       }
 
       .brand-copy span {
@@ -1662,21 +1685,82 @@
       .card-body,
       .quote-block,
       .cta-banner {
-        padding: 22px;
+        padding: 18px;
+      }
+
+      .hero-shell {
+        border-radius: 28px;
+      }
+
+      .showcase-card,
+      .spotlight-panel {
+        padding: 14px;
+        border-radius: 24px;
       }
 
       .section {
-        padding: 24px 0 82px;
+        padding: 22px 0 72px;
+      }
+
+      .section-head {
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(28px, 9vw, 40px);
+        line-height: 1.08;
       }
 
       .hero-title {
-        font-size: clamp(40px, 14vw, 68px);
+        font-size: clamp(34px, 11vw, 50px);
+        line-height: 1;
+        letter-spacing: -0.06em;
       }
 
-      .section-head p,
+      .kicker,
+      .eyebrow {
+        letter-spacing: 0.08em;
+      }
+
+      .hero-copy {
+        gap: 18px;
+      }
+
       .hero-copy p,
+      .section-head p,
       .cta-banner p {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn,
+      .bottom-dock-actions .btn {
+        width: 100%;
+      }
+
+      .hero-tags,
+      .mini-tags,
+      .floating-list,
+      .premium-ribbon,
+      .project-tags,
+      .screen-bars {
+        gap: 8px;
+      }
+
+      .hero-tags span,
+      .mini-tags span,
+      .floating-list span,
+      .premium-ribbon span,
+      .project-tags span,
+      .screen-bars span {
+        font-size: 11px;
+        padding: 9px 11px;
       }
 
       .stats,
@@ -1685,13 +1769,37 @@
         grid-template-columns: 1fr;
       }
 
+      .stat,
+      .metric-card,
+      .award-card,
+      .timeline-content,
+      .contact-row,
+      .panel-box,
+      .signal-grid div {
+        padding: 16px;
+      }
+
+      .stat strong,
+      .metric-card strong,
+      .price {
+        font-size: 30px;
+      }
+
+      .detail-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .detail-item strong {
+        min-width: 0;
+      }
+
       .actions .btn-primary {
         display: none;
       }
 
       .bottom-dock {
-        bottom: 12px;
-        border-radius: 20px;
+        display: none;
       }
 
       .bottom-dock-actions,
@@ -1700,12 +1808,157 @@
       }
 
       .browser {
-        min-height: 500px;
+        min-height: auto;
+        border-radius: 22px;
+      }
+
+      .browser-bar,
+      .browser-body,
+      .hero-screen,
+      .mini-device,
+      .glass-screen,
+      .signal-panel {
+        padding: 16px;
+      }
+
+      .hero-screen,
+      .spotlight-frame {
+        min-height: auto;
+      }
+
+      .showcase-head {
+        padding: 4px;
+        align-items: start;
+      }
+
+      .showcase-head strong {
+        font-size: 14px;
+      }
+
+      .status {
+        font-size: 10px;
+        padding: 9px 10px;
+      }
+
+      .score {
+        padding: 14px 16px;
+      }
+
+      .score strong {
+        font-size: 22px;
       }
 
       .project-visual strong,
       .hero-screen h3 {
-        font-size: 28px;
+        font-size: 24px;
+        max-width: 100%;
+      }
+
+      .project-visual {
+        min-height: 200px;
+        padding: 18px;
+      }
+
+      .quote-block p,
+      .cta-banner h2 {
+        font-size: clamp(26px, 8vw, 34px);
+      }
+
+      .faq-btn {
+        font-size: 16px;
+        padding: 18px;
+        align-items: start;
+      }
+
+      .faq-body {
+        padding: 0 18px 18px;
+        font-size: 14px;
+      }
+
+      .footer-shell {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .footer-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: calc(100% - 16px);
+      }
+
+      .hero-shell,
+      .card-body,
+      .quote-block,
+      .cta-banner,
+      .showcase-card,
+      .spotlight-panel {
+        padding: 14px;
+      }
+
+      .hero-title {
+        font-size: clamp(30px, 10.6vw, 42px);
+      }
+
+      .hero-copy p,
+      .section-head p,
+      .cta-banner p,
+      .service-card p,
+      .feature-card p,
+      .project-card p,
+      .package-card p,
+      .contact-card p,
+      .form-card p {
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .btn {
+        min-height: 52px;
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+
+      .hero-tags span,
+      .mini-tags span,
+      .floating-list span,
+      .premium-ribbon span,
+      .project-tags span,
+      .screen-bars span,
+      .marquee span {
+        font-size: 10px;
+      }
+
+      .stat span,
+      .metric-card span,
+      .award-card p,
+      .timeline-content p,
+      .signal-grid span,
+      .contact-row strong,
+      .panel-box strong {
+        font-size: 13px;
+      }
+
+      .hero-screen h3,
+      .project-visual strong,
+      .glass-screen h3 {
+        font-size: 21px;
+      }
+
+      .trust-strip {
+        margin-top: 16px;
+      }
+
+      .marquee {
+        gap: 12px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
