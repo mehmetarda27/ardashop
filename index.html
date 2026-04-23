@@ -1300,6 +1300,287 @@
       font-weight: 800;
     }
 
+    .qr-showcase {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .qr-copy-card {
+      min-height: 100%;
+    }
+
+    .qr-demo-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 720px;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255, 155, 84, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(72, 229, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 45% 86%, rgba(255, 79, 216, 0.2), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+      box-shadow: var(--shadow-xl);
+      isolation: isolate;
+    }
+
+    .qr-demo-stage::before {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.55;
+      z-index: -1;
+    }
+
+    .phone-mockup {
+      width: min(360px, 82vw);
+      margin: 34px auto 0;
+      padding: 14px;
+      border-radius: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.035)),
+        #090611;
+      box-shadow: 0 34px 110px rgba(0, 0, 0, 0.46), 0 0 48px rgba(72, 229, 255, 0.13);
+    }
+
+    .phone-screen {
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #120d16;
+      min-height: 610px;
+    }
+
+    .menu-hero {
+      position: relative;
+      min-height: 190px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.74)),
+        radial-gradient(circle at 24% 24%, rgba(255, 155, 84, 0.64), transparent 28%),
+        radial-gradient(circle at 76% 34%, rgba(255, 79, 216, 0.35), transparent 24%),
+        linear-gradient(135deg, #43200f, #160b16 54%, #0c2230);
+    }
+
+    .menu-hero::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      bottom: -42px;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 36%, #fff4d2 0 10%, transparent 11%),
+        radial-gradient(circle at 58% 60%, #ffd071 0 9%, transparent 10%),
+        radial-gradient(circle, #d64b2a 0 58%, #7b2218 59% 100%);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      transform: rotate(-12deg);
+    }
+
+    .menu-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .qr-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      color: #fff;
+    }
+
+    .menu-hero h3 {
+      position: relative;
+      z-index: 1;
+      max-width: 230px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .menu-body {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 155, 84, 0.12), transparent 28%),
+        #120d16;
+    }
+
+    .menu-cats {
+      display: flex;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .menu-cats span {
+      flex: 0 0 auto;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.055);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .menu-cats span.active {
+      background: linear-gradient(135deg, #ffcf6d, #ff6b4a);
+      color: #180c09;
+    }
+
+    .menu-offer {
+      padding: 15px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 28%),
+        linear-gradient(135deg, rgba(255, 207, 109, 0.22), rgba(255, 79, 216, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-offer small,
+    .menu-item small {
+      display: block;
+      color: var(--muted-2);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .menu-offer strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 17px;
+      line-height: 1.28;
+    }
+
+    .menu-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.075);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .food-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 34% 32%, rgba(255, 255, 255, 0.62), transparent 13%),
+        radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.36), transparent 12%),
+        linear-gradient(135deg, #ffcf6d, #ff6b4a 52%, #7d281d);
+      box-shadow: inset 0 -18px 26px rgba(0, 0, 0, 0.18);
+    }
+
+    .food-thumb.dark {
+      background:
+        radial-gradient(circle at 38% 30%, rgba(255, 255, 255, 0.45), transparent 14%),
+        linear-gradient(135deg, #8b5cff, #26123b 52%, #0e0918);
+    }
+
+    .food-thumb.green {
+      background:
+        radial-gradient(circle at 35% 34%, rgba(255, 255, 255, 0.5), transparent 14%),
+        linear-gradient(135deg, #abff7f, #1f7a45 52%, #0c2418);
+    }
+
+    .menu-item strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .menu-item p {
+      margin-top: 4px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .menu-price {
+      color: #ffcf6d;
+      font-weight: 900;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .menu-order-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #abff7f, #48e5ff);
+      color: #071110;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(72, 229, 255, 0.18);
+    }
+
+    .qr-side-notes {
+      position: absolute;
+      inset: auto 24px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .qr-note {
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(9, 6, 17, 0.52);
+      backdrop-filter: blur(18px);
+    }
+
+    .qr-note strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .qr-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .timeline {
       display: grid;
       gap: 18px;
@@ -1607,6 +1888,7 @@
       .hero-grid,
       .split,
       .visual-wall,
+      .qr-showcase,
       .contact-layout,
       .cta-layout,
       .grid-4,
@@ -1623,12 +1905,17 @@
       .metrics-band,
       .award-grid,
       .signal-grid,
-      .floating-window {
+      .floating-window,
+      .qr-side-notes {
         grid-template-columns: 1fr;
       }
 
       .hero-shell {
         min-height: auto;
+      }
+
+      .qr-demo-stage {
+        min-height: 910px;
       }
     }
 
@@ -1696,6 +1983,7 @@
       .hero-shell,
       .card-body,
       .quote-block,
+      .qr-demo-stage,
       .cta-banner {
         padding: 18px;
       }
@@ -1916,6 +2204,38 @@
         padding: 16px;
       }
 
+      .qr-demo-stage {
+        min-height: auto;
+        border-radius: 26px;
+      }
+
+      .phone-mockup {
+        width: min(100%, 340px);
+        margin-top: 0;
+      }
+
+      .phone-screen {
+        min-height: auto;
+      }
+
+      .menu-item {
+        grid-template-columns: 54px 1fr;
+      }
+
+      .food-thumb {
+        width: 54px;
+        height: 54px;
+      }
+
+      .menu-price {
+        grid-column: 2;
+      }
+
+      .qr-side-notes {
+        position: static;
+        margin-top: 16px;
+      }
+
       .quote-block p,
       .cta-banner h2 {
         font-size: clamp(24px, 7vw, 30px);
@@ -2058,6 +2378,7 @@
           <a href="#ben-kimim">Ben Kimim</a>
           <a href="#neler-yapiyoruz">Neler Yapıyoruz</a>
           <a href="#projeler">Projeler</a>
+          <a href="#qr-menu-demo">QR Demo</a>
           <a href="#vitrin">Vitrin</a>
           <a href="#surec">Süreç</a>
           <a href="#paketler">Paketler</a>
@@ -2449,6 +2770,141 @@
               <div class="bullet-list">
                 <span>Teklif, başvuru veya görüşme için güçlü aksiyon noktaları</span>
                 <span>Yüksek enerji veren grafik atmosfer ve CTA yerleşimi</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qr-menu-demo">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">QR Menü Simülasyonu</div>
+          <h2>Menüyü sadece liste gibi değil, müşterinin telefonda gezeceği mini bir marka deneyimi gibi tasarlıyoruz.</h2>
+          <p>
+            Restoran, kafe veya paket servis için QR menü hazırlarken ürünleri yan yana dizmekle kalmıyoruz.
+            Kategoriler, kampanya alanı, ürün fotoğraf hissi, fiyat okunabilirliği ve WhatsApp sipariş geçişi aynı sahnede çalışıyor.
+          </p>
+        </div>
+
+        <div class="qr-showcase">
+          <article class="card qr-copy-card reveal">
+            <div class="card-body">
+              <div class="kicker">Canlı Demo Hissi</div>
+              <h3>Telefon ekranında gerçek bir menü açılmış gibi görünen profesyonel sunum.</h3>
+              <p>
+                Bu bölüm müşteriye direkt şunu anlatır: "Benim menüm de böyle kaliteli görünebilir."
+                Simülasyonlu vitrin, özellikle görsele önem veren işletmeler için düz anlatımdan çok daha ikna edicidir.
+              </p>
+
+              <div class="bullet-list">
+                <span>Fine dining, cafe, tatlıcı veya fast food tarzına göre özel görsel dil</span>
+                <span>Popüler ürün, kampanya ve kategori düzeniyle hızlı seçim deneyimi</span>
+                <span>Mobilde büyük fiyat, net açıklama ve WhatsApp siparişe hazır aksiyon</span>
+                <span>PDF gibi soğuk değil; markanın atmosferini taşıyan dijital vitrin</span>
+              </div>
+
+              <div class="accent-box">
+                <strong>Profesyonel fark burada başlıyor.</strong>
+                QR menü müşterinin masada gördüğü ilk dijital temas olabilir. O yüzden sadece çalışması değil,
+                açıldığı anda işletmenin kalitesini hissettirmesi gerekir.
+              </div>
+
+              <div class="hero-actions" style="margin-top: 22px;">
+                <a href="#iletisim" class="btn btn-primary">QR Menü İste</a>
+                <a
+                  href="https://wa.me/905314668927?text=Merhaba%20sim%C3%BClasyonlu%20profesyonel%20QR%20men%C3%BC%20tasar%C4%B1m%C4%B1%20istiyorum."
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-secondary"
+                >
+                  WhatsApp Demo Sor
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="qr-demo-stage reveal" aria-label="QR menü telefon simülasyonu">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="menu-hero">
+                  <div class="menu-topline">
+                    <span>Arda Bistro</span>
+                    <span class="qr-chip">QR Live</span>
+                  </div>
+                  <h3>Chef seçimi burger & özel soslar</h3>
+                </div>
+
+                <div class="menu-body">
+                  <div class="menu-cats" aria-label="Menü kategorileri">
+                    <span class="active">Popüler</span>
+                    <span>Burger</span>
+                    <span>Pizza</span>
+                    <span>İçecek</span>
+                  </div>
+
+                  <div class="menu-offer">
+                    <small>Bugünün kampanyası</small>
+                    <strong>2 burger + özel patates + içecek seti</strong>
+                  </div>
+
+                  <div class="menu-list">
+                    <div class="menu-item">
+                      <div class="food-thumb"></div>
+                      <div>
+                        <small>En çok seçilen</small>
+                        <strong>Smoky House Burger</strong>
+                        <p>Füme sos, cheddar, karamelize soğan.</p>
+                      </div>
+                      <div class="menu-price">₺245</div>
+                    </div>
+
+                    <div class="menu-item">
+                      <div class="food-thumb dark"></div>
+                      <div>
+                        <small>Şef önerisi</small>
+                        <strong>Trüf Mantarlı Pizza</strong>
+                        <p>İnce hamur, mozzarella, özel mantar.</p>
+                      </div>
+                      <div class="menu-price">₺310</div>
+                    </div>
+
+                    <div class="menu-item">
+                      <div class="food-thumb green"></div>
+                      <div>
+                        <small>Ferahlık</small>
+                        <strong>Lime Fresh Cooler</strong>
+                        <p>Nane, lime, buzlu özel karışım.</p>
+                      </div>
+                      <div class="menu-price">₺95</div>
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20demosu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                    target="_blank"
+                    rel="noreferrer"
+                    class="menu-order-btn"
+                  >
+                    WhatsApp ile Sipariş Hissi
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="qr-side-notes">
+              <div class="qr-note">
+                <strong>Görsel Algı</strong>
+                <span>Renk, kart ve kapak alanı işletmenin tarzına göre hazırlanır.</span>
+              </div>
+              <div class="qr-note">
+                <strong>Hızlı Seçim</strong>
+                <span>Kategori ve popüler ürün akışı müşteriyi yormadan ilerletir.</span>
+              </div>
+              <div class="qr-note">
+                <strong>Sipariş Geçişi</strong>
+                <span>WhatsApp, arama veya rezervasyon aksiyonu menüye bağlanabilir.</span>
               </div>
             </div>
           </article>
@@ -3014,6 +3470,7 @@
           <a href="#ben-kimim">Ben Kimim</a>
           <a href="#neler-yapiyoruz">Neler Yapıyoruz</a>
           <a href="#projeler">Projeler</a>
+          <a href="#qr-menu-demo">QR Demo</a>
           <a href="#vitrin">Vitrin</a>
           <a href="#paketler">Paketler</a>
           <a href="#iletisim">İletişim</a>
