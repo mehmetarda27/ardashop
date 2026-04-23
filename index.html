@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7530953607067503" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Mehmet Arda Doğan | Ultra Premium Web Tasarım Stüdyosu</title>
-  <meta name="description" content="Mehmet Arda Doğan ile ultra premium kurumsal web tasarım, landing page, QR menü, marka vitrini ve mobil uyumlu dijital deneyimler." />
-  <meta name="theme-color" content="#06131f" />
+  <title>Mehmet Arda Doğan | Ultra Premium Web Tasarım</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="Mehmet Arda Doğan ile ultra premium kurumsal web tasarım, landing page, QR menü ve dijital marka vitrini çözümleri." />
+  <meta name="theme-color" content="#07111f" />
   <link rel="icon" type="image/png" href="logo.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
-
   <style>
     :root {
-      --navy: #06131f;
-      --navy-2: #0b1d30;
-      --navy-3: #102842;
-      --paper: #f7fbff;
-      --text: #f8fbff;
-      --dark-text: #071320;
-      --muted: rgba(248, 251, 255, .72);
-      --muted-2: rgba(248, 251, 255, .48);
-      --line: rgba(255, 255, 255, .14);
+      --bg: #07111f;
+      --bg-2: #0c1d32;
+      --panel: rgba(255, 255, 255, .075);
+      --panel-2: rgba(255, 255, 255, .12);
+      --line: rgba(255, 255, 255, .13);
       --line-2: rgba(255, 255, 255, .22);
-      --glass: rgba(255, 255, 255, .075);
-      --glass-2: rgba(255, 255, 255, .12);
-      --blue: #2563ff;
-      --cyan: #22d3ee;
-      --pink: #ff3ec9;
-      --gold: #ffbd59;
-      --green: #7cffb2;
-      --red: #ff5570;
+      --text: #f7fbff;
+      --muted: rgba(247, 251, 255, .72);
+      --soft: rgba(247, 251, 255, .48);
+      --cyan: #35ddff;
+      --blue: #315dff;
+      --pink: #ff45cf;
+      --gold: #ffc061;
+      --green: #86ffb6;
+      --danger: #ff5f79;
       --radius-xl: 38px;
       --radius-lg: 28px;
       --radius-md: 20px;
-      --shadow: 0 34px 100px rgba(0, 0, 0, .36);
-      --shadow-soft: 0 22px 70px rgba(0, 0, 0, .24);
-      --container: min(1220px, calc(100% - 34px));
-      --grad: linear-gradient(135deg, #22d3ee 0%, #2563ff 34%, #ff3ec9 70%, #ffbd59 100%);
-      --grad-soft: linear-gradient(135deg, rgba(34, 211, 238, .2), rgba(37, 99, 255, .16), rgba(255, 62, 201, .18));
+      --shadow-xl: 0 38px 120px rgba(0, 0, 0, .42);
+      --shadow-lg: 0 24px 80px rgba(0, 0, 0, .3);
+      --container: min(1240px, calc(100% - 34px));
+      --grad: linear-gradient(135deg, #35ddff 0%, #315dff 34%, #ff45cf 70%, #ffc061 100%);
+      --grad-soft: linear-gradient(135deg, rgba(53, 221, 255, .2), rgba(49, 93, 255, .16), rgba(255, 69, 207, .18));
     }
 
     * {
@@ -59,38 +53,43 @@
       font-family: "Outfit", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(34, 211, 238, .18), transparent 26%),
-        radial-gradient(circle at 84% 10%, rgba(255, 62, 201, .16), transparent 24%),
-        radial-gradient(circle at 52% 70%, rgba(37, 99, 255, .18), transparent 32%),
-        linear-gradient(180deg, #06131f 0%, #081827 44%, #050d17 100%);
+        radial-gradient(circle at 10% 8%, rgba(53, 221, 255, .18), transparent 25%),
+        radial-gradient(circle at 88% 12%, rgba(255, 69, 207, .16), transparent 24%),
+        radial-gradient(circle at 52% 78%, rgba(49, 93, 255, .18), transparent 32%),
+        linear-gradient(180deg, #07111f 0%, #0b1a2b 42%, #060d18 100%);
       overflow-x: hidden;
     }
 
-    body::before {
+    body::before,
+    body::after {
       content: "";
       position: fixed;
       inset: 0;
       z-index: -2;
       pointer-events: none;
+    }
+
+    body::before {
       background-image:
         linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
       background-size: 46px 46px;
-      mask-image: radial-gradient(circle at center, #000 40%, transparent 90%);
-      opacity: .65;
+      mask-image: radial-gradient(circle at center, #000 42%, transparent 90%);
+      opacity: .58;
     }
 
     body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
       z-index: -1;
-      pointer-events: none;
       background:
-        radial-gradient(circle at 20% 18%, rgba(34, 211, 238, .12), transparent 24%),
-        radial-gradient(circle at 78% 20%, rgba(255, 62, 201, .13), transparent 24%),
-        radial-gradient(circle at 70% 78%, rgba(255, 189, 89, .09), transparent 30%);
+        radial-gradient(circle at 20% 18%, rgba(53, 221, 255, .11), transparent 26%),
+        radial-gradient(circle at 78% 16%, rgba(255, 69, 207, .12), transparent 24%),
+        radial-gradient(circle at 70% 78%, rgba(255, 192, 97, .09), transparent 30%);
       filter: blur(32px);
+    }
+
+    body.is-loading .load-in {
+      opacity: 0;
+      transform: translateY(26px);
     }
 
     a {
@@ -119,6 +118,59 @@
       padding: 96px 0;
     }
 
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      order: 1;
+    }
+
+    #ajans-vitrini {
+      order: 2;
+    }
+
+    #hizmetler {
+      order: 3;
+    }
+
+    #neden-biz {
+      order: 4;
+    }
+
+    #projeler {
+      order: 6;
+    }
+
+    #canli-projeler {
+      order: 5;
+    }
+
+    #sektor-demo {
+      order: 7;
+    }
+
+    #qr-menu {
+      order: 8;
+    }
+
+    #paketler {
+      order: 9;
+    }
+
+    #surec {
+      order: 10;
+    }
+
+    #sss {
+      order: 11;
+    }
+
+    #iletisim {
+      order: 12;
+    }
+
     .gradient-text {
       background: var(--grad);
       -webkit-background-clip: text;
@@ -141,7 +193,7 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       backdrop-filter: blur(18px);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 32px rgba(34, 211, 238, .08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 34px rgba(53, 221, 255, .08);
     }
 
     .eyebrow::before {
@@ -150,7 +202,7 @@
       height: 9px;
       border-radius: 50%;
       background: var(--grad);
-      box-shadow: 0 0 16px rgba(34, 211, 238, .78);
+      box-shadow: 0 0 16px rgba(53, 221, 255, .8);
     }
 
     .btn {
@@ -164,7 +216,7 @@
       border-radius: 17px;
       font-weight: 900;
       cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
       white-space: nowrap;
     }
 
@@ -173,9 +225,9 @@
     }
 
     .btn-primary {
-      color: #06131f;
+      color: #06111d;
       background: var(--grad);
-      box-shadow: 0 18px 48px rgba(34, 211, 238, .16), 0 0 34px rgba(255, 62, 201, .16);
+      box-shadow: 0 18px 48px rgba(53, 221, 255, .16), 0 0 34px rgba(255, 69, 207, .16);
     }
 
     .btn-dark {
@@ -185,36 +237,9 @@
     }
 
     .btn-light {
-      color: var(--dark-text);
-      background: var(--paper);
+      color: #06111d;
+      background: #f8fbff;
       box-shadow: 0 18px 38px rgba(0, 0, 0, .22);
-    }
-
-    .section-head {
-      max-width: 860px;
-      display: grid;
-      gap: 16px;
-      margin-bottom: 34px;
-    }
-
-    .section-head.center {
-      max-width: 900px;
-      margin-inline: auto;
-      text-align: center;
-      justify-items: center;
-    }
-
-    .section-head h2 {
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(32px, 5vw, 58px);
-      line-height: 1.03;
-      letter-spacing: -.055em;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.75;
     }
 
     .card {
@@ -225,8 +250,9 @@
       background:
         linear-gradient(180deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035)),
         rgba(9, 24, 39, .82);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-lg);
       isolation: isolate;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
     }
 
     .card::before {
@@ -235,9 +261,15 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 16% 0%, rgba(34, 211, 238, .12), transparent 32%),
-        radial-gradient(circle at 88% 18%, rgba(255, 62, 201, .1), transparent 32%);
+        radial-gradient(circle at 16% 0%, rgba(53, 221, 255, .12), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(255, 69, 207, .1), transparent 32%);
       pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(53, 221, 255, .34);
+      box-shadow: 0 30px 100px rgba(53, 221, 255, .12), 0 0 0 1px rgba(255, 255, 255, .04);
     }
 
     .card-body {
@@ -265,12 +297,57 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
+    .section-head {
+      max-width: 880px;
+      display: grid;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .section-head h2 {
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 4000;
+      background: rgba(255, 255, 255, .08);
+      pointer-events: none;
+    }
+
+    .scroll-progress span {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background: var(--grad);
+      box-shadow: 0 0 22px rgba(53, 221, 255, .65);
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid rgba(255, 255, 255, .09);
-      background: rgba(6, 19, 31, .74);
+      background: rgba(7, 17, 31, .74);
       backdrop-filter: blur(20px);
     }
 
@@ -287,6 +364,7 @@
       align-items: center;
       gap: 13px;
       min-width: 0;
+      flex: 0 1 auto;
     }
 
     .brand-logo {
@@ -296,35 +374,32 @@
       place-items: center;
       overflow: hidden;
       border-radius: 18px;
-      background: var(--grad);
-      box-shadow: 0 0 36px rgba(34, 211, 238, .16);
-    }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-logo span {
-      color: #06131f;
+      background:
+        radial-gradient(circle at 26% 22%, rgba(53, 221, 255, .95), transparent 34%),
+        linear-gradient(135deg, #35ddff 0%, #315dff 44%, #ff45cf 100%);
+      box-shadow: 0 0 36px rgba(53, 221, 255, .18), inset 0 1px 0 rgba(255, 255, 255, .22);
+      color: rgba(6, 17, 29, .86);
       font-family: "Unbounded", sans-serif;
       font-weight: 900;
     }
 
     .brand-copy strong {
       display: block;
-      font-size: 16px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
       font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      text-shadow: 0 10px 26px rgba(0, 0, 0, .24);
     }
 
     .brand-copy span {
       display: block;
-      margin-top: 4px;
-      color: var(--muted-2);
-      font-size: 12px;
+      margin-top: 7px;
+      color: var(--soft);
+      font-size: 13px;
       font-weight: 900;
-      letter-spacing: .08em;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
@@ -376,11 +451,11 @@
       border: 1px solid var(--line);
       border-radius: 42px;
       background:
-        radial-gradient(circle at 12% 12%, rgba(34, 211, 238, .22), transparent 26%),
-        radial-gradient(circle at 86% 16%, rgba(255, 62, 201, .18), transparent 23%),
-        radial-gradient(circle at 50% 86%, rgba(37, 99, 255, .2), transparent 32%),
+        radial-gradient(circle at 12% 12%, rgba(53, 221, 255, .22), transparent 26%),
+        radial-gradient(circle at 86% 16%, rgba(255, 69, 207, .18), transparent 23%),
+        radial-gradient(circle at 50% 86%, rgba(49, 93, 255, .2), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-xl);
       isolation: isolate;
     }
 
@@ -414,9 +489,13 @@
       min-height: 710px;
     }
 
+    .load-in {
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
     .hero-title {
+      max-width: 790px;
       font-family: "Unbounded", sans-serif;
-      max-width: 780px;
       font-size: clamp(42px, 6.6vw, 82px);
       line-height: .94;
       letter-spacing: -.065em;
@@ -458,14 +537,10 @@
       border-radius: 34px;
       border: 1px solid var(--line-2);
       background:
-        radial-gradient(circle at 18% 0%, rgba(34, 211, 238, .16), transparent 28%),
+        radial-gradient(circle at 18% 0%, rgba(53, 221, 255, .16), transparent 28%),
         linear-gradient(180deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-lg);
       backdrop-filter: blur(18px);
-    }
-
-    .lead-panel .card-body {
-      padding: 24px;
     }
 
     .lead-panel h2 {
@@ -504,11 +579,11 @@
 
     input::placeholder,
     textarea::placeholder {
-      color: rgba(248, 251, 255, .42);
+      color: rgba(247, 251, 255, .42);
     }
 
     select option {
-      color: #06131f;
+      color: #06111d;
     }
 
     textarea {
@@ -519,8 +594,8 @@
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(34, 211, 238, .42);
-      box-shadow: 0 0 0 4px rgba(34, 211, 238, .08);
+      border-color: rgba(53, 221, 255, .42);
+      box-shadow: 0 0 0 4px rgba(53, 221, 255, .08);
       background: rgba(255, 255, 255, .1);
     }
 
@@ -528,8 +603,13 @@
       overflow: hidden;
       border-radius: 34px;
       border: 1px solid var(--line);
-      background: rgba(6, 19, 31, .68);
-      box-shadow: var(--shadow-soft);
+      background: rgba(7, 17, 31, .68);
+      box-shadow: var(--shadow-lg);
+      order: 1;
+    }
+
+    .lead-panel {
+      order: 2;
     }
 
     .browser-top {
@@ -538,7 +618,7 @@
       gap: 9px;
       padding: 16px 18px;
       border-bottom: 1px solid var(--line);
-      color: var(--muted-2);
+      color: var(--soft);
       font-size: 13px;
       font-weight: 800;
     }
@@ -547,7 +627,7 @@
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: var(--red);
+      background: var(--danger);
     }
 
     .browser-top i:nth-child(2) {
@@ -563,8 +643,8 @@
       gap: 14px;
       padding: 20px;
       background:
-        radial-gradient(circle at top left, rgba(34, 211, 238, .15), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(255, 62, 201, .12), transparent 34%);
+        radial-gradient(circle at top left, rgba(53, 221, 255, .15), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 69, 207, .12), transparent 34%);
     }
 
     .mock-hero {
@@ -573,14 +653,15 @@
       border-radius: 26px;
       border: 1px solid var(--line);
       background:
-        radial-gradient(circle at 14% 12%, rgba(34, 211, 238, .2), transparent 26%),
-        radial-gradient(circle at 88% 16%, rgba(255, 62, 201, .16), transparent 26%),
+        radial-gradient(circle at 14% 12%, rgba(53, 221, 255, .2), transparent 26%),
+        radial-gradient(circle at 88% 16%, rgba(255, 69, 207, .16), transparent 26%),
         linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .04));
     }
 
     .mock-hero strong {
       display: block;
       max-width: 410px;
+      margin-top: 16px;
       font-family: "Unbounded", sans-serif;
       font-size: 30px;
       line-height: 1.08;
@@ -611,7 +692,7 @@
 
     .mock-card small {
       display: block;
-      color: var(--muted-2);
+      color: var(--soft);
       font-size: 11px;
       font-weight: 900;
       letter-spacing: .1em;
@@ -739,17 +820,19 @@
       border-radius: 18px;
       background: var(--grad-soft);
       font-weight: 900;
-      box-shadow: 0 0 26px rgba(34, 211, 238, .1);
+      box-shadow: 0 0 26px rgba(53, 221, 255, .1);
     }
 
-    .list {
+    .list,
+    .bullet-list {
       display: grid;
       gap: 10px;
       margin-top: 18px;
       list-style: none;
     }
 
-    .list li {
+    .list li,
+    .bullet-list span {
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -758,7 +841,8 @@
       line-height: 1.65;
     }
 
-    .list li::before {
+    .list li::before,
+    .bullet-list span::before {
       content: "";
       width: 8px;
       height: 8px;
@@ -766,31 +850,577 @@
       margin-top: 8px;
       border-radius: 50%;
       background: var(--grad);
-      box-shadow: 0 0 14px rgba(34, 211, 238, .5);
+      box-shadow: 0 0 14px rgba(53, 221, 255, .5);
     }
 
-    .bento {
+    .agency-showcase,
+    .bento,
+    .qr-stage,
+    .contact-layout {
       display: grid;
       grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .device-wall,
+    .big-panel,
+    .phone-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(53, 221, 255, .2), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(255, 69, 207, .18), transparent 26%),
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
+      box-shadow: var(--shadow-xl);
+    }
+
+    .laptop-mockup {
+      position: relative;
+      max-width: 760px;
+      margin: 30px auto 0;
+      padding: 14px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: linear-gradient(145deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)), #070b14;
+      box-shadow: 0 34px 110px rgba(0, 0, 0, .44);
+    }
+
+    .laptop-screen {
+      overflow: hidden;
+      min-height: 365px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      background:
+        radial-gradient(circle at 18% 14%, rgba(53, 221, 255, .22), transparent 28%),
+        radial-gradient(circle at 82% 20%, rgba(255, 69, 207, .2), transparent 30%),
+        linear-gradient(180deg, #141026, #07111f);
+    }
+
+    .laptop-top {
+      display: flex;
+      gap: 8px;
+      padding: 13px 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, .09);
+    }
+
+    .laptop-top i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--danger);
+    }
+
+    .laptop-top i:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .laptop-top i:nth-child(3) {
+      background: var(--green);
+    }
+
+    .laptop-content {
+      display: grid;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .mock-hero-line {
+      width: 72%;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(53, 221, 255, .86), rgba(255, 69, 207, .72));
+    }
+
+    .mock-text-line {
+      width: 58%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+    }
+
+    .mock-text-line.short {
+      width: 38%;
+    }
+
+    .mock-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mock-mini-card {
+      min-height: 120px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .mock-mini-card b {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: var(--grad);
+    }
+
+    .phone-floating {
+      position: absolute;
+      right: 36px;
+      bottom: 34px;
+      width: 210px;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)), #080611;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .4);
+      transform: rotate(4deg);
+    }
+
+    .phone-floating-screen {
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .72)),
+        radial-gradient(circle at 28% 18%, rgba(255, 192, 97, .68), transparent 30%),
+        radial-gradient(circle at 82% 28%, rgba(255, 69, 207, .36), transparent 28%),
+        #120d16;
+    }
+
+    .phone-floating-head {
+      min-height: 124px;
+      display: flex;
+      align-items: end;
+      padding: 18px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 20px;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .phone-floating-list {
+      display: grid;
+      gap: 9px;
+      padding: 12px;
+    }
+
+    .phone-floating-item {
+      height: 54px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .09);
+    }
+
+    .live-project-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
       gap: 20px;
       align-items: stretch;
     }
 
-    .big-panel {
-      min-height: 560px;
-      padding: 28px;
-      border-radius: 34px;
+    .project-live-card {
+      min-height: 520px;
+      padding: 24px;
       border: 1px solid var(--line);
+      border-radius: 32px;
       background:
-        radial-gradient(circle at 18% 14%, rgba(34, 211, 238, .18), transparent 28%),
-        radial-gradient(circle at 82% 22%, rgba(255, 62, 201, .15), transparent 28%),
-        linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow);
+        radial-gradient(circle at 18% 14%, rgba(53, 221, 255, .18), transparent 28%),
+        radial-gradient(circle at 84% 16%, rgba(255, 69, 207, .14), transparent 26%),
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
+      box-shadow: var(--shadow-xl);
       overflow: hidden;
     }
 
+    .project-live-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .07);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .project-status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 14px rgba(134, 255, 182, .7);
+    }
+
+    .project-browser {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(7, 17, 31, .72);
+    }
+
+    .project-browser-body {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .project-preview-panel {
+      min-height: 300px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 20% 16%, rgba(53, 221, 255, .22), transparent 30%),
+        radial-gradient(circle at 80% 18%, rgba(255, 69, 207, .18), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+    }
+
+    .project-preview-panel strong {
+      display: block;
+      margin-top: 18px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 30px;
+      line-height: 1.06;
+      letter-spacing: -.05em;
+    }
+
+    .project-preview-panel p {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .project-dashboard {
+      display: grid;
+      gap: 12px;
+    }
+
+    .dash-row,
+    .sector-stat {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .065);
+    }
+
+    .dash-row small,
+    .sector-stat small {
+      display: block;
+      color: var(--soft);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dash-row strong,
+    .sector-stat strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 18px;
+      line-height: 1.32;
+    }
+
+    .project-pills {
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-pill {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .project-pill b {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--grad-soft);
+    }
+
+    .project-pill strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .project-pill span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .before-after-slider {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .055) 0 50%, rgba(53, 221, 255, .09) 50% 100%),
+        rgba(255, 255, 255, .045);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .before-layer,
+    .after-layer {
+      position: absolute;
+      inset: 0;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .before-layer {
+      width: 52%;
+      background:
+        radial-gradient(circle at 24% 18%, rgba(255, 255, 255, .08), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02));
+      color: rgba(247, 251, 255, .72);
+      clip-path: inset(0 0 0 0);
+    }
+
+    .after-layer {
+      left: 48%;
+      background:
+        radial-gradient(circle at 28% 18%, rgba(53, 221, 255, .25), transparent 30%),
+        radial-gradient(circle at 82% 24%, rgba(255, 69, 207, .2), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--grad);
+      box-shadow: 0 0 22px rgba(53, 221, 255, .7);
+    }
+
+    .slider-handle::before {
+      content: "Önce / Sonra";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 118px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #f8fbff;
+      color: #06111d;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, .28);
+    }
+
+    .layer-label {
+      width: fit-content;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .layer-title {
+      max-width: 310px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 30px;
+      line-height: 1.06;
+      letter-spacing: -.05em;
+    }
+
+    .sector-lab {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .sector-tabs {
+      display: grid;
+      gap: 12px;
+    }
+
+    .sector-tab {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      color: var(--text);
+      background: rgba(255, 255, 255, .06);
+      text-align: left;
+      cursor: pointer;
+      transition: .22s ease;
+    }
+
+    .sector-tab:hover,
+    .sector-tab.active {
+      border-color: rgba(53, 221, 255, .36);
+      background: rgba(53, 221, 255, .1);
+      transform: translateY(-2px);
+    }
+
+    .sector-tab b {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--grad);
+      color: #06111d;
+    }
+
+    .sector-tab strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .sector-tab span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .sector-display {
+      min-height: 560px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 18% 12%, var(--sector-a, rgba(53, 221, 255, .18)), transparent 28%),
+        radial-gradient(circle at 86% 16%, var(--sector-b, rgba(255, 69, 207, .16)), transparent 26%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+      box-shadow: var(--shadow-xl);
+    }
+
+    .sector-screen {
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(7, 17, 31, .7);
+    }
+
+    .sector-hero {
+      min-height: 250px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 24% 22%, var(--sector-a, rgba(53, 221, 255, .24)), transparent 32%),
+        radial-gradient(circle at 82% 26%, var(--sector-b, rgba(255, 69, 207, .2)), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+    }
+
+    .sector-hero h3 {
+      max-width: 560px;
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(30px, 4.3vw, 52px);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .sector-body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .before-after-card,
+    .side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .compare-box {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .compare-box.before {
+      background: linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025));
+    }
+
+    .compare-box.after {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(53, 221, 255, .2), transparent 32%),
+        linear-gradient(145deg, rgba(255, 69, 207, .17), rgba(49, 93, 255, .08));
+    }
+
+    .compare-box small {
+      color: var(--soft);
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .compare-box strong {
+      font-size: 22px;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
     .big-panel h3 {
-      max-width: 620px;
+      max-width: 640px;
       margin-top: 22px;
       font-family: "Unbounded", sans-serif;
       font-size: clamp(32px, 4.8vw, 58px);
@@ -836,31 +1466,26 @@
       height: 100%;
       border-radius: inherit;
       background: var(--grad);
-      box-shadow: 0 0 18px rgba(255, 62, 201, .28);
-    }
-
-    .side-stack {
-      display: grid;
-      gap: 20px;
+      box-shadow: 0 0 18px rgba(255, 69, 207, .28);
     }
 
     .portfolio-visual {
       min-height: 220px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(34, 211, 238, .2), transparent 30%),
-        radial-gradient(circle at 88% 18%, rgba(255, 62, 201, .15), transparent 30%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .04));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(53, 221, 255, .2), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(255, 69, 207, .15), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .04));
     }
 
     .portfolio-visual small {
-      color: var(--muted-2);
+      color: var(--soft);
       font-size: 12px;
       font-weight: 900;
       letter-spacing: .1em;
@@ -876,101 +1501,10 @@
       letter-spacing: -.045em;
     }
 
-    .price-card.featured {
-      transform: translateY(-12px);
-      border-color: rgba(34, 211, 238, .36);
-      box-shadow: 0 30px 100px rgba(34, 211, 238, .14), 0 0 0 1px rgba(255, 255, 255, .04);
-    }
-
-    .badge {
-      display: inline-flex;
-      width: fit-content;
-      margin-bottom: 14px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255, 189, 89, .24);
-      border-radius: 999px;
-      background: rgba(255, 189, 89, .13);
-      color: #ffddad;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .price {
-      margin-top: 18px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 38px;
-      letter-spacing: -.05em;
-    }
-
-    .price small {
-      color: var(--muted-2);
-      font-family: "Outfit", sans-serif;
-      font-size: 14px;
-      letter-spacing: 0;
-    }
-
-    .process {
-      display: grid;
-      gap: 16px;
-      counter-reset: process;
-    }
-
-    .process-item {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, .06);
-    }
-
-    .process-item::before {
-      counter-increment: process;
-      content: "0" counter(process);
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 17px;
-      background: var(--grad);
-      color: #06131f;
-      font-weight: 900;
-    }
-
-    .process-item h3 {
-      font-size: 20px;
-      letter-spacing: -.02em;
-    }
-
-    .process-item p {
-      margin-top: 8px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .qr-stage {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
     .phone-wrap {
       min-height: 680px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255, 189, 89, .18), transparent 25%),
-        radial-gradient(circle at 80% 16%, rgba(34, 211, 238, .16), transparent 25%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
     .phone {
@@ -985,8 +1519,8 @@
     .phone-screen {
       overflow: hidden;
       min-height: 590px;
-      border-radius: 32px;
       border: 1px solid var(--line);
+      border-radius: 32px;
       background: #130f14;
     }
 
@@ -998,8 +1532,8 @@
       padding: 20px;
       background:
         linear-gradient(180deg, rgba(0, 0, 0, .02), rgba(0, 0, 0, .72)),
-        radial-gradient(circle at 24% 22%, rgba(255, 189, 89, .68), transparent 29%),
-        radial-gradient(circle at 82% 26%, rgba(255, 62, 201, .36), transparent 27%),
+        radial-gradient(circle at 24% 22%, rgba(255, 192, 97, .68), transparent 29%),
+        radial-gradient(circle at 82% 26%, rgba(255, 69, 207, .36), transparent 27%),
         linear-gradient(135deg, #4a210d, #151020 56%, #062a3d);
     }
 
@@ -1084,7 +1618,7 @@
 
     .menu-item small {
       display: block;
-      color: var(--muted-2);
+      color: var(--soft);
       font-size: 10px;
       font-weight: 900;
       letter-spacing: .08em;
@@ -1100,7 +1634,7 @@
 
     .menu-item p {
       margin-top: 3px;
-      color: var(--muted-2);
+      color: var(--soft);
       font-size: 12px;
       line-height: 1.35;
     }
@@ -1109,6 +1643,82 @@
       color: #ffcf6d;
       font-weight: 900;
       white-space: nowrap;
+    }
+
+    .price-card.featured {
+      transform: translateY(-12px);
+      border-color: rgba(53, 221, 255, .36);
+      box-shadow: 0 30px 100px rgba(53, 221, 255, .14), 0 0 0 1px rgba(255, 255, 255, .04);
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 192, 97, .24);
+      border-radius: 999px;
+      background: rgba(255, 192, 97, .13);
+      color: #ffddad;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .price {
+      margin-top: 18px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 38px;
+      letter-spacing: -.05em;
+    }
+
+    .price small {
+      color: var(--soft);
+      font-family: "Outfit", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .process {
+      display: grid;
+      gap: 16px;
+      counter-reset: process;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .process-item::before {
+      counter-increment: process;
+      content: "0" counter(process);
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--grad);
+      color: #06111d;
+      font-weight: 900;
+    }
+
+    .process-item h3 {
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .process-item p {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     .faq-list {
@@ -1161,12 +1771,6 @@
       transform: rotate(45deg);
     }
 
-    .contact-layout {
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      gap: 22px;
-    }
-
     .contact-row {
       display: flex;
       gap: 14px;
@@ -1193,7 +1797,7 @@
 
     .contact-row small {
       display: block;
-      color: var(--muted-2);
+      color: var(--soft);
       font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -1206,8 +1810,50 @@
       word-break: break-word;
     }
 
+    .mobile-action-bar {
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 2000;
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 9px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 20px;
+      background: rgba(7, 17, 31, .82);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .38);
+    }
+
+    .mobile-action-bar a {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .mobile-action-bar .call {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .mobile-action-bar .wa {
+      color: #071110;
+      background: linear-gradient(135deg, #7cffb2, #35ddff);
+    }
+
+    .mobile-action-bar .offer {
+      color: #06111d;
+      background: var(--grad);
+    }
+
     .footer {
-      padding: 34px 0;
+      padding: 34px 0 110px;
       border-top: 1px solid var(--line);
       color: var(--muted);
     }
@@ -1218,37 +1864,6 @@
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 999;
-      min-height: 54px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #7cffb2, #22d3ee);
-      color: #06131f;
-      font-weight: 900;
-      box-shadow: 0 18px 50px rgba(34, 211, 238, .22);
-    }
-
-    .scroll-progress {
-      position: fixed;
-      inset: 0 auto auto 0;
-      width: 100%;
-      height: 3px;
-      z-index: 2000;
-      background: rgba(255, 255, 255, .08);
-    }
-
-    .scroll-progress span {
-      display: block;
-      width: 0%;
-      height: 100%;
-      background: var(--grad);
-      box-shadow: 0 0 22px rgba(34, 211, 238, .65);
     }
 
     .reveal {
@@ -1279,26 +1894,37 @@
 
     @media (max-width: 1120px) {
       .hero-grid,
+      .agency-showcase,
+      .live-project-grid,
       .bento,
       .qr-stage,
       .contact-layout,
+      .sector-lab,
       .grid-4,
       .grid-3,
       .grid-2,
-      .mock-grid {
+      .mock-grid,
+      .project-browser-body,
+      .sector-body {
         grid-template-columns: 1fr;
       }
 
-      .hero-shell {
-        min-height: auto;
-      }
-
+      .hero-shell,
       .hero-copy {
         min-height: auto;
       }
 
       .stats-band {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .phone-floating {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(260px, 100%);
+        margin: 24px auto 0;
+        transform: none;
       }
 
       .price-card.featured {
@@ -1316,8 +1942,8 @@
         flex-direction: column;
         align-items: stretch;
         border-radius: 24px;
-        background: rgba(6, 19, 31, .96);
-        box-shadow: var(--shadow-soft);
+        background: rgba(7, 17, 31, .96);
+        box-shadow: var(--shadow-lg);
       }
 
       .nav.open {
@@ -1337,6 +1963,16 @@
       }
     }
 
+    @media (max-width: 720px) {
+      body {
+        padding-bottom: 82px;
+      }
+
+      .mobile-action-bar {
+        display: grid;
+      }
+    }
+
     @media (max-width: 640px) {
       .container {
         width: calc(100% - 18px);
@@ -1352,7 +1988,9 @@
 
       .hero-shell,
       .card-body,
-      .big-panel {
+      .big-panel,
+      .device-wall,
+      .phone-wrap {
         padding: 17px;
         border-radius: 26px;
       }
@@ -1368,11 +2006,21 @@
       }
 
       .brand-copy strong {
-        font-size: 14px;
+        font-size: 13px;
+        max-width: 160px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .brand-copy span {
-        display: none;
+        display: block;
+        max-width: 180px;
+        font-size: 9px;
+        letter-spacing: .12em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .hero-title {
@@ -1399,7 +2047,9 @@
         font-size: 14px;
       }
 
-      .stats-band {
+      .stats-band,
+      .mock-card-grid,
+      .comparison {
         grid-template-columns: 1fr;
       }
 
@@ -1416,13 +2066,59 @@
         font-size: clamp(28px, 9vw, 39px);
       }
 
-      .meter {
+      .meter,
+      .process-item {
         grid-template-columns: 1fr;
+      }
+
+      .laptop-mockup {
+        margin-top: 10px;
+        padding: 9px;
+        border-radius: 22px;
+      }
+
+      .laptop-screen {
+        min-height: 300px;
+      }
+
+      .project-live-card,
+      .sector-display,
+      .before-after-slider {
+        min-height: auto;
+      }
+
+      .before-after-slider {
+        min-height: 520px;
+      }
+
+      .before-layer,
+      .after-layer {
+        padding: 18px;
+      }
+
+      .before-layer {
+        width: 100%;
+        height: 50%;
+      }
+
+      .after-layer {
+        inset: 50% 0 0 0;
+      }
+
+      .slider-handle {
+        top: 50%;
+        bottom: auto;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+
+      .layer-title {
+        font-size: 23px;
       }
 
       .phone-wrap {
         min-height: auto;
-        padding: 18px;
       }
 
       .phone-screen {
@@ -1441,26 +2137,16 @@
       .menu-price {
         grid-column: 2;
       }
-
-      .floating-whatsapp {
-        left: 10px;
-        right: 10px;
-        justify-content: center;
-        text-align: center;
-      }
     }
   </style>
 </head>
 
-<body>
+<body class="is-loading">
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
-
   <header>
     <div class="container header-inner">
       <a href="#anasayfa" class="brand" aria-label="Mehmet Arda Doğan ana sayfa">
-        <div class="brand-logo">
-          <img src="logo.png" alt="" onerror="this.remove(); this.parentElement.innerHTML='<span>MA</span>';" />
-        </div>
+        <div class="brand-logo" aria-hidden="true">MA</div>
         <div class="brand-copy">
           <strong>Mehmet Arda Doğan</strong>
           <span>Ultra Premium Web Studio</span>
@@ -1469,12 +2155,14 @@
 
       <div class="nav-shell">
         <nav class="nav" id="navMenu">
+          <a href="#ajans-vitrini">Ajans Vitrini</a>
           <a href="#hizmetler">Hizmetler</a>
+          <a href="#canli-projeler">Canlı Proje</a>
+          <a href="#sektor-demo">Sektör Demo</a>
           <a href="#neden-biz">Neden Biz</a>
           <a href="#projeler">Projeler</a>
           <a href="#qr-menu">QR Menü</a>
           <a href="#paketler">Paketler</a>
-          <a href="#surec">Süreç</a>
           <a href="#iletisim">İletişim</a>
         </nav>
 
@@ -1490,32 +2178,25 @@
         <div class="hero-shell">
           <div class="hero-grid">
             <div class="hero-copy reveal">
-              <div class="eyebrow">Premium Web Tasarım ve Dijital Vitrin</div>
+              <div class="eyebrow load-in">Premium Web Tasarım ve Dijital Vitrin</div>
 
-              <h1 class="hero-title">
+              <h1 class="hero-title load-in">
                 Markanı internette
                 <span class="gradient-text">daha büyük, daha pahalı ve daha güvenilir</span>
                 gösteren web sitesi.
               </h1>
 
-              <p>
+              <p class="load-in">
                 Mehmet Arda Doğan imzasıyla kurumsal web sitesi, landing page, QR menü ve kişisel marka vitrinlerini
-                sıradan sayfa mantığından çıkarıp; hızlı, mobil uyumlu, SEO dostu ve yüksek algılı dijital deneyime dönüştürüyoruz.
+                sıradan sayfa mantığından çıkarıp hızlı, mobil uyumlu, SEO dostu ve yüksek algılı dijital deneyime dönüştürüyoruz.
               </p>
 
-              <div class="hero-actions">
+              <div class="hero-actions load-in">
                 <a href="#iletisim" class="btn btn-primary">30 Saniyede Teklif Al</a>
-                <a
-                  href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-                  target="_blank"
-                  rel="noreferrer"
-                  class="btn btn-dark"
-                >
-                  WhatsApp'tan Yaz
-                </a>
+                <a href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp'tan Yaz</a>
               </div>
 
-              <div class="chips">
+              <div class="chips load-in">
                 <span>Kurumsal web sitesi</span>
                 <span>Landing page</span>
                 <span>QR menü</span>
@@ -1582,7 +2263,7 @@
 
           <div class="stats-band reveal">
             <div class="stat">
-              <strong>100%</strong>
+              <strong data-count="100">0</strong>
               <span>Mobil uyumlu, hızlı ve modern görünüm</span>
             </div>
             <div class="stat">
@@ -1594,7 +2275,7 @@
               <span>Kullanıcıyı yormayan premium arayüz akışı</span>
             </div>
             <div class="stat">
-              <strong>CTA</strong>
+              <strong data-count="24">0</strong>
               <span>Form, WhatsApp ve teklif odaklı dönüşüm sistemi</span>
             </div>
           </div>
@@ -1619,15 +2300,160 @@
       </div>
     </section>
 
+    <section class="section" id="canli-projeler">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Canlı Proje Sunumu</div>
+          <h2>Ajans işi gibi görünen büyük proje kartları ve canlı dashboard hissi.</h2>
+          <p>Bu bölüm siteye “gerçek üretim yapılıyor” algısı katar. Ziyaretçi sadece hizmet okumaz, profesyonel proje ekranı görür.</p>
+        </div>
+
+        <div class="live-project-grid">
+          <article class="project-live-card reveal">
+            <div class="project-live-head">
+              <div>
+                <div class="eyebrow">Featured Project</div>
+              </div>
+              <div class="project-status">Live Preview</div>
+            </div>
+
+            <div class="project-browser">
+              <div class="browser-top">
+                <i></i><i></i><i></i>
+                <span>project-preview / conversion-system</span>
+              </div>
+
+              <div class="project-browser-body">
+                <div class="project-preview-panel">
+                  <div class="mini-row">
+                    <span>Premium UI</span>
+                    <span>Lead Form</span>
+                  </div>
+                  <strong>Kurumsal markayı daha pahalı gösteren açılış ekranı.</strong>
+                  <p>Hero, güven rozetleri, teklif formu ve mobil akış tek bir satış sistemine bağlanır.</p>
+                </div>
+
+                <div class="project-dashboard">
+                  <div class="dash-row">
+                    <small>Hedef</small>
+                    <strong>İlk 5 saniyede güven oluşturmak</strong>
+                  </div>
+                  <div class="dash-row">
+                    <small>CTA</small>
+                    <strong>WhatsApp, arama ve teklif formu</strong>
+                  </div>
+                  <div class="dash-row">
+                    <small>Mobil</small>
+                    <strong>Alt aksiyon barı ile hızlı dönüşüm</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="project-pills reveal">
+            <div class="project-pill">
+              <b>01</b>
+              <div>
+                <strong>Kurumsal Firma</strong>
+                <span>Güven, hizmet anlatımı ve teklif akışı.</span>
+              </div>
+            </div>
+            <div class="project-pill">
+              <b>02</b>
+              <div>
+                <strong>QR Menü</strong>
+                <span>Mobilde premium restoran menüsü.</span>
+              </div>
+            </div>
+            <div class="project-pill">
+              <b>03</b>
+              <div>
+                <strong>Landing Page</strong>
+                <span>Reklamdan gelen kullanıcıyı tek hedefe taşır.</span>
+              </div>
+            </div>
+            <div class="project-pill">
+              <b>04</b>
+              <div>
+                <strong>Kişisel Marka</strong>
+                <span>Uzmanlığı daha güçlü ve profesyonel gösterir.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sektor-demo">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="eyebrow">Sektöre Göre Demo</div>
+          <h2>Butona basınca sektör havası değişen interaktif vitrin.</h2>
+          <p>Restoran, kurumsal firma, güzellik merkezi veya e-ticaret için aynı altyapı farklı marka diliyle sunulur.</p>
+        </div>
+
+        <div class="sector-lab">
+          <div class="card reveal">
+            <div class="card-body">
+              <div class="sector-tabs" aria-label="Sektör seçimi">
+                <button class="sector-tab active" type="button" data-sector="restaurant">
+                  <b>R</b>
+                  <span><strong>Restoran / Kafe</strong><span>QR menü, kampanya ve sipariş.</span></span>
+                </button>
+                <button class="sector-tab" type="button" data-sector="corporate">
+                  <b>K</b>
+                  <span><strong>Kurumsal Firma</strong><span>Güven, hizmet ve teklif.</span></span>
+                </button>
+                <button class="sector-tab" type="button" data-sector="beauty">
+                  <b>G</b>
+                  <span><strong>Güzellik Merkezi</strong><span>Randevu, hizmet ve premium algı.</span></span>
+                </button>
+                <button class="sector-tab" type="button" data-sector="commerce">
+                  <b>E</b>
+                  <span><strong>E-ticaret / Ürün</strong><span>Ürün vitrini ve satış odaklı yapı.</span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <article class="sector-display reveal" id="sectorDisplay">
+            <div class="sector-screen">
+              <div class="sector-hero">
+                <div class="mini-row" id="sectorTags">
+                  <span>QR Menü</span>
+                  <span>Popüler Ürün</span>
+                  <span>WhatsApp Sipariş</span>
+                </div>
+                <h3 id="sectorTitle">Restoran için premium QR menü ve sipariş vitrini.</h3>
+              </div>
+
+              <div class="sector-body">
+                <div class="sector-stat">
+                  <small id="sectorMetricOne">Odak</small>
+                  <strong id="sectorMetricOneText">Müşteriyi hızlı seçim ve siparişe taşımak</strong>
+                </div>
+                <div class="sector-stat">
+                  <small id="sectorMetricTwo">Görünüm</small>
+                  <strong id="sectorMetricTwoText">Lezzetli, canlı ve mobil öncelikli</strong>
+                </div>
+                <div class="sector-stat">
+                  <small id="sectorMetricThree">Aksiyon</small>
+                  <strong id="sectorMetricThreeText">WhatsApp sipariş veya rezervasyon</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="hizmetler">
       <div class="container">
         <div class="section-head center reveal">
           <div class="eyebrow">Hizmetler</div>
           <h2>Sadece site yapmıyoruz; markanın dijital satış vitrinini kuruyoruz.</h2>
-          <p>
-            Web sayfası artık sadece bilgi alanı değil. İnsanlar seni önce tasarım kalitenle yargılıyor.
-            Bu yüzden her projeyi prestij, hız, güven ve teklif dönüşümüyle birlikte düşünüyoruz.
-          </p>
+          <p>Web sayfası artık sadece bilgi alanı değil. İnsanlar seni önce tasarım kalitenle yargılıyor. Bu yüzden her projeyi prestij, hız, güven ve teklif dönüşümüyle birlikte düşünüyoruz.</p>
         </div>
 
         <div class="grid-3">
@@ -1673,16 +2499,97 @@
       </div>
     </section>
 
+    <section class="section" id="ajans-vitrini">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Ajans Vitrini</div>
+          <h2>Gerçek ajans hissi veren cihaz mockup’ları, proje ekranları ve önce/sonra sunumu.</h2>
+          <p>Ziyaretçi sadece metin okumaz; ekranda profesyonel bir üretim kalitesi görür. Laptop, telefon, proje kartları ve dönüşüm hissi sayfayı çok daha pahalı gösterir.</p>
+        </div>
+
+        <div class="agency-showcase">
+          <article class="device-wall reveal">
+            <div class="eyebrow">Live Project Preview</div>
+
+            <div class="laptop-mockup">
+              <div class="laptop-screen">
+                <div class="laptop-top">
+                  <i></i><i></i><i></i>
+                </div>
+
+                <div class="laptop-content">
+                  <div class="mock-hero-line"></div>
+                  <div class="mock-text-line"></div>
+                  <div class="mock-text-line short"></div>
+
+                  <div class="mock-card-grid">
+                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
+                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
+                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-floating">
+              <div class="phone-floating-screen">
+                <div class="phone-floating-head">Premium QR Menü deneyimi</div>
+                <div class="phone-floating-list">
+                  <div class="phone-floating-item"></div>
+                  <div class="phone-floating-item"></div>
+                  <div class="phone-floating-item"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="before-after-card">
+            <article class="card reveal">
+              <div class="card-body">
+                <div class="eyebrow">Önce / Sonra</div>
+                <h3 style="font-size: 28px; line-height: 1.15; letter-spacing: -0.03em; margin-top: 16px;">Aynı marka, daha iyi sunulunca daha değerli algılanır.</h3>
+
+                <div class="before-after-slider">
+                  <div class="before-layer">
+                    <span class="layer-label">Önce</span>
+                    <strong class="layer-title">Düz, sıradan ve güven vermekte zorlanan web görünümü.</strong>
+                  </div>
+
+                  <div class="after-layer">
+                    <span class="layer-label">Sonra</span>
+                    <strong class="layer-title">Işıklı, premium, mobil güçlü ve teklif almaya hazır dijital sahne.</strong>
+                  </div>
+
+                  <div class="slider-handle" aria-hidden="true"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-body">
+                <div class="eyebrow">Premium Katmanlar</div>
+                <h3 style="font-size: 26px; line-height: 1.2; letter-spacing: -0.03em; margin-top: 16px;">Sayfanın ajans işi gibi görünmesini sağlayan detaylar</h3>
+
+                <div class="bullet-list">
+                  <span>Laptop ve telefon mockup ile gerçek proje sunumu hissi</span>
+                  <span>Önce / sonra kartları ile dönüşüm algısı</span>
+                  <span>Hover efektleri ile daha canlı premium deneyim</span>
+                  <span>Mobilde sürekli görünen Ara / WhatsApp / Teklif barı</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="neden-biz">
       <div class="container">
         <div class="bento">
           <article class="big-panel reveal">
             <div class="eyebrow">Neden Biz</div>
             <h3>Bir web sitesini pahalı gösteren şey sadece renk değil, bütün sistemdir.</h3>
-            <p>
-              Doğru başlık, doğru boşluk, doğru hız, doğru mobil akış, doğru teklif butonu ve doğru marka dili birleşince
-              ziyaretçi sadece site görmez; profesyonel bir marka hisseder.
-            </p>
+            <p>Doğru başlık, doğru boşluk, doğru hız, doğru mobil akış, doğru teklif butonu ve doğru marka dili birleşince ziyaretçi sadece site görmez; profesyonel bir marka hisseder.</p>
 
             <div class="meter-list">
               <div class="meter">
@@ -1744,10 +2651,7 @@
         <div class="section-head reveal">
           <div class="eyebrow">Proje Vitrini</div>
           <h2>Farklı sektörlere premium görünen dijital sahneler.</h2>
-          <p>
-            Her sektörün aynı tasarıma ihtiyacı yok. Restoran başka, kurumsal firma başka, kişisel marka başka görünmeli.
-            Biz tasarımı markanın karakterine göre güçlendiriyoruz.
-          </p>
+          <p>Her sektörün aynı tasarıma ihtiyacı yok. Restoran başka, kurumsal firma başka, kişisel marka başka görünmeli. Biz tasarımı markanın karakterine göre güçlendiriyoruz.</p>
         </div>
 
         <div class="grid-3">
@@ -1792,13 +2696,8 @@
         <article class="card reveal">
           <div class="card-body">
             <div class="eyebrow">QR Menü</div>
-            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">
-              Menüyü PDF gibi değil, telefonda gezilen premium bir marka deneyimi gibi tasarlıyoruz.
-            </h2>
-            <p style="margin-top:16px;color:var(--muted);line-height:1.75;">
-              Müşteri masada QR kodu okuttuğunda ilk gördüğü şey senin dijital kaliten olur. Bu yüzden menü sadece çalışmamalı;
-              işletmenin havasını, ürün kalitesini ve sipariş kolaylığını aynı anda hissettirmeli.
-            </p>
+            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">Menüyü PDF gibi değil, telefonda gezilen premium bir marka deneyimi gibi tasarlıyoruz.</h2>
+            <p style="margin-top:16px;color:var(--muted);line-height:1.75;">Müşteri masada QR kodu okuttuğunda ilk gördüğü şey senin dijital kaliten olur. Bu yüzden menü sadece çalışmamalı; işletmenin havasını, ürün kalitesini ve sipariş kolaylığını aynı anda hissettirmeli.</p>
 
             <ul class="list">
               <li>Kategori, ürün, fiyat ve açıklama düzeni</li>
@@ -1809,14 +2708,7 @@
 
             <div class="hero-actions" style="margin-top:22px;">
               <a href="#iletisim" class="btn btn-primary">QR Menü İste</a>
-              <a
-                href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20tasar%C4%B1m%C4%B1%20istiyorum."
-                target="_blank"
-                rel="noreferrer"
-                class="btn btn-dark"
-              >
-                WhatsApp Demo Sor
-              </a>
+              <a href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20tasar%C4%B1m%C4%B1%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp Demo Sor</a>
             </div>
           </div>
         </article>
@@ -1870,14 +2762,7 @@
                   <div class="menu-price">₺95</div>
                 </div>
 
-                <a
-                  href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20demosu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-                  target="_blank"
-                  rel="noreferrer"
-                  class="btn btn-primary"
-                >
-                  WhatsApp ile Sipariş
-                </a>
+                <a href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20demosu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-primary">WhatsApp ile Sipariş</a>
               </div>
             </div>
           </div>
@@ -1890,9 +2775,7 @@
         <div class="section-head center reveal">
           <div class="eyebrow">Paketler</div>
           <h2>İhtiyacına göre net, şık ve profesyonel web paketleri.</h2>
-          <p>
-            Fiyat proje kapsamına göre netleşir. Buradaki paketler sana hangi seviyede bir web deneyimi hazırlanabileceğini gösterir.
-          </p>
+          <p>Fiyat proje kapsamına göre netleşir. Buradaki paketler sana hangi seviyede bir web deneyimi hazırlanabileceğini gösterir.</p>
         </div>
 
         <div class="grid-3">
@@ -1956,9 +2839,7 @@
         <div class="section-head reveal">
           <div class="eyebrow">Süreç</div>
           <h2>Projeyi karmaşaya çevirmeden net adımlarla yayına hazırlıyoruz.</h2>
-          <p>
-            Önce markanın nasıl görünmesi gerektiğini çözüyoruz. Sonra tasarım, içerik, mobil akış ve iletişim yapısını tek sistemde topluyoruz.
-          </p>
+          <p>Önce markanın nasıl görünmesi gerektiğini çözüyoruz. Sonra tasarım, içerik, mobil akış ve iletişim yapısını tek sistemde topluyoruz.</p>
           <div class="hero-actions">
             <a href="#iletisim" class="btn btn-primary">Projeyi Başlat</a>
             <a href="#sss" class="btn btn-dark">Soruları Gör</a>
@@ -2011,9 +2892,7 @@
               <span>Bu site mobilde de güçlü görünür mü?</span>
               <span class="faq-sign">+</span>
             </button>
-            <div class="faq-body">
-              Evet. Yapı mobil öncelikli kuruldu. Kartlar, formlar, menü, QR demo ve CTA butonları telefon ekranında daha temiz akacak şekilde düzenlendi.
-            </div>
+            <div class="faq-body">Evet. Yapı mobil öncelikli kuruldu. Kartlar, formlar, menü, QR demo ve CTA butonları telefon ekranında daha temiz akacak şekilde düzenlendi.</div>
           </article>
 
           <article class="faq-item reveal">
@@ -2021,9 +2900,7 @@
               <span>Form ve WhatsApp çalışır mı?</span>
               <span class="faq-sign">+</span>
             </button>
-            <div class="faq-body">
-              Formspree bağlantısı mevcut. WhatsApp butonları da senin numarana yönlenir. İstersen mesaj metinleri sonradan değiştirilebilir.
-            </div>
+            <div class="faq-body">Formspree bağlantısı mevcut. WhatsApp butonları da senin numarana yönlenir. İstersen mesaj metinleri sonradan değiştirilebilir.</div>
           </article>
 
           <article class="faq-item reveal">
@@ -2031,19 +2908,7 @@
               <span>İçerikleri daha sonra değiştirebilir miyim?</span>
               <span class="faq-sign">+</span>
             </button>
-            <div class="faq-body">
-              Evet. Başlıklar, hizmetler, paketler, iletişim bilgileri, QR menü içerikleri ve kampanya alanları sonradan güncellenebilir.
-            </div>
-          </article>
-
-          <article class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span>Bu tasarım kurumsal durur mu yoksa fazla gösterişli mi?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">
-              Gösterişli ama kontrollü. Amaç renk kalabalığı değil; markayı daha pahalı, daha güvenilir ve daha profesyonel algılatan premium sahne kurmak.
-            </div>
+            <div class="faq-body">Evet. Başlıklar, hizmetler, paketler, iletişim bilgileri, QR menü içerikleri ve kampanya alanları sonradan güncellenebilir.</div>
           </article>
         </div>
       </div>
@@ -2054,12 +2919,8 @@
         <article class="card reveal">
           <div class="card-body">
             <div class="eyebrow">İletişim</div>
-            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">
-              Markanı internette daha premium gösterelim.
-            </h2>
-            <p style="margin-top:15px;color:var(--muted);line-height:1.75;">
-              Projeni birkaç cümleyle anlatman yeterli. Nasıl görünmek istediğini konuşup sana uygun web yapısını birlikte netleştiririz.
-            </p>
+            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">Markanı internette daha premium gösterelim.</h2>
+            <p style="margin-top:15px;color:var(--muted);line-height:1.75;">Projen birkaç cümleyle başlar. Nasıl görünmek istediğini konuşup sana uygun web yapısını birlikte netleştiririz.</p>
 
             <div style="margin-top:22px;">
               <div class="contact-row">
@@ -2082,15 +2943,7 @@
                 <b>03</b>
                 <div>
                   <small>WhatsApp</small>
-                  <strong>
-                    <a
-                      href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Hemen yaz, projeyi konuşalım
-                    </a>
-                  </strong>
+                  <strong><a href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." target="_blank" rel="noreferrer">Hemen yaz, projeyi konuşalım</a></strong>
                 </div>
               </div>
             </div>
@@ -2100,12 +2953,8 @@
         <article class="card reveal">
           <div class="card-body">
             <div class="eyebrow">Teklif Formu</div>
-            <h3 style="font-size:28px;line-height:1.15;letter-spacing:-.035em;margin-top:18px;">
-              Nasıl bir site istiyorsun?
-            </h3>
-            <p style="margin-top:12px;color:var(--muted);line-height:1.7;">
-              Kurumsal site, landing page, QR menü veya özel proje talebini yaz. En doğru yapıyı sana göre şekillendirelim.
-            </p>
+            <h3 style="font-size:28px;line-height:1.15;letter-spacing:-.035em;margin-top:18px;">Nasıl bir site istiyorsun?</h3>
+            <p style="margin-top:12px;color:var(--muted);line-height:1.7;">Kurumsal site, landing page, QR menü veya özel proje talebini yaz. En doğru yapıyı sana göre şekillendirelim.</p>
 
             <form action="https://formspree.io/f/xeevzely" method="POST">
               <div class="grid-2">
@@ -2128,14 +2977,7 @@
 
               <div class="hero-actions">
                 <button type="submit" class="btn btn-primary">Formu Gönder</button>
-                <a
-                  href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20projem%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
-                  target="_blank"
-                  rel="noreferrer"
-                  class="btn btn-dark"
-                >
-                  WhatsApp
-                </a>
+                <a href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20projem%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp</a>
               </div>
             </form>
           </div>
@@ -2154,17 +2996,18 @@
     </div>
   </footer>
 
-  <a
-    class="floating-whatsapp"
-    href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20istiyorum."
-    target="_blank"
-    rel="noreferrer"
-  >
-    WhatsApp'tan Yaz
-  </a>
+  <div class="mobile-action-bar" aria-label="Mobil hızlı iletişim">
+    <a class="call" href="tel:+905314668927">Ara</a>
+    <a class="wa" href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer">WhatsApp</a>
+    <a class="offer" href="#iletisim">Teklif Al</a>
+  </div>
 
   <script>
-    document.body.classList.add("js");
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.body.classList.remove("is-loading");
+      }, 120);
+    });
 
     const scrollProgress = document.getElementById("scrollProgress");
     const updateScrollProgress = () => {
@@ -2204,6 +3047,39 @@
 
     revealItems.forEach((item) => revealObserver.observe(item));
 
+    const animatedCounters = document.querySelectorAll("[data-count]");
+    if (animatedCounters.length) {
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const target = Number(entry.target.dataset.count || "0");
+            const duration = 1200;
+            const start = performance.now();
+
+            const animate = (time) => {
+              const progress = Math.min((time - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              entry.target.textContent = Math.floor(eased * target);
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                entry.target.textContent = target;
+              }
+            };
+
+            requestAnimationFrame(animate);
+            countObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.45 }
+      );
+
+      animatedCounters.forEach((counter) => countObserver.observe(counter));
+    }
+
     const faqItems = document.querySelectorAll(".faq-item");
     faqItems.forEach((item) => {
       const button = item.querySelector(".faq-btn");
@@ -2239,6 +3115,70 @@
         if (!submitButton) return;
         submitButton.textContent = "Gönderiliyor...";
         submitButton.disabled = true;
+      });
+    });
+
+    const sectorData = {
+      restaurant: {
+        title: "Restoran için premium QR menü ve sipariş vitrini.",
+        tags: ["QR Menü", "Popüler Ürün", "WhatsApp Sipariş"],
+        a: "rgba(255, 192, 97, .24)",
+        b: "rgba(255, 69, 207, .18)",
+        one: "Müşteriyi hızlı seçim ve siparişe taşımak",
+        two: "Lezzetli, canlı ve mobil öncelikli",
+        three: "WhatsApp sipariş veya rezervasyon"
+      },
+      corporate: {
+        title: "Kurumsal firma için güven veren teklif odaklı web sitesi.",
+        tags: ["Kurumsal", "SEO", "Teklif Formu"],
+        a: "rgba(53, 221, 255, .24)",
+        b: "rgba(49, 93, 255, .2)",
+        one: "Hizmeti net anlatıp güven oluşturmak",
+        two: "Ciddi, temiz ve yüksek algılı",
+        three: "Teklif formu, telefon ve WhatsApp"
+      },
+      beauty: {
+        title: "Güzellik merkezi için lüks randevu ve hizmet vitrini.",
+        tags: ["Randevu", "Premium Hizmet", "Görsel Algı"],
+        a: "rgba(255, 69, 207, .24)",
+        b: "rgba(255, 192, 97, .16)",
+        one: "Hizmetleri daha değerli göstermek",
+        two: "Lüks, yumuşak ve güven veren",
+        three: "Randevu ve WhatsApp danışma"
+      },
+      commerce: {
+        title: "Ürün ve e-ticaret için satış odaklı dijital vitrin.",
+        tags: ["Ürün Vitrini", "Kampanya", "Satış CTA"],
+        a: "rgba(134, 255, 182, .2)",
+        b: "rgba(53, 221, 255, .2)",
+        one: "Ürünü hızlıca anlaşılır ve çekici sunmak",
+        two: "Dinamik, net ve satın almaya yakın",
+        three: "Kampanya, sepet veya teklif CTA"
+      }
+    };
+
+    const sectorDisplay = document.getElementById("sectorDisplay");
+    const sectorTitle = document.getElementById("sectorTitle");
+    const sectorTags = document.getElementById("sectorTags");
+    const sectorMetricOneText = document.getElementById("sectorMetricOneText");
+    const sectorMetricTwoText = document.getElementById("sectorMetricTwoText");
+    const sectorMetricThreeText = document.getElementById("sectorMetricThreeText");
+
+    document.querySelectorAll(".sector-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const data = sectorData[tab.dataset.sector];
+        if (!data || !sectorDisplay || !sectorTitle || !sectorTags) return;
+
+        document.querySelectorAll(".sector-tab").forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
+
+        sectorDisplay.style.setProperty("--sector-a", data.a);
+        sectorDisplay.style.setProperty("--sector-b", data.b);
+        sectorTitle.textContent = data.title;
+        sectorTags.innerHTML = data.tags.map((tag) => `<span>${tag}</span>`).join("");
+        if (sectorMetricOneText) sectorMetricOneText.textContent = data.one;
+        if (sectorMetricTwoText) sectorMetricTwoText.textContent = data.two;
+        if (sectorMetricThreeText) sectorMetricThreeText.textContent = data.three;
       });
     });
   </script>
