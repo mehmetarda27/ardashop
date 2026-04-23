@@ -4097,6 +4097,7 @@
     document.body.classList.add("js");
 
     const ADMIN_CONTENT_KEY = "ardaSiteAdminContent";
+    const ADMIN_CONTENT_URL = "site-content.json";
 
     const escapeHtml = (value) =>
       String(value || "")
@@ -4106,15 +4107,7 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
 
-    const applyAdminContent = () => {
-      let adminContent = {};
-
-      try {
-        adminContent = JSON.parse(localStorage.getItem(ADMIN_CONTENT_KEY) || "{}");
-      } catch (error) {
-        adminContent = {};
-      }
-
+    const applyAdminContent = (adminContent = {}) => {
       document.querySelectorAll("[data-admin-text]").forEach((item) => {
         const key = item.dataset.adminText;
         const value = adminContent[key];
@@ -4155,9 +4148,31 @@
       if (adminSection) adminSection.hidden = !hasAnnouncement && cards.length === 0;
     };
 
-    applyAdminContent();
+    const loadAdminContent = async () => {
+      try {
+        const response = await fetch(`${ADMIN_CONTENT_URL}?v=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Content file not found");
+        const remoteContent = await response.json();
+        applyAdminContent(remoteContent);
+        localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(remoteContent));
+      } catch (error) {
+        try {
+          applyAdminContent(JSON.parse(localStorage.getItem(ADMIN_CONTENT_KEY) || "{}"));
+        } catch (storageError) {
+          applyAdminContent({});
+        }
+      }
+    };
+
+    loadAdminContent();
     window.addEventListener("storage", (event) => {
-      if (event.key === ADMIN_CONTENT_KEY) applyAdminContent();
+      if (event.key === ADMIN_CONTENT_KEY) {
+        try {
+          applyAdminContent(JSON.parse(event.newValue || "{}"));
+        } catch (error) {
+          applyAdminContent({});
+        }
+      }
     });
 
     const scrollProgress = document.getElementById("scrollProgress");

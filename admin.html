@@ -392,13 +392,17 @@
       <h1>Siteyi kod açmadan güncelle.</h1>
       <p>
         Bu panel hero metinlerini, duyuru bandını ve ana sayfaya eklenecek güncelleme kartlarını yönetir.
-        Şimdilik tarayıcı hafızasına kaydeder; gerçek veritabanı bağlayınca herkes için kalıcı panele dönüşür.
+        GitHub token girersen kayıtlar canlı içerik dosyasına işlenir ve yayındaki siteye yansır.
       </p>
 
       <form id="loginForm">
         <label>
           Admin Şifresi
           <input id="password" type="password" autocomplete="current-password" placeholder="Şifreyi yaz" required />
+        </label>
+        <label>
+          GitHub Token
+          <input id="githubToken" type="password" autocomplete="off" placeholder="Canlı yayın için token gir" />
         </label>
         <button class="btn primary" type="submit">Panele Gir</button>
         <div class="status" id="loginStatus"></div>
@@ -432,7 +436,7 @@
             Başlığı değiştir, duyuru gir, yeni kart ekle. Kaydet dediğinde aynı tarayıcıda ana sayfa hemen güncellenir.
           </p>
           <p class="hint">
-            Kalıcı ve herkesin gördüğü admin paneli için sonraki adımda küçük bir veritabanı bağlarız.
+            GitHub token girildiğinde kayıtlar `site-content.json` dosyasına commit edilir ve canlı site herkes için güncellenir.
           </p>
         </div>
 
@@ -516,7 +520,13 @@
   <script>
     const ADMIN_CONTENT_KEY = "ardaSiteAdminContent";
     const ADMIN_SESSION_KEY = "ardaSiteAdminSession";
+    const ADMIN_TOKEN_KEY = "ardaSiteGithubToken";
     const ADMIN_PASSWORD = "arda2026";
+    const GITHUB_OWNER = "mehmetarda27";
+    const GITHUB_REPO = "ardashop";
+    const GITHUB_BRANCH = "main";
+    const CONTENT_PATH = "site-content.json";
+    const CONTENT_URL = "site-content.json";
 
     const loginShell = document.getElementById("loginShell");
     const adminApp = document.getElementById("adminApp");
@@ -553,12 +563,67 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
 
-    const loadContent = () => {
+    const loadLocalContent = () => {
       try {
         return { ...defaults, ...JSON.parse(localStorage.getItem(ADMIN_CONTENT_KEY) || "{}") };
       } catch (error) {
         return { ...defaults };
       }
+    };
+
+    const loadContent = async () => {
+      try {
+        const response = await fetch(`${CONTENT_URL}?v=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Remote content not found");
+        const remoteContent = { ...defaults, ...(await response.json()) };
+        localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(remoteContent));
+        return remoteContent;
+      } catch (error) {
+        return loadLocalContent();
+      }
+    };
+
+    const githubRequest = async (token, path, options = {}) => {
+      const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
+        ...options,
+        headers: {
+          Accept: "application/vnd.github+json",
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          ...(options.headers || {})
+        }
+      });
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.message || "GitHub isteği başarısız oldu.");
+      }
+      return data;
+    };
+
+    const encodeBase64Utf8 = (value) => btoa(unescape(encodeURIComponent(value)));
+
+    const publishContent = async (content) => {
+      const token = localStorage.getItem(ADMIN_TOKEN_KEY);
+      if (!token) {
+        localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(content));
+        return { mode: "local" };
+      }
+
+      const currentFile = await githubRequest(token, CONTENT_PATH);
+      await githubRequest(token, CONTENT_PATH, {
+        method: "PUT",
+        body: JSON.stringify({
+          message: "Admin panel içerik güncellemesi",
+          content: encodeBase64Utf8(JSON.stringify(content, null, 2) + "\n"),
+          sha: currentFile.sha,
+          branch: GITHUB_BRANCH
+        })
+      });
+
+      localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(content));
+      return { mode: "github" };
     };
 
     const collectContent = () => ({
@@ -622,8 +687,8 @@
         : "<div><small>Boş</small><strong>Henüz ek kart yok.</strong></div>";
     };
 
-    const fillForm = () => {
-      const content = loadContent();
+    const fillForm = async () => {
+      const content = await loadContent();
       Object.keys(fields).forEach((key) => {
         fields[key].value = content[key] || "";
       });
@@ -648,6 +713,8 @@
       }
 
       localStorage.setItem(ADMIN_SESSION_KEY, "active");
+      const githubToken = document.getElementById("githubToken").value.trim();
+      if (githubToken) localStorage.setItem(ADMIN_TOKEN_KEY, githubToken);
       showAdmin();
     });
 
@@ -675,12 +742,24 @@
       renderCards();
     });
 
-    document.getElementById("saveBtn").addEventListener("click", () => {
-      localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(collectContent()));
-      saveStatus.textContent = "Kaydedildi. Ana sayfayı yenileyince değişiklikleri görebilirsin.";
+    document.getElementById("saveBtn").addEventListener("click", async () => {
+      const content = collectContent();
+      saveStatus.textContent = "Kaydediliyor...";
+
+      try {
+        const result = await publishContent(content);
+        saveStatus.textContent =
+          result.mode === "github"
+            ? "Canlı içerik GitHub'a kaydedildi. Yayına yansıması kısa süre alabilir."
+            : "Token olmadığı için sadece bu tarayıcıya kaydedildi.";
+      } catch (error) {
+        localStorage.setItem(ADMIN_CONTENT_KEY, JSON.stringify(content));
+        saveStatus.textContent = `GitHub'a kaydedilemedi: ${error.message}`;
+      }
+
       setTimeout(() => {
         saveStatus.textContent = "";
-      }, 3500);
+      }, 6000);
     });
 
     document.getElementById("resetBtn").addEventListener("click", () => {
@@ -693,6 +772,7 @@
 
     document.getElementById("logoutBtn").addEventListener("click", () => {
       localStorage.removeItem(ADMIN_SESSION_KEY);
+      localStorage.removeItem(ADMIN_TOKEN_KEY);
       location.reload();
     });
 
