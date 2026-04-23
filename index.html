@@ -1,825 +1,1485 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7530953607067503" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="logo.png">
-  <title>Mehmet Arda Doğan | Premium Web Tasarım ve Dijital Vitrin</title>
-  <meta name="description" content="Mehmet Arda Doğan için profesyonel, mobil uyumlu, admin panel içermeyen premium web tasarım sayfası." />
-  <meta name="theme-color" content="#0a0814" />
+
+  <title>Mehmet Arda Doğan | Ultra Premium Web Tasarım Stüdyosu</title>
+  <meta name="description" content="Mehmet Arda Doğan ile ultra premium kurumsal web tasarım, landing page, QR menü, marka vitrini ve mobil uyumlu dijital deneyimler." />
+  <meta name="theme-color" content="#06131f" />
+  <link rel="icon" type="image/png" href="logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #0a0814;
-      --bg-soft: #120d21;
-      --panel: rgba(255,255,255,0.06);
-      --panel-strong: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.12);
-      --text: #f5f2ff;
-      --muted: rgba(245,242,255,0.72);
-      --muted-2: rgba(245,242,255,0.46);
-      --cyan: #48e5ff;
-      --violet: #8b5cff;
-      --pink: #ff4fd8;
-      --orange: #ff9b54;
-      --lime: #abff7f;
-      --gradient-main: linear-gradient(135deg, #48e5ff 0%, #8b5cff 38%, #ff4fd8 70%, #ff9b54 100%);
-      --gradient-soft: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      --radius-xl: 36px;
+      --navy: #06131f;
+      --navy-2: #0b1d30;
+      --navy-3: #102842;
+      --paper: #f7fbff;
+      --text: #f8fbff;
+      --dark-text: #071320;
+      --muted: rgba(248, 251, 255, .72);
+      --muted-2: rgba(248, 251, 255, .48);
+      --line: rgba(255, 255, 255, .14);
+      --line-2: rgba(255, 255, 255, .22);
+      --glass: rgba(255, 255, 255, .075);
+      --glass-2: rgba(255, 255, 255, .12);
+      --blue: #2563ff;
+      --cyan: #22d3ee;
+      --pink: #ff3ec9;
+      --gold: #ffbd59;
+      --green: #7cffb2;
+      --red: #ff5570;
+      --radius-xl: 38px;
       --radius-lg: 28px;
       --radius-md: 20px;
-      --shadow-xl: 0 36px 120px rgba(0,0,0,0.42);
-      --shadow-lg: 0 22px 70px rgba(0,0,0,0.32);
-      --container: min(1200px, calc(100% - 24px));
+      --shadow: 0 34px 100px rgba(0, 0, 0, .36);
+      --shadow-soft: 0 22px 70px rgba(0, 0, 0, .24);
+      --container: min(1220px, calc(100% - 34px));
+      --grad: linear-gradient(135deg, #22d3ee 0%, #2563ff 34%, #ff3ec9 70%, #ffbd59 100%);
+      --grad-soft: linear-gradient(135deg, rgba(34, 211, 238, .2), rgba(37, 99, 255, .16), rgba(255, 62, 201, .18));
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      min-height: 100vh;
       font-family: "Outfit", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(72,229,255,0.16), transparent 24%),
-        radial-gradient(circle at 88% 14%, rgba(255,79,216,0.16), transparent 22%),
-        radial-gradient(circle at 52% 78%, rgba(139,92,255,0.18), transparent 28%),
-        linear-gradient(180deg, #090611 0%, #0d0818 46%, #090611 100%);
+        radial-gradient(circle at 12% 8%, rgba(34, 211, 238, .18), transparent 26%),
+        radial-gradient(circle at 84% 10%, rgba(255, 62, 201, .16), transparent 24%),
+        radial-gradient(circle at 52% 70%, rgba(37, 99, 255, .18), transparent 32%),
+        linear-gradient(180deg, #06131f 0%, #081827 44%, #050d17 100%);
       overflow-x: hidden;
     }
+
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -2;
       pointer-events: none;
-      z-index: -1;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, #000 42%, transparent 85%);
-      opacity: 0.55;
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle at center, #000 40%, transparent 90%);
+      opacity: .65;
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    .container { width: var(--container); margin: 0 auto; }
-    .section { padding: 84px 0; }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(34, 211, 238, .12), transparent 24%),
+        radial-gradient(circle at 78% 20%, rgba(255, 62, 201, .13), transparent 24%),
+        radial-gradient(circle at 70% 78%, rgba(255, 189, 89, .09), transparent 30%);
+      filter: blur(32px);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
     .gradient-text {
-      background: var(--gradient-main);
+      background: var(--grad);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 16px;
+      width: fit-content;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, .07);
       color: var(--text);
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      font-weight: 900;
+      letter-spacing: .12em;
       text-transform: uppercase;
       backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 32px rgba(34, 211, 238, .08);
     }
+
     .eyebrow::before {
       content: "";
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: var(--gradient-main);
-      box-shadow: 0 0 16px rgba(72,229,255,0.8);
+      background: var(--grad);
+      box-shadow: 0 0 16px rgba(34, 211, 238, .78);
     }
-    .kicker {
-      color: #ff9aed;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .section-head {
-      max-width: 760px;
-      display: grid;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .section-head h2 {
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(30px, 5vw, 54px);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-    }
-    .section-head p {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    .card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: var(--gradient-soft), rgba(18, 12, 32, 0.9);
-      box-shadow: var(--shadow-lg);
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(140deg, rgba(72,229,255,0.08), transparent 28%, rgba(255,79,216,0.08) 72%, transparent 100%);
-      pointer-events: none;
-    }
-    .card-body { position: relative; padding: 28px; z-index: 1; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 54px;
-      padding: 14px 22px;
-      border-radius: 18px;
+      min-height: 56px;
+      padding: 15px 22px;
       border: 1px solid transparent;
-      font-weight: 800;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      border-radius: 17px;
+      font-weight: 900;
       cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      white-space: nowrap;
     }
-    .btn:hover { transform: translateY(-2px); }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
     .btn-primary {
-      background: var(--gradient-main);
-      color: #14091f;
-      box-shadow: 0 0 36px rgba(255,79,216,0.18), 0 16px 40px rgba(72,229,255,0.12);
+      color: #06131f;
+      background: var(--grad);
+      box-shadow: 0 18px 48px rgba(34, 211, 238, .16), 0 0 34px rgba(255, 62, 201, .16);
     }
-    .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.12);
+
+    .btn-dark {
       color: var(--text);
+      background: rgba(255, 255, 255, .075);
+      border-color: var(--line);
+    }
+
+    .btn-light {
+      color: var(--dark-text);
+      background: var(--paper);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .22);
+    }
+
+    .section-head {
+      max-width: 860px;
+      display: grid;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .section-head h2 {
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035)),
+        rgba(9, 24, 39, .82);
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 16% 0%, rgba(34, 211, 238, .12), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(255, 62, 201, .1), transparent 32%);
+      pointer-events: none;
+    }
+
+    .card-body {
+      position: relative;
+      z-index: 1;
+      padding: 28px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(18px);
-      background: rgba(9,6,17,0.74);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, .09);
+      background: rgba(6, 19, 31, .74);
+      backdrop-filter: blur(20px);
     }
+
     .header-inner {
-      min-height: 78px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
     }
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 13px;
       min-width: 0;
     }
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+
+    .brand-logo {
+      width: 56px;
+      height: 56px;
       display: grid;
       place-items: center;
-      background: var(--gradient-main);
-      color: #13091f;
-      font-family: "Unbounded", sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      box-shadow: 0 0 30px rgba(255,79,216,0.2);
-      flex: 0 0 auto;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--grad);
+      box-shadow: 0 0 36px rgba(34, 211, 238, .16);
     }
-    .brand-copy strong { display: block; font-size: 15px; }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-logo span {
+      color: #06131f;
+      font-family: "Unbounded", sans-serif;
+      font-weight: 900;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
     .brand-copy span {
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
       color: var(--muted-2);
       font-size: 12px;
-      letter-spacing: 0.08em;
+      font-weight: 900;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .nav-shell { position: relative; display: flex; align-items: center; gap: 12px; }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .nav {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       padding: 8px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, .055);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
     }
+
     .nav a {
-      padding: 10px 14px;
+      padding: 10px 13px;
       border-radius: 999px;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
-    }
-    .nav a:hover { background: rgba(255,255,255,0.08); color: var(--text); }
-    .menu-btn {
-      display: none;
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      font-size: 20px;
-      cursor: pointer;
+      font-weight: 800;
+      transition: .22s ease;
     }
 
-    .hero { padding: 24px 0 30px; }
+    .nav a:hover,
+    .nav a.active {
+      color: var(--text);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .hero {
+      padding: 26px 0 56px;
+    }
+
     .hero-shell {
       position: relative;
       overflow: hidden;
-      border-radius: 34px;
-      border: 1px solid rgba(255,255,255,0.1);
+      min-height: 780px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 42px;
       background:
-        radial-gradient(circle at 16% 12%, rgba(72,229,255,0.18), transparent 24%),
-        radial-gradient(circle at 84% 16%, rgba(255,79,216,0.18), transparent 24%),
-        radial-gradient(circle at 50% 82%, rgba(139,92,255,0.22), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow-xl);
-      padding: 28px;
+        radial-gradient(circle at 12% 12%, rgba(34, 211, 238, .22), transparent 26%),
+        radial-gradient(circle at 86% 16%, rgba(255, 62, 201, .18), transparent 23%),
+        radial-gradient(circle at 50% 86%, rgba(37, 99, 255, .2), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .035));
+      box-shadow: var(--shadow);
+      isolation: isolate;
     }
-    .orb {
+
+    .hero-shell::before {
+      content: "";
       position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -90px;
       border-radius: 50%;
-      filter: blur(70px);
-      opacity: .68;
-      pointer-events: none;
-      animation: floatOrb 10s ease-in-out infinite;
+      background: conic-gradient(from 180deg, var(--cyan), var(--blue), var(--pink), var(--gold), var(--cyan));
+      filter: blur(55px);
+      opacity: .28;
+      animation: spin 12s linear infinite;
+      z-index: -1;
     }
-    .orb.a { width: 240px; height: 240px; left: -80px; top: -60px; background: rgba(72,229,255,0.22); }
-    .orb.b { width: 300px; height: 300px; right: -120px; top: 50px; background: rgba(255,79,216,0.18); animation-delay: -3s; }
-    .orb.c { width: 260px; height: 260px; left: 36%; bottom: -130px; background: rgba(139,92,255,0.18); animation-delay: -5s; }
-    @keyframes floatOrb {
-      0%,100% { transform: translate3d(0,0,0) scale(1); }
-      50% { transform: translate3d(10px,-18px,0) scale(1.04); }
-    }
+
     .hero-grid {
-      position: relative;
-      z-index: 1;
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 20px;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 26px;
       align-items: stretch;
     }
-    .hero-copy { display: grid; gap: 22px; align-content: center; }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      min-height: 710px;
+    }
+
     .hero-title {
       font-family: "Unbounded", sans-serif;
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: .96;
-      letter-spacing: -0.05em;
-      max-width: 720px;
+      max-width: 780px;
+      font-size: clamp(42px, 6.6vw, 82px);
+      line-height: .94;
+      letter-spacing: -.065em;
     }
+
     .hero-copy p {
+      max-width: 740px;
       color: var(--muted);
-      font-size: 18px;
+      font-size: 19px;
       line-height: 1.8;
-      max-width: 680px;
     }
-    .hero-actions, .hero-tags, .project-tags, .contact-pills {
+
+    .hero-actions,
+    .chips,
+    .mini-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-    .hero-tags span, .project-tags span, .contact-pills span {
-      padding: 10px 14px;
+
+    .chips span,
+    .mini-row span {
+      padding: 10px 13px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, .065);
+      color: var(--text);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
     }
-    .stats {
+
+    .hero-side {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-content: center;
+    }
+
+    .lead-panel {
+      border-radius: 34px;
+      border: 1px solid var(--line-2);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(34, 211, 238, .16), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+
+    .lead-panel .card-body {
+      padding: 24px;
+    }
+
+    .lead-panel h2 {
+      margin-top: 14px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: -.045em;
+    }
+
+    .lead-panel p {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 54px;
+      padding: 15px 16px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 16px;
+      outline: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, .075);
+      transition: .22s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(248, 251, 255, .42);
+    }
+
+    select option {
+      color: #06131f;
+    }
+
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(34, 211, 238, .42);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, .08);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .hero-showcase {
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      background: rgba(6, 19, 31, .68);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .browser-top {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted-2);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .browser-top i {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .browser-top i:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .browser-top i:nth-child(3) {
+      background: var(--green);
+    }
+
+    .browser-stage {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, .15), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 62, 201, .12), transparent 34%);
+    }
+
+    .mock-hero {
+      min-height: 230px;
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(34, 211, 238, .2), transparent 26%),
+        radial-gradient(circle at 88% 16%, rgba(255, 62, 201, .16), transparent 26%),
+        linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .04));
+    }
+
+    .mock-hero strong {
+      display: block;
+      max-width: 410px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 30px;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    .mock-hero p {
+      max-width: 430px;
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
       gap: 14px;
     }
-    .stat {
-      padding: 18px;
+
+    .mock-card {
+      min-height: 120px;
+      padding: 16px;
+      border: 1px solid var(--line);
       border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, .07);
     }
+
+    .mock-card small {
+      display: block;
+      color: var(--muted-2);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .mock-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .score {
+      display: grid;
+      gap: 10px;
+    }
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .score-row span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .score-row strong {
+      font-family: "Unbounded", sans-serif;
+      font-size: 21px;
+    }
+
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .065);
+      backdrop-filter: blur(16px);
+    }
+
     .stat strong {
       display: block;
       font-family: "Unbounded", sans-serif;
-      font-size: 28px;
-      letter-spacing: -0.05em;
+      font-size: 34px;
+      letter-spacing: -.05em;
     }
+
     .stat span {
       display: block;
       margin-top: 8px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.55;
     }
-    .hero-side { display: grid; gap: 16px; }
-    .showcase-card {
-      padding: 18px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: linear-gradient(180deg, rgba(22,16,37,0.92), rgba(13,8,25,0.95));
-      box-shadow: 0 30px 90px rgba(0,0,0,0.34);
-    }
-    .showcase-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px;
-    }
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 10px 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 14px rgba(171,255,127,0.72);
-    }
-    .browser {
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: linear-gradient(180deg, #18122c, #0d0918);
-      min-height: 420px;
-      display: grid;
-      grid-template-rows: auto 1fr;
-      margin-top: 14px;
-    }
-    .browser-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted-2);
-      font-size: 13px;
-    }
-    .browser-bar i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .browser-bar i:nth-child(1){ background:#ff6b81; }
-    .browser-bar i:nth-child(2){ background:#ffd166; }
-    .browser-bar i:nth-child(3){ background:#86ff9b; }
-    .browser-body {
-      display: grid;
-      gap: 14px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at top left, rgba(72,229,255,0.18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(255,79,216,0.18), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 80%);
-    }
-    .hero-screen, .panel-box {
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-    }
-    .hero-screen h3, .project-title, .feature-card h3, .service-card h3, .faq-title, .contact-card h3 {
-      font-size: 24px;
-      line-height: 1.16;
-      letter-spacing: -0.03em;
-    }
-    .hero-screen p, .service-card p, .feature-card p, .contact-card p {
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 15px;
-    }
-    .browser-grid {
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 12px;
-    }
-    .score-stack { display: grid; gap: 12px; }
-    .score {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.05);
-    }
-    .score strong {
-      font-family: "Unbounded", sans-serif;
-      font-size: 24px;
-      letter-spacing: -0.04em;
-    }
-    .score span { color: var(--muted); font-size: 13px; }
 
-    .trust-strip {
+    .marquee-wrap {
       position: relative;
       overflow: hidden;
-      margin-top: 22px;
-      padding: 16px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+      margin-top: 24px;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-    .trust-strip::before,
-    .trust-strip::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 72px;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .trust-strip::before { left: 0; background: linear-gradient(90deg, rgba(9,6,17,1), transparent); }
-    .trust-strip::after { right: 0; background: linear-gradient(270deg, rgba(9,6,17,1), transparent); }
+
     .marquee {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       width: max-content;
-      animation: marquee 24s linear infinite;
+      animation: marquee 26s linear infinite;
     }
+
     .marquee span {
       padding: 11px 16px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      font-size: 12px;
-      font-weight: 800;
+      background: rgba(255, 255, 255, .065);
+      font-size: 13px;
+      font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
       white-space: nowrap;
     }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    .grid-3, .grid-2, .services-grid, .projects-grid, .features-grid {
-      display: grid;
-      gap: 18px;
+    .service-card h3,
+    .price-card h3,
+    .feature-card h3,
+    .portfolio-card h3 {
+      font-size: 24px;
+      line-height: 1.18;
+      letter-spacing: -.03em;
     }
-    .grid-3, .services-grid, .projects-grid, .features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .icon-box {
-      width: 56px;
-      height: 56px;
+
+    .service-card p,
+    .price-card p,
+    .feature-card p,
+    .portfolio-card p {
+      margin-top: 13px;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 15px;
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
       display: grid;
       place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(72,229,255,0.18), rgba(255,79,216,0.18));
-      border: 1px solid rgba(255,255,255,0.1);
-      font-size: 22px;
-      margin-bottom: 16px;
+      background: var(--grad-soft);
+      font-weight: 900;
+      box-shadow: 0 0 26px rgba(34, 211, 238, .1);
     }
-    .bullet-list {
+
+    .list {
       display: grid;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 18px;
+      list-style: none;
     }
-    .bullet-list span {
+
+    .list li {
       display: flex;
+      align-items: flex-start;
       gap: 10px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.65;
     }
-    .bullet-list span::before {
+
+    .list li::before {
       content: "";
       width: 8px;
       height: 8px;
-      border-radius: 50%;
-      margin-top: 8px;
       flex: 0 0 auto;
-      background: var(--gradient-main);
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--grad);
+      box-shadow: 0 0 14px rgba(34, 211, 238, .5);
     }
 
-    .about-layout, .contact-layout, .cta-layout {
+    .bento {
       display: grid;
-      grid-template-columns: 1.02fr .98fr;
+      grid-template-columns: 1.05fr .95fr;
       gap: 20px;
+      align-items: stretch;
     }
-    .quote-block {
-      padding: 30px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.12);
+
+    .big-panel {
+      min-height: 560px;
+      padding: 28px;
+      border-radius: 34px;
+      border: 1px solid var(--line);
       background:
-        radial-gradient(circle at top left, rgba(72,229,255,0.16), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(255,79,216,0.16), transparent 26%),
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow-lg);
+        radial-gradient(circle at 18% 14%, rgba(34, 211, 238, .18), transparent 28%),
+        radial-gradient(circle at 82% 22%, rgba(255, 62, 201, .15), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035));
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    .quote-block p {
+
+    .big-panel h3 {
+      max-width: 620px;
+      margin-top: 22px;
       font-family: "Unbounded", sans-serif;
-      font-size: clamp(24px, 4vw, 40px);
-      line-height: 1.18;
-      letter-spacing: -0.04em;
+      font-size: clamp(32px, 4.8vw, 58px);
+      line-height: 1;
+      letter-spacing: -.06em;
     }
-    .quote-block footer {
+
+    .big-panel p {
+      max-width: 620px;
       margin-top: 18px;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
+      font-size: 17px;
+      line-height: 1.75;
     }
-    .detail-list { display: grid; gap: 14px; margin-top: 18px; }
-    .detail-item {
-      display: flex;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .detail-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .detail-item strong { min-width: 120px; font-size: 15px; }
-    .detail-item span { color: var(--muted); line-height: 1.75; }
 
-    .project-visual {
+    .meter-list {
+      display: grid;
+      gap: 12px;
+      max-width: 580px;
+      margin-top: 30px;
+    }
+
+    .meter {
+      display: grid;
+      grid-template-columns: 132px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .meter-track {
+      height: 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .09);
+    }
+
+    .meter-track span {
+      display: block;
+      width: var(--v);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--grad);
+      box-shadow: 0 0 18px rgba(255, 62, 201, .28);
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .portfolio-visual {
       min-height: 220px;
       padding: 22px;
+      border: 1px solid var(--line);
       border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
       background:
-        radial-gradient(circle at top left, rgba(72,229,255,0.22), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(255,79,216,0.22), transparent 34%),
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        radial-gradient(circle at 18% 18%, rgba(34, 211, 238, .2), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(255, 62, 201, .15), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .04));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 16px;
     }
-    .project-visual small {
+
+    .portfolio-visual small {
       color: var(--muted-2);
       font-size: 12px;
+      font-weight: 900;
       letter-spacing: .1em;
       text-transform: uppercase;
-      font-weight: 800;
     }
-    .project-visual strong {
+
+    .portfolio-visual strong {
       display: block;
+      max-width: 360px;
       font-family: "Unbounded", sans-serif;
       font-size: 28px;
       line-height: 1.08;
-      letter-spacing: -0.04em;
-      max-width: 320px;
+      letter-spacing: -.045em;
     }
 
-    .faq-list { display: grid; gap: 14px; }
+    .price-card.featured {
+      transform: translateY(-12px);
+      border-color: rgba(34, 211, 238, .36);
+      box-shadow: 0 30px 100px rgba(34, 211, 238, .14), 0 0 0 1px rgba(255, 255, 255, .04);
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 189, 89, .24);
+      border-radius: 999px;
+      background: rgba(255, 189, 89, .13);
+      color: #ffddad;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .price {
+      margin-top: 18px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 38px;
+      letter-spacing: -.05em;
+    }
+
+    .price small {
+      color: var(--muted-2);
+      font-family: "Outfit", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .process {
+      display: grid;
+      gap: 16px;
+      counter-reset: process;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .process-item::before {
+      counter-increment: process;
+      content: "0" counter(process);
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--grad);
+      color: #06131f;
+      font-weight: 900;
+    }
+
+    .process-item h3 {
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .process-item p {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .qr-stage {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .phone-wrap {
+      min-height: 680px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 189, 89, .18), transparent 25%),
+        radial-gradient(circle at 80% 16%, rgba(34, 211, 238, .16), transparent 25%),
+        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .phone {
+      width: min(345px, 82vw);
+      padding: 13px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 44px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .04)), #071320;
+      box-shadow: 0 34px 100px rgba(0, 0, 0, .42);
+    }
+
+    .phone-screen {
+      overflow: hidden;
+      min-height: 590px;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      background: #130f14;
+    }
+
+    .menu-hero {
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, .02), rgba(0, 0, 0, .72)),
+        radial-gradient(circle at 24% 22%, rgba(255, 189, 89, .68), transparent 29%),
+        radial-gradient(circle at 82% 26%, rgba(255, 62, 201, .36), transparent 27%),
+        linear-gradient(135deg, #4a210d, #151020 56%, #062a3d);
+    }
+
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .menu-hero h3 {
+      max-width: 230px;
+      font-family: "Unbounded", sans-serif;
+      font-size: 27px;
+      line-height: 1.03;
+      letter-spacing: -.04em;
+    }
+
+    .menu-body {
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .menu-cats {
+      display: flex;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .menu-cats span {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .06);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .menu-cats .active {
+      color: #221004;
+      background: linear-gradient(135deg, #ffdb82, #ff784f);
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 11px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .055);
+    }
+
+    .thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 17px;
+      background:
+        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .55), transparent 13%),
+        linear-gradient(135deg, #ffcf6d, #ff6547 54%, #6f2018);
+    }
+
+    .thumb.dark {
+      background:
+        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .42), transparent 13%),
+        linear-gradient(135deg, #8b5cff, #2d1744 54%, #090711);
+    }
+
+    .thumb.green {
+      background:
+        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .45), transparent 13%),
+        linear-gradient(135deg, #7cffb2, #20804a 54%, #092117);
+    }
+
+    .menu-item small {
+      display: block;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .menu-item strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .menu-item p {
+      margin-top: 3px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .menu-price {
+      color: #ffcf6d;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
     .faq-item {
       overflow: hidden;
+      border: 1px solid var(--line);
       border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, .055);
     }
+
     .faq-btn {
       width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 20px 22px;
-      background: transparent;
-      border: none;
+      padding: 21px 23px;
+      border: 0;
       color: var(--text);
+      background: transparent;
       text-align: left;
+      font-size: 18px;
+      font-weight: 900;
       cursor: pointer;
-      font-size: 17px;
-      font-weight: 800;
     }
-    .faq-sign { color: var(--cyan); font-size: 24px; transition: transform .25s ease; }
+
+    .faq-sign {
+      color: var(--cyan);
+      font-size: 24px;
+      transition: .25s ease;
+    }
+
     .faq-body {
       display: none;
-      padding: 0 22px 20px;
+      padding: 0 23px 21px;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
+      line-height: 1.75;
     }
-    .faq-item.active .faq-body { display: block; }
-    .faq-item.active .faq-sign { transform: rotate(45deg); }
 
-    .contact-card, .contact-row {
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
+    .faq-item.active .faq-body {
+      display: block;
     }
-    .contact-card { padding: 24px; }
-    .contact-pillars { display: grid; gap: 14px; margin-top: 18px; }
+
+    .faq-item.active .faq-sign {
+      transform: rotate(45deg);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 22px;
+    }
+
     .contact-row {
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      padding: 16px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .055);
     }
-    .contact-row .icon-box { margin: 0; width: 48px; height: 48px; font-size: 18px; flex: 0 0 auto; }
+
+    .contact-row + .contact-row {
+      margin-top: 12px;
+    }
+
+    .contact-row b {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 15px;
+      background: var(--grad-soft);
+    }
+
     .contact-row small {
       display: block;
       color: var(--muted-2);
-      font-size: 12px;
+      font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
-      font-weight: 800;
     }
+
     .contact-row strong {
       display: block;
-      margin-top: 6px;
-      font-size: 18px;
-      line-height: 1.55;
+      margin-top: 5px;
+      line-height: 1.45;
       word-break: break-word;
     }
 
-    form { display: grid; gap: 14px; margin-top: 18px; }
-    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
-    input, textarea {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      padding: 15px 16px;
-      outline: none;
-      transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
-    }
-    input::placeholder, textarea::placeholder { color: rgba(245,242,255,0.42); }
-    input:focus, textarea:focus {
-      border-color: rgba(72,229,255,0.38);
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 0 0 4px rgba(72,229,255,0.08);
-    }
-    textarea { min-height: 170px; resize: vertical; }
-
-    .cta-banner {
-      padding: 28px;
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(72,229,255,0.18), transparent 20%),
-        radial-gradient(circle at 90% 20%, rgba(255,79,216,0.22), transparent 24%),
-        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow-lg);
-    }
-    .cta-banner h2 {
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(30px, 5vw, 50px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-    .cta-banner p {
-      margin-top: 14px;
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 17px;
-      max-width: 700px;
     }
 
-    footer { padding-bottom: 36px; }
-    .footer-shell {
-      padding: 22px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
+    .footer-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
     }
-    .footer-shell strong { display: block; margin-bottom: 6px; font-size: 17px; }
-    .footer-shell p, .footer-links {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      min-height: 54px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7cffb2, #22d3ee);
+      color: #06131f;
+      font-weight: 900;
+      box-shadow: 0 18px 50px rgba(34, 211, 238, .22);
     }
-    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; }
 
     .scroll-progress {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0 auto auto 0;
       width: 100%;
       height: 3px;
-      z-index: 999;
-      background: rgba(255,255,255,0.08);
-      pointer-events: none;
+      z-index: 2000;
+      background: rgba(255, 255, 255, .08);
     }
+
     .scroll-progress span {
       display: block;
       width: 0%;
       height: 100%;
-      background: var(--gradient-main);
-      box-shadow: 0 0 24px rgba(72,229,255,0.65);
+      background: var(--grad);
+      box-shadow: 0 0 22px rgba(34, 211, 238, .65);
     }
 
-    .js .reveal {
+    .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
     }
-    .js .reveal.visible {
+
+    .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
     @media (max-width: 1120px) {
       .hero-grid,
-      .about-layout,
+      .bento,
+      .qr-stage,
       .contact-layout,
-      .cta-layout,
+      .grid-4,
       .grid-3,
       .grid-2,
-      .browser-grid,
-      .services-grid,
-      .projects-grid,
-      .features-grid {
+      .mock-grid {
         grid-template-columns: 1fr;
       }
-      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+      .hero-shell {
+        min-height: auto;
+      }
+
+      .hero-copy {
+        min-height: auto;
+      }
+
+      .stats-band {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
     }
 
     @media (max-width: 920px) {
-      .container { width: min(100% - 18px, 1200px); }
       .nav {
-        display: none;
         position: absolute;
-        top: calc(100% + 12px);
-        left: 0;
-        right: 0;
+        top: 74px;
+        left: 16px;
+        right: 16px;
+        display: none;
         flex-direction: column;
         align-items: stretch;
-        padding: 12px;
         border-radius: 24px;
-        background: rgba(11,8,20,0.96);
-        box-shadow: var(--shadow-lg);
+        background: rgba(6, 19, 31, .96);
+        box-shadow: var(--shadow-soft);
       }
-      .nav.open { display: flex; }
-      .nav a { text-align: center; }
-      .menu-btn { display: inline-grid; place-items: center; }
-      .hero-shell { padding: 22px; border-radius: 28px; }
-      .section { padding: 68px 0; }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .header-cta {
+        display: none;
+      }
     }
 
-    @media (max-width: 720px) {
-      .header-inner { min-height: 72px; }
-      .brand-mark { width: 46px; height: 46px; font-size: 17px; border-radius: 14px; }
-      .brand-copy strong { font-size: 14px; }
-      .hero-title { font-size: clamp(32px, 10vw, 48px); }
-      .hero-copy p { font-size: 16px; }
-      .stats { grid-template-columns: 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
-      .detail-item { flex-direction: column; gap: 8px; }
-      .detail-item strong { min-width: 0; }
-      .cta-banner, .quote-block, .card-body, .contact-card { padding: 22px; }
-      .browser, .project-visual { min-height: auto; }
-      .faq-btn { font-size: 16px; padding: 18px 18px; }
-      .faq-body { padding: 0 18px 18px; }
-      .footer-shell { flex-direction: column; align-items: flex-start; }
-      .hero-actions .btn,
-      .cta-layout .btn,
-      .contact-card .btn { width: 100%; }
+    @media (max-width: 640px) {
+      .container {
+        width: calc(100% - 18px);
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        padding-top: 16px;
+      }
+
+      .hero-shell,
+      .card-body,
+      .big-panel {
+        padding: 17px;
+        border-radius: 26px;
+      }
+
+      .header-inner {
+        min-height: 74px;
+      }
+
+      .brand-logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+      }
+
+      .brand-copy strong {
+        font-size: 14px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: clamp(31px, 10.5vw, 44px);
+        line-height: 1;
+      }
+
+      .hero-copy p,
+      .section-head p,
+      .big-panel p {
+        font-size: 14px;
+        line-height: 1.68;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 50px;
+        padding: 13px 15px;
+        font-size: 14px;
+      }
+
+      .stats-band {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 16px;
+      }
+
+      .stat strong {
+        font-size: 28px;
+      }
+
+      .section-head h2,
+      .big-panel h3 {
+        font-size: clamp(28px, 9vw, 39px);
+      }
+
+      .meter {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-wrap {
+        min-height: auto;
+        padding: 18px;
+      }
+
+      .phone-screen {
+        min-height: auto;
+      }
+
+      .menu-item {
+        grid-template-columns: 54px 1fr;
+      }
+
+      .thumb {
+        width: 54px;
+        height: 54px;
+      }
+
+      .menu-price {
+        grid-column: 2;
+      }
+
+      .floating-whatsapp {
+        left: 10px;
+        right: 10px;
+        justify-content: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="scroll-progress"><span id="scrollProgress"></span></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
 
   <header>
     <div class="container header-inner">
-      <a href="#anasayfa" class="brand">
-        <img src="logo.png" alt="Mehmet Arda Doğan Logo" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">
+      <a href="#anasayfa" class="brand" aria-label="Mehmet Arda Doğan ana sayfa">
+        <div class="brand-logo">
+          <img src="logo.png" alt="" onerror="this.remove(); this.parentElement.innerHTML='<span>MA</span>';" />
+        </div>
         <div class="brand-copy">
           <strong>Mehmet Arda Doğan</strong>
-          <span>Web Tasarım & Dijital Deneyim</span>
+          <span>Ultra Premium Web Studio</span>
         </div>
       </a>
 
       <div class="nav-shell">
         <nav class="nav" id="navMenu">
-          <a href="#anasayfa">Ana Sayfa</a>
           <a href="#hizmetler">Hizmetler</a>
-          <a href="#vitrin">Vitrin</a>
-          <a href="#projeler">Projeler</a>
-          <a href="#surec">Süreç</a>
-          <a href="#paketler">Paketler</a>
           <a href="#neden-biz">Neden Biz</a>
-          <a href="#sss">SSS</a>
+          <a href="#projeler">Projeler</a>
+          <a href="#qr-menu">QR Menü</a>
+          <a href="#paketler">Paketler</a>
+          <a href="#surec">Süreç</a>
           <a href="#iletisim">İletişim</a>
         </nav>
-        <button class="menu-btn" id="menuToggle" aria-label="Menüyü aç">☰</button>
+
+        <button class="btn btn-dark menu-btn" id="menuToggle" type="button">Menü</button>
+        <a href="#iletisim" class="btn btn-primary header-cta">Teklif Al</a>
       </div>
     </div>
   </header>
@@ -828,116 +1488,131 @@
     <section class="hero">
       <div class="container">
         <div class="hero-shell">
-          <div class="orb a"></div>
-          <div class="orb b"></div>
-          <div class="orb c"></div>
-
           <div class="hero-grid">
-            <div class="hero-copy reveal visible">
-              <div class="eyebrow">Bağımsız Dijital Stüdyo</div>
+            <div class="hero-copy reveal">
+              <div class="eyebrow">Premium Web Tasarım ve Dijital Vitrin</div>
 
-              <div>
-                <p class="kicker">Gösterişli. Güçlü. Premium. Akılda kalıcı.</p>
-                <h1 class="hero-title">
-                  Markanı <span class="gradient-text">sıradan görünen sitelerden</span>
-                  çıkarıp dijitalde daha güçlü gösteriyorum.
-                </h1>
-              </div>
+              <h1 class="hero-title">
+                Markanı internette
+                <span class="gradient-text">daha büyük, daha pahalı ve daha güvenilir</span>
+                gösteren web sitesi.
+              </h1>
 
               <p>
-                Ben Mehmet Arda Doğan. Web tasarım, landing page, QR menü, dijital vitrin ve marka sunum projelerinde sadece çalışan değil; aynı zamanda güven veren, premium hissettiren ve mobilde de güçlü duran deneyimler tasarlıyorum.
+                Mehmet Arda Doğan imzasıyla kurumsal web sitesi, landing page, QR menü ve kişisel marka vitrinlerini
+                sıradan sayfa mantığından çıkarıp; hızlı, mobil uyumlu, SEO dostu ve yüksek algılı dijital deneyime dönüştürüyoruz.
               </p>
 
               <div class="hero-actions">
-                <a href="#iletisim" class="btn btn-primary">Teklif Al</a>
-                <a href="https://wa.me/905314668927?text=Merhaba%20web%20tasar%C4%B1m%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-secondary">WhatsApp’tan Yaz</a>
+                <a href="#iletisim" class="btn btn-primary">30 Saniyede Teklif Al</a>
+                <a
+                  href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-dark"
+                >
+                  WhatsApp'tan Yaz
+                </a>
               </div>
 
-              <div class="hero-tags">
-                <span>Kurumsal web tasarım</span>
+              <div class="chips">
+                <span>Kurumsal web sitesi</span>
                 <span>Landing page</span>
-                <span>QR menü sistemleri</span>
-                <span>Mobil uyumlu yapı</span>
-              </div>
-
-              <div class="stats">
-                <div class="stat">
-                  <strong>01</strong>
-                  <span>İlk bakışta profesyonel görünen premium sahne kurgusu</span>
-                </div>
-                <div class="stat">
-                  <strong>02</strong>
-                  <span>Mobilde bozulmayan güçlü tipografi ve kart düzeni</span>
-                </div>
-                <div class="stat">
-                  <strong>03</strong>
-                  <span>Hızlı iletişim ve teklif odaklı dönüşüm akışı</span>
-                </div>
-                <div class="stat">
-                  <strong>04</strong>
-                  <span>Markayı daha düzenli ve daha büyük gösteren tasarım dili</span>
-                </div>
-                <div class="stat">
-                  <strong>05</strong>
-                  <span>Yüksek algı oluşturan renk, boşluk ve vitrin dengesi</span>
-                </div>
-                <div class="stat">
-                  <strong>06</strong>
-                  <span>Hedefe göre özelleştirilebilen esnek sayfa yapısı</span>
-                </div>
+                <span>QR menü</span>
+                <span>Mobil uyumlu arayüz</span>
+                <span>SEO dostu yapı</span>
               </div>
             </div>
 
-            <div class="hero-side reveal visible">
-              <div class="showcase-card">
-                <div class="showcase-head">
-                  <div>
-                    <strong>Canlı Marka Vitrini</strong>
-                    <span>Modern, premium ve yüksek algı tasarımı</span>
-                  </div>
-                  <div class="status">Hazır</div>
+            <aside class="hero-side reveal">
+              <div class="card lead-panel">
+                <div class="card-body">
+                  <div class="eyebrow">Ücretsiz Analiz</div>
+                  <h2>Projen için hızlı teklif al.</h2>
+                  <p>Bilgilerini bırak, markanı hangi web yapısıyla daha profesyonel gösterebileceğimizi netleştirelim.</p>
+
+                  <form action="https://formspree.io/f/xeevzely" method="POST">
+                    <input type="text" name="name" placeholder="Ad Soyad" required />
+                    <input type="tel" name="phone" placeholder="Telefon Numaran" required />
+                    <input type="email" name="email" placeholder="E-posta Adresin" />
+                    <select name="service" required>
+                      <option value="">İstenen hizmet</option>
+                      <option>Kurumsal Web Sitesi</option>
+                      <option>Landing Page</option>
+                      <option>QR Menü</option>
+                      <option>Özel Premium Proje</option>
+                    </select>
+                    <textarea name="message" placeholder="Projeni kısaca anlat"></textarea>
+                    <button class="btn btn-primary" type="submit">Teklif İste</button>
+                  </form>
                 </div>
+              </div>
 
-                <div class="browser">
-                  <div class="browser-bar">
-                    <i></i><i></i><i></i>
-                    <span>ardashop.site</span>
-                  </div>
-                  <div class="browser-body">
-                    <div class="hero-screen">
-                      <h3>Mobilde de güçlü duran premium sunum dili.</h3>
-                      <p>Kullanıcı daha ilk saniyede düzen, kalite ve güven hissini alır. Tasarım sadece güzel görünmez; işi ciddiye aldığını da hissettirir.</p>
+              <div class="hero-showcase">
+                <div class="browser-top">
+                  <i></i><i></i><i></i>
+                  <span>mehmetarda.studio / premium-experience</span>
+                </div>
+                <div class="browser-stage">
+                  <div class="mock-hero">
+                    <div class="mini-row">
+                      <span>Brand Power</span>
+                      <span>Luxury UI</span>
+                      <span>SEO Ready</span>
                     </div>
+                    <strong>İlk ekranda “bu marka profesyonel” dedirten dijital sahne.</strong>
+                    <p>Görsel kalite, güven veren içerik akışı ve net teklif sistemi tek arayüzde birleşir.</p>
+                  </div>
 
-                    <div class="browser-grid">
-                      <div class="panel-box">
-                        <small>Algı</small>
-                        <strong>Daha pahalı görünen, daha profesyonel hissettiren dijital sunum.</strong>
-                      </div>
-                      <div class="score-stack">
-                        <div class="score"><span>Mobil etki</span><strong>98</strong></div>
-                        <div class="score"><span>Görsel güç</span><strong>96</strong></div>
-                        <div class="score"><span>İlk izlenim</span><strong>99</strong></div>
-                      </div>
+                  <div class="mock-grid">
+                    <div class="mock-card">
+                      <small>Signature System</small>
+                      <strong>Marka algısını büyüten premium bölüm mimarisi.</strong>
+                    </div>
+                    <div class="score">
+                      <div class="score-row"><span>İlk etki</span><strong>9.9</strong></div>
+                      <div class="score-row"><span>Mobil uyum</span><strong>9.8</strong></div>
+                      <div class="score-row"><span>Netlik</span><strong>9.7</strong></div>
                     </div>
                   </div>
                 </div>
               </div>
+            </aside>
+          </div>
+
+          <div class="stats-band reveal">
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Mobil uyumlu, hızlı ve modern görünüm</span>
+            </div>
+            <div class="stat">
+              <strong>SEO</strong>
+              <span>Google dostu başlık, içerik ve section yapısı</span>
+            </div>
+            <div class="stat">
+              <strong>UI/UX</strong>
+              <span>Kullanıcıyı yormayan premium arayüz akışı</span>
+            </div>
+            <div class="stat">
+              <strong>CTA</strong>
+              <span>Form, WhatsApp ve teklif odaklı dönüşüm sistemi</span>
             </div>
           </div>
 
-          <div class="trust-strip">
+          <div class="marquee-wrap reveal">
             <div class="marquee">
-              <span>Luxury UI System</span>
-              <span>Premium Landing Experience</span>
-              <span>Mobile First Layout</span>
-              <span>Brand Power Design</span>
-              <span>High-End Visual Language</span>
-              <span>Conversion Focused</span>
-              <span>Luxury UI System</span>
-              <span>Premium Landing Experience</span>
-              <span>Mobile First Layout</span>
-              <span>Brand Power Design</span>
+              <span>Premium Web Tasarım</span>
+              <span>Kurumsal Site</span>
+              <span>Landing Page</span>
+              <span>QR Menü</span>
+              <span>SEO Uyumlu Altyapı</span>
+              <span>Mobil Kusursuzluk</span>
+              <span>Premium Web Tasarım</span>
+              <span>Kurumsal Site</span>
+              <span>Landing Page</span>
+              <span>QR Menü</span>
+              <span>SEO Uyumlu Altyapı</span>
+              <span>Mobil Kusursuzluk</span>
             </div>
           </div>
         </div>
@@ -946,154 +1621,52 @@
 
     <section class="section" id="hizmetler">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <div class="eyebrow">Hizmetler</div>
-          <h2>Markanı güçlendiren <span class="gradient-text">dijital çözümler</span></h2>
-          <p>Hazırladığım sayfalar sadece boş alan doldurmaz. Ziyaretçiyi etkileyen, iletişime yönlendiren ve seni daha güçlü gösteren dijital bir vitrin kurar.</p>
+          <h2>Sadece site yapmıyoruz; markanın dijital satış vitrinini kuruyoruz.</h2>
+          <p>
+            Web sayfası artık sadece bilgi alanı değil. İnsanlar seni önce tasarım kalitenle yargılıyor.
+            Bu yüzden her projeyi prestij, hız, güven ve teklif dönüşümüyle birlikte düşünüyoruz.
+          </p>
         </div>
 
-        <div class="services-grid">
+        <div class="grid-3">
           <article class="card service-card reveal">
             <div class="card-body">
-              <div class="icon-box">🌐</div>
-              <h3>Kurumsal Web Sitesi</h3>
-              <p>Güven veren, net anlatan ve profesyonel görünüm sunan şirket, hizmet ve marka siteleri.</p>
-              <div class="bullet-list">
-                <span>Kurumsal sunum düzeni</span>
-                <span>Hızlı iletişim akışı</span>
-                <span>Mobil uyumlu yapı</span>
-              </div>
+              <div class="icon">01</div>
+              <h3>Kurumsal Web Tasarım</h3>
+              <p>Şirketini daha oturmuş, daha büyük ve daha güvenilir gösteren premium kurumsal web sitesi.</p>
+              <ul class="list">
+                <li>Güçlü ana ekran ve marka anlatımı</li>
+                <li>Hizmet, süreç, güven ve iletişim bölümleri</li>
+                <li>Mobilde kusursuz section akışı</li>
+              </ul>
             </div>
           </article>
 
           <article class="card service-card reveal">
             <div class="card-body">
-              <div class="icon-box">⚡</div>
+              <div class="icon">02</div>
               <h3>Landing Page</h3>
-              <p>Tek hizmeti ya da kampanyayı öne çıkaran, dönüşüm odaklı ve dikkat çekici açılış sayfaları.</p>
-              <div class="bullet-list">
-                <span>Teklif ve satış odaklı</span>
-                <span>Güçlü başlık mimarisi</span>
-                <span>Yüksek ilk izlenim</span>
-              </div>
+              <p>Reklam, kampanya veya özel teklif için kullanıcıyı tek hedefe yönlendiren satış sayfası.</p>
+              <ul class="list">
+                <li>Net teklif ve güçlü CTA sistemi</li>
+                <li>Görsel etkisi yüksek kampanya sahnesi</li>
+                <li>Form ve WhatsApp dönüşüm akışı</li>
+              </ul>
             </div>
           </article>
 
           <article class="card service-card reveal">
             <div class="card-body">
-              <div class="icon-box">📱</div>
-              <h3>QR Menü ve Dijital Vitrin</h3>
-              <p>Restoran, kafe ve işletmeler için mobilde rahat kullanılan, şık görünen menü ve ürün sunum sayfaları.</p>
-              <div class="bullet-list">
-                <span>Telefon odaklı kullanım</span>
-                <span>Kolay okunur ürün blokları</span>
-                <span>Modern marka hissi</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="vitrin">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Vitrin Gücü</div>
-          <h2>Sayfan sadece güzel görünmez, <span class="gradient-text">markanı daha büyük gösterir</span></h2>
-          <p>Buradaki ek bloklar, sayfanın boş hissettirmemesi için premium bir ritim kurar. Yani kullanıcı bir iki kart görüp çıkmaz; markanın gücünü katman katman hisseder.</p>
-        </div>
-
-        <div class="features-grid">
-          <article class="card feature-card reveal">
-            <div class="card-body">
-              <div class="icon-box">🎯</div>
-              <h3>Net Konumlandırma</h3>
-              <p>Ziyaretçi ilk saniyede senin ne yaptığını, kime hitap ettiğini ve neden tercih edilmen gerektiğini anlar.</p>
-              <div class="bullet-list">
-                <span>Dağınık değil kontrollü mesaj</span>
-                <span>Güçlü başlık mimarisi</span>
-                <span>Daha premium ilk izlenim</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card feature-card reveal">
-            <div class="card-body">
-              <div class="icon-box">✨</div>
-              <h3>Yüksek Algı Tasarımı</h3>
-              <p>Renk, boşluk, tipografi ve katman kullanımı sayesinde hizmetlerin daha düzenli ve değerli görünür.</p>
-              <div class="bullet-list">
-                <span>Luxury hissiyat</span>
-                <span>Daha modern görünüm</span>
-                <span>Kurumsal güven etkisi</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card feature-card reveal">
-            <div class="card-body">
-              <div class="icon-box">📲</div>
-              <h3>Mobil Öncelikli Akış</h3>
-              <p>Telefon ekranında taşmayan, sıkışmayan ve kullanıcının rahat kaydırabildiği akıcı bir düzen kurulur.</p>
-              <div class="bullet-list">
-                <span>Kolay gezinme</span>
-                <span>Net buton yerleşimi</span>
-                <span>Hızlı iletişim odaklı</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projeler">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Projeler</div>
-          <h2>Nasıl bir görünüm istediğini <span class="gradient-text">somutlaştıran</span> örnekler</h2>
-          <p>Aşağıdaki bloklar gerçek proje mantığına uygun şekilde kurgulandı. İstersen senin hizmetine göre başlıkları ve içeriği birlikte özelleştiririz.</p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="project-visual">
-                <small>Kurumsal Sunum</small>
-                <strong>Hizmetlerini daha premium gösteren vitrin sayfası</strong>
-                <div class="project-tags">
-                  <span>Güçlü başlık</span>
-                  <span>Hızlı teklif</span>
-                  <span>Premium algı</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="project-visual">
-                <small>Restoran / Kafe</small>
-                <strong>Mobilde akıcı çalışan QR menü deneyimi</strong>
-                <div class="project-tags">
-                  <span>QR menü</span>
-                  <span>Mobil uyum</span>
-                  <span>Kolay kullanım</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="project-visual">
-                <small>Kampanya Sayfası</small>
-                <strong>Tek bir hizmeti öne çıkaran landing page yapısı</strong>
-                <div class="project-tags">
-                  <span>Dönüşüm</span>
-                  <span>WhatsApp akışı</span>
-                  <span>Net CTA</span>
-                </div>
-              </div>
+              <div class="icon">03</div>
+              <h3>QR Menü ve Dijital Menü</h3>
+              <p>Kafe, restoran ve paket servisler için sıradan PDF yerine premium mobil menü deneyimi.</p>
+              <ul class="list">
+                <li>Kategori, ürün ve kampanya düzeni</li>
+                <li>Mobilde hızlı ve şık menü arayüzü</li>
+                <li>WhatsApp sipariş bağlantısı</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -1101,205 +1674,375 @@
     </section>
 
     <section class="section" id="neden-biz">
-      <div class="container about-layout">
-        <div class="quote-block reveal">
-          <div class="eyebrow">Yaklaşım</div>
-          <div class="kicker" style="margin-top:18px;">Creative Direction • Premium Web Experience • Digital Prestige</div>
-          <p>
-            Benim işim sadece bir site açmak değil; markayı daha düzenli, daha güçlü ve daha profesyonel gösterecek dijital sahneyi kurmak.
-          </p>
-          <footer>
-            Yani olay “bir şeyler koyduk, çalışıyor” seviyesi değil. Amaç; ilk saniyede güven veren,
-            mobilde akmayan değil rahat kullanılan, göze ucuz değil güçlü görünen bir sistem kurmak.
-          </footer>
-        </div>
+      <div class="container">
+        <div class="bento">
+          <article class="big-panel reveal">
+            <div class="eyebrow">Neden Biz</div>
+            <h3>Bir web sitesini pahalı gösteren şey sadece renk değil, bütün sistemdir.</h3>
+            <p>
+              Doğru başlık, doğru boşluk, doğru hız, doğru mobil akış, doğru teklif butonu ve doğru marka dili birleşince
+              ziyaretçi sadece site görmez; profesyonel bir marka hisseder.
+            </p>
 
-        <article class="card reveal">
-          <div class="card-body">
-            <div class="kicker">Neden farklı?</div>
-            <h2 class="gradient-text" style="font-family:'Unbounded',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.06; letter-spacing:-0.04em; margin-top:10px;">Sıradan ajans dili yerine daha etkileyici bir sunum.</h2>
-            <div class="detail-list">
-              <div class="detail-item">
-                <strong>Konumlandırma</strong>
-                <span>Önce markanın nasıl görünmesi gerektiğini çözüyorum. Ağır mı, modern mi, agresif mi, premium mu? Tasarım buna göre kuruluyor.</span>
+            <div class="meter-list">
+              <div class="meter">
+                <span>İlk Etki</span>
+                <div class="meter-track"><span style="--v: 97%;"></span></div>
+                <b>97</b>
               </div>
-              <div class="detail-item">
-                <strong>Anlatı</strong>
-                <span>“Biz kimiz, ne yapıyoruz, neden biz?” sorularını kısa değil etkili şekilde cevaplayan metin mimarisi kuruluyor.</span>
+              <div class="meter">
+                <span>Premium Algı</span>
+                <div class="meter-track"><span style="--v: 94%;"></span></div>
+                <b>94</b>
               </div>
-              <div class="detail-item">
-                <strong>Mobil Etki</strong>
-                <span>Masaüstünde havalı olup telefonda dağılan yapı değil; iki tarafta da güçlü duran düzen kuruluyor.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Dönüşüm</strong>
-                <span>Ziyaretçi sadece bakıp çıkmasın diye teklif alma, mesaj gönderme ve iletişim aksiyonları doğru yerde konumlandırılıyor.</span>
+              <div class="meter">
+                <span>Dönüşüm Netliği</span>
+                <div class="meter-track"><span style="--v: 91%;"></span></div>
+                <b>91</b>
               </div>
             </div>
+
+            <div class="chips" style="margin-top: 28px;">
+              <span>Yüksek algı</span>
+              <span>Güven veren yapı</span>
+              <span>Hızlı iletişim</span>
+              <span>Profesyonel görünüm</span>
+            </div>
+          </article>
+
+          <div class="side-stack">
+            <article class="card feature-card reveal">
+              <div class="card-body">
+                <div class="icon">A</div>
+                <h3>Hazır tema hissi yok</h3>
+                <p>Sayfa markanın havasına göre özel kurgulanır. Sıradan, ucuz ve kalıp gibi görünmez.</p>
+              </div>
+            </article>
+
+            <article class="card feature-card reveal">
+              <div class="card-body">
+                <div class="icon">B</div>
+                <h3>Mobil öncelikli tasarım</h3>
+                <p>Ziyaretçinin büyük kısmı telefondan geleceği için arayüz mobilde güçlü kalacak şekilde tasarlanır.</p>
+              </div>
+            </article>
+
+            <article class="card feature-card reveal">
+              <div class="card-body">
+                <div class="icon">C</div>
+                <h3>Teklif odaklı akış</h3>
+                <p>Güzel görünen ama iş getirmeyen site değil; form, WhatsApp ve arama yönlendirmesi net olan yapı.</p>
+              </div>
+            </article>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="surec">
+    <section class="section" id="projeler">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Süreç</div>
-          <h2>İşin ilerleyişi <span class="gradient-text">net ve kontrollü</span> olur</h2>
-          <p>Proje sürecini kafa karıştırmadan, net adımlarla ilerletmek en sağlıklısı. Böylece hem tasarım dili hem içerik akışı düzgün oturur.</p>
+          <div class="eyebrow">Proje Vitrini</div>
+          <h2>Farklı sektörlere premium görünen dijital sahneler.</h2>
+          <p>
+            Her sektörün aynı tasarıma ihtiyacı yok. Restoran başka, kurumsal firma başka, kişisel marka başka görünmeli.
+            Biz tasarımı markanın karakterine göre güçlendiriyoruz.
+          </p>
         </div>
 
         <div class="grid-3">
-          <article class="card reveal">
+          <article class="card portfolio-card reveal">
             <div class="card-body">
-              <div class="kicker">01 • Brief</div>
-              <h3 style="margin-top:10px;">İhtiyacı netleştiririz</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Markan, hedef kitlen ve vermek istediğin his belirlenir. Böylece site sadece dolu değil doğru olur.</p>
+              <div class="portfolio-visual">
+                <small>Concept 01</small>
+                <strong>Kurumsal hizmet şirketi için premium vitrin.</strong>
+                <div class="chips"><span>Kurumsal</span><span>SEO</span><span>Form</span></div>
+              </div>
+              <p>Hizmeti net anlatan, güven veren ve teklif almaya yönlendiren profesyonel web yapısı.</p>
             </div>
           </article>
-          <article class="card reveal">
+
+          <article class="card portfolio-card reveal">
             <div class="card-body">
-              <div class="kicker">02 • Tasarım</div>
-              <h3 style="margin-top:10px;">Premium yapı kurulur</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Renk, tipografi, kart yapıları, butonlar ve sahne geçişleri seni daha güçlü gösterecek şekilde kurulur.</p>
+              <div class="portfolio-visual">
+                <small>Concept 02</small>
+                <strong>Restoran ve kafe için QR menü deneyimi.</strong>
+                <div class="chips"><span>QR Menü</span><span>Mobil</span><span>Sipariş</span></div>
+              </div>
+              <p>Ürünleri liste gibi değil, işletmenin kalitesini yansıtan mobil vitrin gibi sunar.</p>
             </div>
           </article>
-          <article class="card reveal">
+
+          <article class="card portfolio-card reveal">
             <div class="card-body">
-              <div class="kicker">03 • Yayın</div>
-              <h3 style="margin-top:10px;">Canlıya alınır</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Son kontrollerden sonra site yayınlanır ve mobil/masaüstü görünümü test edilerek temiz şekilde teslim edilir.</p>
+              <div class="portfolio-visual">
+                <small>Concept 03</small>
+                <strong>Reklam kampanyası için yüksek dönüşümlü landing page.</strong>
+                <div class="chips"><span>Lead</span><span>CTA</span><span>Satış</span></div>
+              </div>
+              <p>Reklamdan gelen kullanıcıyı hızlıca ikna eden tek hedefli kampanya sayfası.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qr-menu">
+      <div class="container qr-stage">
+        <article class="card reveal">
+          <div class="card-body">
+            <div class="eyebrow">QR Menü</div>
+            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">
+              Menüyü PDF gibi değil, telefonda gezilen premium bir marka deneyimi gibi tasarlıyoruz.
+            </h2>
+            <p style="margin-top:16px;color:var(--muted);line-height:1.75;">
+              Müşteri masada QR kodu okuttuğunda ilk gördüğü şey senin dijital kaliten olur. Bu yüzden menü sadece çalışmamalı;
+              işletmenin havasını, ürün kalitesini ve sipariş kolaylığını aynı anda hissettirmeli.
+            </p>
+
+            <ul class="list">
+              <li>Kategori, ürün, fiyat ve açıklama düzeni</li>
+              <li>Popüler ürün ve kampanya alanları</li>
+              <li>WhatsApp sipariş veya rezervasyon bağlantısı</li>
+              <li>Mobilde hızlı, net ve şık kullanım</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a href="#iletisim" class="btn btn-primary">QR Menü İste</a>
+              <a
+                href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20tasar%C4%B1m%C4%B1%20istiyorum."
+                target="_blank"
+                rel="noreferrer"
+                class="btn btn-dark"
+              >
+                WhatsApp Demo Sor
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div class="phone-wrap reveal">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="menu-hero">
+                <div class="menu-top">
+                  <span>Arda Bistro</span>
+                  <span>QR Live</span>
+                </div>
+                <h3>Chef seçimi burger & özel soslar</h3>
+              </div>
+
+              <div class="menu-body">
+                <div class="menu-cats">
+                  <span class="active">Popüler</span>
+                  <span>Burger</span>
+                  <span>Pizza</span>
+                  <span>İçecek</span>
+                </div>
+
+                <div class="menu-item">
+                  <div class="thumb"></div>
+                  <div>
+                    <small>En çok seçilen</small>
+                    <strong>Smoky House Burger</strong>
+                    <p>Füme sos, cheddar, karamelize soğan.</p>
+                  </div>
+                  <div class="menu-price">₺245</div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="thumb dark"></div>
+                  <div>
+                    <small>Şef önerisi</small>
+                    <strong>Trüf Mantarlı Pizza</strong>
+                    <p>İnce hamur, mozzarella, özel mantar.</p>
+                  </div>
+                  <div class="menu-price">₺310</div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="thumb green"></div>
+                  <div>
+                    <small>Ferahlık</small>
+                    <strong>Lime Fresh Cooler</strong>
+                    <p>Nane, lime, buzlu özel karışım.</p>
+                  </div>
+                  <div class="menu-price">₺95</div>
+                </div>
+
+                <a
+                  href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20demosu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-primary"
+                >
+                  WhatsApp ile Sipariş
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="paketler">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Paket Yapısı</div>
-          <h2>Farklı ihtiyaçlara göre <span class="gradient-text">ölçeklenen</span> çözümler</h2>
-          <p>Bu alan sayfayı daha dolu, daha profesyonel ve daha güven veren gösterir. Aynı zamanda ziyaretçiye ne sunduğunu net şekilde sınıflandırır.</p>
+        <div class="section-head center reveal">
+          <div class="eyebrow">Paketler</div>
+          <h2>İhtiyacına göre net, şık ve profesyonel web paketleri.</h2>
+          <p>
+            Fiyat proje kapsamına göre netleşir. Buradaki paketler sana hangi seviyede bir web deneyimi hazırlanabileceğini gösterir.
+          </p>
         </div>
 
         <div class="grid-3">
-          <article class="card reveal">
+          <article class="card price-card reveal">
             <div class="card-body">
-              <div class="kicker">Başlangıç</div>
-              <h3 style="margin-top:10px;">Tek sayfa premium sunum</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Hizmetini tek sayfada güçlü şekilde anlatmak isteyenler için temiz, hızlı ve mobil uyumlu yapı.</p>
-              <div class="bullet-list">
-                <span>Hero alanı</span>
-                <span>Hizmet blokları</span>
-                <span>İletişim CTA</span>
-                <span>Mobil uyum</span>
+              <span class="badge">Başlangıç</span>
+              <h3>Starter Glow</h3>
+              <p>Tek sayfalık, hızlı, şık ve mobil uyumlu profesyonel başlangıç vitrini.</p>
+              <div class="price">Starter <small>/ tek sayfa</small></div>
+              <ul class="list">
+                <li>Hero, hizmetler ve iletişim</li>
+                <li>WhatsApp ve form bağlantısı</li>
+                <li>Mobil uyumlu tasarım</li>
+              </ul>
+              <div class="hero-actions" style="margin-top:22px;">
+                <a href="#iletisim" class="btn btn-dark">Detay Al</a>
               </div>
             </div>
           </article>
 
-          <article class="card reveal" style="transform:translateY(-8px); border-color:rgba(255,79,216,0.3); box-shadow:0 0 0 1px rgba(255,79,216,0.08), 0 26px 90px rgba(255,79,216,0.14);">
+          <article class="card price-card featured reveal">
             <div class="card-body">
-              <div class="kicker">Önerilen</div>
-              <h3 style="margin-top:10px;">Kurumsal premium vitrin</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Daha güçlü algı isteyen markalar için süreç, vitrin gücü, proje, SSS ve detaylı iletişim kurgusuyla daha dolu yapı.</p>
-              <div class="bullet-list">
-                <span>Premium sahne kurgusu</span>
-                <span>Ek içerik bölümleri</span>
-                <span>Daha yüksek güven algısı</span>
-                <span>Özel marka dili</span>
+              <span class="badge">En Güçlü Paket</span>
+              <h3>Ultra Premium</h3>
+              <p>Markanı büyük gösteren, güven veren ve teklif akışını güçlendiren tam vitrin sistemi.</p>
+              <div class="price">Premium <small>/ kurumsal</small></div>
+              <ul class="list">
+                <li>Detaylı bölüm ve içerik kurgusu</li>
+                <li>Premium UI, animasyon ve vitrin blokları</li>
+                <li>SEO dostu yapı ve güçlü CTA akışı</li>
+                <li>Formspree form ve WhatsApp geçişleri</li>
+              </ul>
+              <div class="hero-actions" style="margin-top:22px;">
+                <a href="#iletisim" class="btn btn-primary">Bu Paketi İste</a>
               </div>
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card price-card reveal">
             <div class="card-body">
-              <div class="kicker">Genişletilmiş</div>
-              <h3 style="margin-top:10px;">Landing + vitrin kombinasyonu</h3>
-              <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Kampanya, hizmet ya da işletme sayfalarını daha iddialı göstermek için yoğunlaştırılmış bloklarla kurulan yapı.</p>
-              <div class="bullet-list">
-                <span>Dönüşüm odaklı CTA</span>
-                <span>Ek vitrin alanları</span>
-                <span>Kurumsal anlatım</span>
-                <span>Daha tok tasarım hissi</span>
+              <span class="badge">Özel Proje</span>
+              <h3>Custom Universe</h3>
+              <p>QR menü, landing page veya sektöre özel ekstra tasarım dili isteyenlere özel çözüm.</p>
+              <div class="price">Custom <small>/ özel kapsam</small></div>
+              <ul class="list">
+                <li>Özel sektör ve marka dili</li>
+                <li>Ekstra section ve özel arayüz</li>
+                <li>Kampanya, ürün veya rezervasyon yapısı</li>
+              </ul>
+              <div class="hero-actions" style="margin-top:22px;">
+                <a href="#iletisim" class="btn btn-dark">Özel Teklif Al</a>
               </div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="surec">
+      <div class="container grid-2">
+        <div class="section-head reveal">
+          <div class="eyebrow">Süreç</div>
+          <h2>Projeyi karmaşaya çevirmeden net adımlarla yayına hazırlıyoruz.</h2>
+          <p>
+            Önce markanın nasıl görünmesi gerektiğini çözüyoruz. Sonra tasarım, içerik, mobil akış ve iletişim yapısını tek sistemde topluyoruz.
+          </p>
+          <div class="hero-actions">
+            <a href="#iletisim" class="btn btn-primary">Projeyi Başlat</a>
+            <a href="#sss" class="btn btn-dark">Soruları Gör</a>
+          </div>
+        </div>
+
+        <div class="process reveal">
+          <div class="process-item">
+            <div>
+              <h3>Analiz ve konumlandırma</h3>
+              <p>Markanın tonu, hedef kitlen, hizmetlerin ve nasıl görünmek istediğin netleştirilir.</p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <div>
+              <h3>Premium tasarım dili</h3>
+              <p>Renk, tipografi, section düzeni ve mobil akış profesyonel algı için hazırlanır.</p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <div>
+              <h3>Kodlama ve bağlantılar</h3>
+              <p>Form, WhatsApp, telefon, mail, SEO başlıkları ve responsive yapı tamamlanır.</p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <div>
+              <h3>Kontrol ve yayın hazırlığı</h3>
+              <p>Mobil görünüm, butonlar, form gönderimi ve sayfa akışı kontrol edilerek yayına hazır hale getirilir.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="sss">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Sık Sorulanlar</div>
-          <h2>Karar vermeden önce <span class="gradient-text">en çok merak edilenler</span></h2>
+        <div class="section-head center reveal">
+          <div class="eyebrow">Sık Sorulan Sorular</div>
+          <h2>Aklına takılanları netleştirelim.</h2>
+          <p>Profesyonel web sitesi yaptırmadan önce en çok merak edilen konular.</p>
         </div>
 
         <div class="faq-list">
-          <div class="faq-item reveal">
+          <article class="faq-item reveal active">
             <button class="faq-btn" type="button">
-              <span class="faq-title">Site mobilde sorunsuz çalışır mı?</span>
+              <span>Bu site mobilde de güçlü görünür mü?</span>
               <span class="faq-sign">+</span>
             </button>
-            <div class="faq-body">Evet. Tasarım baştan itibaren mobil uyumlu düşünülür. Menü, butonlar, kartlar ve içerik akışı telefon ekranında rahat kullanılacak şekilde düzenlenir.</div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span class="faq-title">Admin panel olacak mı?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Hayır. Bu yapı özellikle admin panel olmadan, temiz ve sade bir kurgu ile hazırlandı. İstersen sonradan ayrı bir sistem eklenebilir ama mevcut versiyon tamamen panelsizdir.</div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span class="faq-title">WhatsApp ve iletişim entegrasyonu eklenebilir mi?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Evet. WhatsApp butonu, telefon, mail ve iletişim formu gibi alanlar rahatlıkla kullanılabilir. En hızlı dönüşüm için genelde WhatsApp yönlendirmesi öne çıkarılır.</div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span class="faq-title">Sonradan içerik değişikliği yapılabilir mi?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Evet. Kod tarafında metinler, başlıklar, hizmet blokları ve iletişim alanları kolayca güncellenebilir. İstersen bunu daha da sadeleştirip tek dosyalı kullanımda bırakabiliriz.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="guven">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Profesyonel Duruş</div>
-          <h2>Bu yapı neden daha <span class="gradient-text">kurumsal ve güven veren</span> görünür?</h2>
-          <p>İlham aldığın sayfada güçlü hero, süreç anlatımı, hizmet blokları, SSS ve yoğun CTA kullanımı vardı. Ben de aynı profesyonel hissi koruyup, içeriği sana özel ve daha özgün hale getirecek şekilde buraya taşıdım. ([webioo.com.tr](https://www.webioo.com.tr/aksaray-web-tasarim?utm_source=chatgpt.com))</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="icon-box">🧠</div>
-              <h3>Katmanlı İçerik Kurgusu</h3>
-              <p>Tek bir hero ve birkaç kart yerine; hizmet, vitrin, süreç, paket ve SSS ile daha tok bir yapı oluşturulur.</p>
+            <div class="faq-body">
+              Evet. Yapı mobil öncelikli kuruldu. Kartlar, formlar, menü, QR demo ve CTA butonları telefon ekranında daha temiz akacak şekilde düzenlendi.
             </div>
           </article>
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="icon-box">🏛️</div>
-              <h3>Kurumsal Yoğunluk</h3>
-              <p>Boşluk hissi azaltılır. Böylece sayfa daha ciddi, daha büyük ölçekli ve daha profesyonel görünür.</p>
+
+          <article class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>Form ve WhatsApp çalışır mı?</span>
+              <span class="faq-sign">+</span>
+            </button>
+            <div class="faq-body">
+              Formspree bağlantısı mevcut. WhatsApp butonları da senin numarana yönlenir. İstersen mesaj metinleri sonradan değiştirilebilir.
             </div>
           </article>
-          <article class="card reveal">
-            <div class="card-body">
-              <div class="icon-box">🚀</div>
-              <h3>Dönüşüm Akışı</h3>
-              <p>Farklı bölümlere yerleştirilen CTA ve iletişim alanları ziyaretçiyi kararsız bırakmadan harekete yönlendirir.</p>
+
+          <article class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>İçerikleri daha sonra değiştirebilir miyim?</span>
+              <span class="faq-sign">+</span>
+            </button>
+            <div class="faq-body">
+              Evet. Başlıklar, hizmetler, paketler, iletişim bilgileri, QR menü içerikleri ve kampanya alanları sonradan güncellenebilir.
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>Bu tasarım kurumsal durur mu yoksa fazla gösterişli mi?</span>
+              <span class="faq-sign">+</span>
+            </button>
+            <div class="faq-body">
+              Gösterişli ama kontrollü. Amaç renk kalabalığı değil; markayı daha pahalı, daha güvenilir ve daha profesyonel algılatan premium sahne kurmak.
             </div>
           </article>
         </div>
@@ -1308,141 +2051,196 @@
 
     <section class="section" id="iletisim">
       <div class="container contact-layout">
-        <div class="contact-card reveal">
-          <div class="eyebrow">İletişim</div>
-          <h3 style="font-family:'Unbounded',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.05; letter-spacing:-0.04em; margin-top:16px;">Projen için hızlıca konuşalım.</h3>
-          <p>Net bir fiyat, doğru bir yön ve güçlü bir sunum istiyorsan iletişime geç. Birlikte markana yakışan sahneyi kuralım.</p>
+        <article class="card reveal">
+          <div class="card-body">
+            <div class="eyebrow">İletişim</div>
+            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">
+              Markanı internette daha premium gösterelim.
+            </h2>
+            <p style="margin-top:15px;color:var(--muted);line-height:1.75;">
+              Projeni birkaç cümleyle anlatman yeterli. Nasıl görünmek istediğini konuşup sana uygun web yapısını birlikte netleştiririz.
+            </p>
 
-          <div class="contact-pills" style="margin-top:18px;">
-            <span>Hızlı geri dönüş</span>
-            <span>Mobil uyum</span>
-            <span>Premium tasarım dili</span>
-            <span>Marka odaklı kurgu</span>
-            <span>Temiz teslim</span>
+            <div style="margin-top:22px;">
+              <div class="contact-row">
+                <b>01</b>
+                <div>
+                  <small>Telefon</small>
+                  <strong><a href="tel:+905314668927">0531 466 89 27</a></strong>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <b>02</b>
+                <div>
+                  <small>E-posta</small>
+                  <strong><a href="mailto:mehmetardad068@gmail.com">mehmetardad068@gmail.com</a></strong>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <b>03</b>
+                <div>
+                  <small>WhatsApp</small>
+                  <strong>
+                    <a
+                      href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Hemen yaz, projeyi konuşalım
+                    </a>
+                  </strong>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="contact-pillars">
-            <div class="contact-row">
-              <div class="icon-box">💬</div>
-              <div>
-                <small>WhatsApp</small>
-                <strong><a href="https://wa.me/905314668927?text=Merhaba%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer">+90 531 466 89 27</a></strong>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="icon-box">✉️</div>
-              <div>
-                <small>E-posta</small>
-                <strong><a href="mailto:mehmetarda27@gmail.com">mehmetarda27@gmail.com</a></strong>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="icon-box">📍</div>
-              <div>
-                <small>Konum</small>
-                <strong>Mersin, Türkiye</strong>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
 
         <article class="card reveal">
           <div class="card-body">
-            <div class="kicker">Mesaj Gönder</div>
-            <h3 style="margin-top:10px; font-family:'Unbounded',sans-serif; font-size:clamp(26px,4vw,40px); line-height:1.08; letter-spacing:-0.04em;">Kısa bir brief bırak, dönüş yapayım.</h3>
-            <p style="margin-top:12px; color:var(--muted); line-height:1.8;">Bu form örnek yapıdır. İstersen Formspree, Netlify Forms ya da kendi mail sistemine bağlayabiliriz. Yani görüntü hazır; istersen sonraki aşamada tam çalışan hale getirilir.</p>
+            <div class="eyebrow">Teklif Formu</div>
+            <h3 style="font-size:28px;line-height:1.15;letter-spacing:-.035em;margin-top:18px;">
+              Nasıl bir site istiyorsun?
+            </h3>
+            <p style="margin-top:12px;color:var(--muted);line-height:1.7;">
+              Kurumsal site, landing page, QR menü veya özel proje talebini yaz. En doğru yapıyı sana göre şekillendirelim.
+            </p>
 
-            <form>
-              <div class="form-grid">
-                <input type="text" placeholder="Ad Soyad" />
-                <input type="text" placeholder="Telefon / WhatsApp" />
+            <form action="https://formspree.io/f/xeevzely" method="POST">
+              <div class="grid-2">
+                <input type="text" name="name" placeholder="Ad Soyad" required />
+                <input type="text" name="business" placeholder="Marka / İşletme Adı" required />
               </div>
-              <input type="text" placeholder="Marka / İşletme Adı" />
-              <textarea placeholder="Nasıl bir site istediğini kısaca yaz..."></textarea>
-              <button type="button" class="btn btn-primary">Mesaj Hazırla</button>
+
+              <div class="grid-2">
+                <input type="tel" name="phone" placeholder="Telefon Numaran" required />
+                <select name="service" required>
+                  <option value="">İstenen hizmet</option>
+                  <option>Ultra Premium Kurumsal Web Sitesi</option>
+                  <option>Landing Page Tasarımı</option>
+                  <option>QR Menü ve Dijital Menü</option>
+                  <option>Özel Premium Proje</option>
+                </select>
+              </div>
+
+              <textarea name="message" placeholder="Nasıl bir hava istiyorsun? Daha kurumsal mı, daha lüks mü, daha teknolojik mi? Projeni kısaca anlat." required></textarea>
+
+              <div class="hero-actions">
+                <button type="submit" class="btn btn-primary">Formu Gönder</button>
+                <a
+                  href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20projem%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-dark"
+                >
+                  WhatsApp
+                </a>
+              </div>
             </form>
           </div>
         </article>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container cta-layout">
-        <div class="cta-banner reveal">
-          <h2>Hazırsan siteni <span class="gradient-text">bir üst seviyeye</span> taşıyalım.</h2>
-          <p>Boş duran bir sayfa değil; seni daha ciddi, daha düzenli ve daha premium gösterecek bir dijital yüz kuralım.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-body" style="display:grid; gap:14px; align-content:center; min-height:100%;">
-            <div class="kicker">Hızlı Başlangıç</div>
-            <h3 style="font-family:'Unbounded',sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.1; letter-spacing:-0.04em;">İlk adımı bugün atalım.</h3>
-            <p style="color:var(--muted); line-height:1.8;">İstersen bir sonraki aşamada bu tasarımı doğrudan senin marka adına, hizmetlerine ve renklerine göre özelleştireyim.</p>
-            <a href="https://wa.me/905314668927?text=Merhaba%20siteyi%20%C3%B6zelle%C5%9Ftirmek%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-primary">Hemen Başlayalım</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-shell">
-        <div>
-          <strong>Mehmet Arda Doğan</strong>
-          <p>Premium web tasarım, landing page, QR menü ve mobil uyumlu dijital vitrin çözümleri.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#anasayfa">Ana Sayfa</a>
-          <a href="#hizmetler">Hizmetler</a>
-          <a href="#vitrin">Vitrin</a>
-          <a href="#projeler">Projeler</a>
-          <a href="#paketler">Paketler</a>
-          <a href="#iletisim">İletişim</a>
-        </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Mehmet Arda Doğan</strong>
+        <div>Ultra premium web tasarım, landing page ve QR menü deneyimleri.</div>
       </div>
+      <div>© 2026 Tüm hakları saklıdır.</div>
     </div>
   </footer>
 
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20istiyorum."
+    target="_blank"
+    rel="noreferrer"
+  >
+    WhatsApp'tan Yaz
+  </a>
+
   <script>
-    document.documentElement.classList.add('js');
+    document.body.classList.add("js");
 
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
-      navMenu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => navMenu.classList.remove('open'));
-      });
-    }
-
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach((item) => {
-      const btn = item.querySelector('.faq-btn');
-      btn.addEventListener('click', () => item.classList.toggle('active'));
-    });
-
-    const revealItems = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealItems.forEach((item) => revealObserver.observe(item));
-
-    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollProgress = document.getElementById("scrollProgress");
     const updateScrollProgress = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      scrollProgress.style.width = Math.min(progress, 100) + '%';
+      if (scrollProgress) scrollProgress.style.width = `${Math.min(progress, 100)}%`;
     };
+
     updateScrollProgress();
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    window.addEventListener('resize', updateScrollProgress);
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => navMenu.classList.remove("open"));
+      });
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach((item) => {
+      const button = item.querySelector(".faq-btn");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+        faqItems.forEach((faq) => faq.classList.remove("active"));
+        if (!isActive) item.classList.add("active");
+      });
+    });
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav a");
+
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const current = document.querySelector(`.nav a[href="#${entry.target.id}"]`);
+          if (current) current.classList.add("active");
+        });
+      },
+      { threshold: 0.42 }
+    );
+
+    sections.forEach((section) => navObserver.observe(section));
+
+    document.querySelectorAll("form").forEach((form) => {
+      form.addEventListener("submit", () => {
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (!submitButton) return;
+        submitButton.textContent = "Gönderiliyor...";
+        submitButton.disabled = true;
+      });
+    });
   </script>
 </body>
 </html>
