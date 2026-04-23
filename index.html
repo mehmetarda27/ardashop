@@ -1873,6 +1873,85 @@
       font-weight: 700;
     }
 
+    .admin-live-section[hidden] {
+      display: none;
+    }
+
+    .admin-announcement {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 20px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(72, 229, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 86% 18%, rgba(255, 79, 216, 0.18), transparent 24%),
+        rgba(255, 255, 255, 0.055);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 22px;
+    }
+
+    .admin-announcement-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--gradient-main);
+      color: #14091f;
+      font-weight: 900;
+      box-shadow: 0 0 28px rgba(255, 79, 216, 0.22);
+    }
+
+    .admin-announcement strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .admin-announcement p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .admin-announcement a {
+      white-space: nowrap;
+    }
+
+    .admin-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .admin-update-card {
+      min-height: 220px;
+    }
+
+    .admin-update-card small {
+      color: var(--pink-soft);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .admin-update-card h3 {
+      margin-top: 12px;
+      font-size: 24px;
+      line-height: 1.16;
+      letter-spacing: -0.03em;
+    }
+
+    .admin-update-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -2242,6 +2321,15 @@
       .meter-row,
       .boost-list div {
         grid-template-columns: 1fr;
+      }
+
+      .admin-announcement,
+      .admin-card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-announcement a {
+        width: 100%;
       }
 
       .before-after {
@@ -2799,15 +2887,15 @@
               <div class="eyebrow">Bağımsız Dijital Stüdyo</div>
 
               <div>
-                <p class="kicker">Gösterişli. Güçlü. Premium. Akılda kalıcı.</p>
-                <h1 class="hero-title">
+                <p class="kicker" data-admin-text="heroKicker">Gösterişli. Güçlü. Premium. Akılda kalıcı.</p>
+                <h1 class="hero-title" data-admin-text="heroTitle">
                   Ben markaları
                   <span class="gradient-text">sıradan görünen sitelerden</span>
                   çıkarıp dijital sahnede parlayan deneyimlere dönüştürüyorum.
                 </h1>
               </div>
 
-              <p>
+              <p data-admin-text="heroDescription">
                 Ben Mehmet Arda Doğan. Web tasarım, landing page, QR menü ve dijital vitrin projelerinde
                 “sade geçelim” değil, “baktığında vay be dedirtsin” yaklaşımıyla çalışıyorum.
                 Hedefim sadece bir sayfa hazırlamak değil; sizi daha pahalı, daha profesyonel,
@@ -2960,6 +3048,21 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section admin-live-section" id="admin-guncellemeler" hidden>
+      <div class="container">
+        <div class="admin-announcement" id="adminAnnouncement" hidden>
+          <div class="admin-announcement-badge">NEW</div>
+          <div>
+            <strong data-admin-text="announcementTitle"></strong>
+            <p data-admin-text="announcementText"></p>
+          </div>
+          <a href="#iletisim" class="btn btn-primary">Detay Al</a>
+        </div>
+
+        <div class="admin-card-grid" id="adminCards"></div>
       </div>
     </section>
 
@@ -3991,6 +4094,70 @@
 
   <script>
     document.body.classList.add("js");
+
+    const ADMIN_CONTENT_KEY = "ardaSiteAdminContent";
+
+    const escapeHtml = (value) =>
+      String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    const applyAdminContent = () => {
+      let adminContent = {};
+
+      try {
+        adminContent = JSON.parse(localStorage.getItem(ADMIN_CONTENT_KEY) || "{}");
+      } catch (error) {
+        adminContent = {};
+      }
+
+      document.querySelectorAll("[data-admin-text]").forEach((item) => {
+        const key = item.dataset.adminText;
+        const value = adminContent[key];
+        if (typeof value === "string" && value.trim()) {
+          item.textContent = value.trim();
+        }
+      });
+
+      const announcement = document.getElementById("adminAnnouncement");
+      const adminCards = document.getElementById("adminCards");
+      const adminSection = document.getElementById("admin-guncellemeler");
+      const cards = Array.isArray(adminContent.cards)
+        ? adminContent.cards.filter((card) => card && (card.title || card.text || card.tag))
+        : [];
+
+      if (adminCards) {
+        adminCards.innerHTML = cards
+          .map(
+            (card) => `
+              <article class="card admin-update-card reveal visible">
+                <div class="card-body">
+                  <small>${escapeHtml(card.tag || "Güncelleme")}</small>
+                  <h3>${escapeHtml(card.title || "Yeni içerik")}</h3>
+                  <p>${escapeHtml(card.text || "")}</p>
+                </div>
+              </article>
+            `
+          )
+          .join("");
+      }
+
+      const hasAnnouncement = Boolean(
+        (adminContent.announcementTitle && adminContent.announcementTitle.trim()) ||
+          (adminContent.announcementText && adminContent.announcementText.trim())
+      );
+
+      if (announcement) announcement.hidden = !hasAnnouncement;
+      if (adminSection) adminSection.hidden = !hasAnnouncement && cards.length === 0;
+    };
+
+    applyAdminContent();
+    window.addEventListener("storage", (event) => {
+      if (event.key === ADMIN_CONTENT_KEY) applyAdminContent();
+    });
 
     const scrollProgress = document.getElementById("scrollProgress");
     const cursorAura = document.getElementById("cursorAura");
