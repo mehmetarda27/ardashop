@@ -1,3186 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mehmet Arda Doğan | Ultra Premium Web Tasarım</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <meta name="description" content="Mehmet Arda Doğan ile ultra premium kurumsal web tasarım, landing page, QR menü ve dijital marka vitrini çözümleri." />
-  <meta name="theme-color" content="#07111f" />
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #07111f;
-      --bg-2: #0c1d32;
-      --panel: rgba(255, 255, 255, .075);
-      --panel-2: rgba(255, 255, 255, .12);
-      --line: rgba(255, 255, 255, .13);
-      --line-2: rgba(255, 255, 255, .22);
-      --text: #f7fbff;
-      --muted: rgba(247, 251, 255, .72);
-      --soft: rgba(247, 251, 255, .48);
-      --cyan: #35ddff;
-      --blue: #315dff;
-      --pink: #ff45cf;
-      --gold: #ffc061;
-      --green: #86ffb6;
-      --danger: #ff5f79;
-      --radius-xl: 38px;
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --shadow-xl: 0 38px 120px rgba(0, 0, 0, .42);
-      --shadow-lg: 0 24px 80px rgba(0, 0, 0, .3);
-      --container: min(1240px, calc(100% - 34px));
-      --grad: linear-gradient(135deg, #35ddff 0%, #315dff 34%, #ff45cf 70%, #ffc061 100%);
-      --grad-soft: linear-gradient(135deg, rgba(53, 221, 255, .2), rgba(49, 93, 255, .16), rgba(255, 69, 207, .18));
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "Outfit", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 10% 8%, rgba(53, 221, 255, .18), transparent 25%),
-        radial-gradient(circle at 88% 12%, rgba(255, 69, 207, .16), transparent 24%),
-        radial-gradient(circle at 52% 78%, rgba(49, 93, 255, .18), transparent 32%),
-        linear-gradient(180deg, #07111f 0%, #0b1a2b 42%, #060d18 100%);
-      overflow-x: hidden;
-    }
-
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    body::before {
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: radial-gradient(circle at center, #000 42%, transparent 90%);
-      opacity: .58;
-    }
-
-    body::after {
-      z-index: -1;
-      background:
-        radial-gradient(circle at 20% 18%, rgba(53, 221, 255, .11), transparent 26%),
-        radial-gradient(circle at 78% 16%, rgba(255, 69, 207, .12), transparent 24%),
-        radial-gradient(circle at 70% 78%, rgba(255, 192, 97, .09), transparent 30%);
-      filter: blur(32px);
-    }
-
-    body.is-loading .load-in {
-      opacity: 0;
-      transform: translateY(26px);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: var(--container);
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 96px 0;
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero {
-      order: 1;
-    }
-
-    #ajans-vitrini {
-      order: 2;
-    }
-
-    #hizmetler {
-      order: 3;
-    }
-
-    #neden-biz {
-      order: 4;
-    }
-
-    #projeler {
-      order: 6;
-    }
-
-    #canli-projeler {
-      order: 5;
-    }
-
-    #sektor-demo {
-      order: 7;
-    }
-
-    #qr-menu {
-      order: 8;
-    }
-
-    #paketler {
-      order: 9;
-    }
-
-    #surec {
-      order: 10;
-    }
-
-    #sss {
-      order: 11;
-    }
-
-    #iletisim {
-      order: 12;
-    }
-
-    .gradient-text {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 10px 15px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .07);
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      backdrop-filter: blur(18px);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 34px rgba(53, 221, 255, .08);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--grad);
-      box-shadow: 0 0 16px rgba(53, 221, 255, .8);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 56px;
-      padding: 15px 22px;
-      border: 1px solid transparent;
-      border-radius: 17px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #06111d;
-      background: var(--grad);
-      box-shadow: 0 18px 48px rgba(53, 221, 255, .16), 0 0 34px rgba(255, 69, 207, .16);
-    }
-
-    .btn-dark {
-      color: var(--text);
-      background: rgba(255, 255, 255, .075);
-      border-color: var(--line);
-    }
-
-    .btn-light {
-      color: #06111d;
-      background: #f8fbff;
-      box-shadow: 0 18px 38px rgba(0, 0, 0, .22);
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035)),
-        rgba(9, 24, 39, .82);
-      box-shadow: var(--shadow-lg);
-      isolation: isolate;
-      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 16% 0%, rgba(53, 221, 255, .12), transparent 32%),
-        radial-gradient(circle at 88% 18%, rgba(255, 69, 207, .1), transparent 32%);
-      pointer-events: none;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(53, 221, 255, .34);
-      box-shadow: 0 30px 100px rgba(53, 221, 255, .12), 0 0 0 1px rgba(255, 255, 255, .04);
-    }
-
-    .card-body {
-      position: relative;
-      z-index: 1;
-      padding: 28px;
-    }
-
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .section-head {
-      max-width: 880px;
-      display: grid;
-      gap: 16px;
-      margin-bottom: 34px;
-    }
-
-    .section-head.center {
-      margin-inline: auto;
-      text-align: center;
-      justify-items: center;
-    }
-
-    .section-head h2 {
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(32px, 5vw, 58px);
-      line-height: 1.03;
-      letter-spacing: -.055em;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      z-index: 4000;
-      background: rgba(255, 255, 255, .08);
-      pointer-events: none;
-    }
-
-    .scroll-progress span {
-      display: block;
-      width: 0%;
-      height: 100%;
-      background: var(--grad);
-      box-shadow: 0 0 22px rgba(53, 221, 255, .65);
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-      background: rgba(7, 17, 31, .74);
-      backdrop-filter: blur(20px);
-    }
-
-    .header-inner {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      min-width: 0;
-      flex: 0 1 auto;
-    }
-
-    .brand-logo {
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 26% 22%, rgba(53, 221, 255, .95), transparent 34%),
-        linear-gradient(135deg, #35ddff 0%, #315dff 44%, #ff45cf 100%);
-      box-shadow: 0 0 36px rgba(53, 221, 255, .18), inset 0 1px 0 rgba(255, 255, 255, .22);
-      color: rgba(6, 17, 29, .86);
-      font-family: "Unbounded", sans-serif;
-      font-weight: 900;
-    }
-
-    .brand-copy strong {
-      display: block;
-      font-family: "Unbounded", sans-serif;
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -.04em;
-      text-shadow: 0 10px 26px rgba(0, 0, 0, .24);
-    }
-
-    .brand-copy span {
-      display: block;
-      margin-top: 7px;
-      color: var(--soft);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .nav-shell {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .055);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
-    }
-
-    .nav a {
-      padding: 10px 13px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 800;
-      transition: .22s ease;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: var(--text);
-      background: rgba(255, 255, 255, .1);
-    }
-
-    .menu-btn {
-      display: none;
-    }
-
-    .hero {
-      padding: 26px 0 56px;
-    }
-
-    .hero-shell {
-      position: relative;
-      overflow: hidden;
-      min-height: 780px;
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 42px;
-      background:
-        radial-gradient(circle at 12% 12%, rgba(53, 221, 255, .22), transparent 26%),
-        radial-gradient(circle at 86% 16%, rgba(255, 69, 207, .18), transparent 23%),
-        radial-gradient(circle at 50% 86%, rgba(49, 93, 255, .2), transparent 32%),
-        linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow-xl);
-      isolation: isolate;
-    }
-
-    .hero-shell::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      right: -150px;
-      top: -90px;
-      border-radius: 50%;
-      background: conic-gradient(from 180deg, var(--cyan), var(--blue), var(--pink), var(--gold), var(--cyan));
-      filter: blur(55px);
-      opacity: .28;
-      animation: spin 12s linear infinite;
-      z-index: -1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 24px;
-      min-height: 710px;
-    }
-
-    .load-in {
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .hero-title {
-      max-width: 790px;
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(42px, 6.6vw, 82px);
-      line-height: .94;
-      letter-spacing: -.065em;
-    }
-
-    .hero-copy p {
-      max-width: 740px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.8;
-    }
-
-    .hero-actions,
-    .chips,
-    .mini-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .chips span,
-    .mini-row span {
-      padding: 10px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .065);
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 18px;
-      align-content: center;
-    }
-
-    .lead-panel {
-      border-radius: 34px;
-      border: 1px solid var(--line-2);
-      background:
-        radial-gradient(circle at 18% 0%, rgba(53, 221, 255, .16), transparent 28%),
-        linear-gradient(180deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(18px);
-    }
-
-    .lead-panel h2 {
-      margin-top: 14px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 32px;
-      line-height: 1.1;
-      letter-spacing: -.045em;
-    }
-
-    .lead-panel p {
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    form {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      min-height: 54px;
-      padding: 15px 16px;
-      border: 1px solid rgba(255, 255, 255, .15);
-      border-radius: 16px;
-      outline: none;
-      color: var(--text);
-      background: rgba(255, 255, 255, .075);
-      transition: .22s ease;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(247, 251, 255, .42);
-    }
-
-    select option {
-      color: #06111d;
-    }
-
-    textarea {
-      min-height: 116px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(53, 221, 255, .42);
-      box-shadow: 0 0 0 4px rgba(53, 221, 255, .08);
-      background: rgba(255, 255, 255, .1);
-    }
-
-    .hero-showcase {
-      overflow: hidden;
-      border-radius: 34px;
-      border: 1px solid var(--line);
-      background: rgba(7, 17, 31, .68);
-      box-shadow: var(--shadow-lg);
-      order: 1;
-    }
-
-    .lead-panel {
-      order: 2;
-    }
-
-    .browser-top {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-      color: var(--soft);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .browser-top i {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--danger);
-    }
-
-    .browser-top i:nth-child(2) {
-      background: var(--gold);
-    }
-
-    .browser-top i:nth-child(3) {
-      background: var(--green);
-    }
-
-    .browser-stage {
-      display: grid;
-      gap: 14px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at top left, rgba(53, 221, 255, .15), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(255, 69, 207, .12), transparent 34%);
-    }
-
-    .mock-hero {
-      min-height: 230px;
-      padding: 22px;
-      border-radius: 26px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 14% 12%, rgba(53, 221, 255, .2), transparent 26%),
-        radial-gradient(circle at 88% 16%, rgba(255, 69, 207, .16), transparent 26%),
-        linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .04));
-    }
-
-    .mock-hero strong {
-      display: block;
-      max-width: 410px;
-      margin-top: 16px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 30px;
-      line-height: 1.08;
-      letter-spacing: -.045em;
-    }
-
-    .mock-hero p {
-      max-width: 430px;
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .mock-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 14px;
-    }
-
-    .mock-card {
-      min-height: 120px;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, .07);
-    }
-
-    .mock-card small {
-      display: block;
-      color: var(--soft);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .mock-card strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 18px;
-      line-height: 1.35;
-    }
-
-    .score {
-      display: grid;
-      gap: 10px;
-    }
-
-    .score-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 13px 14px;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      background: rgba(255, 255, 255, .07);
-    }
-
-    .score-row span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .score-row strong {
-      font-family: "Unbounded", sans-serif;
-      font-size: 21px;
-    }
-
-    .stats-band {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .stat {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, .065);
-      backdrop-filter: blur(16px);
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Unbounded", sans-serif;
-      font-size: 34px;
-      letter-spacing: -.05em;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .marquee-wrap {
-      position: relative;
-      overflow: hidden;
-      margin-top: 24px;
-      padding: 17px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .marquee {
-      display: flex;
-      gap: 14px;
-      width: max-content;
-      animation: marquee 26s linear infinite;
-    }
-
-    .marquee span {
-      padding: 11px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .065);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .service-card h3,
-    .price-card h3,
-    .feature-card h3,
-    .portfolio-card h3 {
-      font-size: 24px;
-      line-height: 1.18;
-      letter-spacing: -.03em;
-    }
-
-    .service-card p,
-    .price-card p,
-    .feature-card p,
-    .portfolio-card p {
-      margin-top: 13px;
-      color: var(--muted);
-      line-height: 1.72;
-      font-size: 15px;
-    }
-
-    .icon {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--grad-soft);
-      font-weight: 900;
-      box-shadow: 0 0 26px rgba(53, 221, 255, .1);
-    }
-
-    .list,
-    .bullet-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-      list-style: none;
-    }
-
-    .list li,
-    .bullet-list span {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .list li::before,
-    .bullet-list span::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      flex: 0 0 auto;
-      margin-top: 8px;
-      border-radius: 50%;
-      background: var(--grad);
-      box-shadow: 0 0 14px rgba(53, 221, 255, .5);
-    }
-
-    .agency-showcase,
-    .bento,
-    .qr-stage,
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .device-wall,
-    .big-panel,
-    .phone-wrap {
-      position: relative;
-      overflow: hidden;
-      min-height: 620px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 18% 12%, rgba(53, 221, 255, .2), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(255, 69, 207, .18), transparent 26%),
-        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
-      box-shadow: var(--shadow-xl);
-    }
-
-    .laptop-mockup {
-      position: relative;
-      max-width: 760px;
-      margin: 30px auto 0;
-      padding: 14px;
-      border-radius: 28px;
-      border: 1px solid rgba(255, 255, 255, .16);
-      background: linear-gradient(145deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)), #070b14;
-      box-shadow: 0 34px 110px rgba(0, 0, 0, .44);
-    }
-
-    .laptop-screen {
-      overflow: hidden;
-      min-height: 365px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, .1);
-      background:
-        radial-gradient(circle at 18% 14%, rgba(53, 221, 255, .22), transparent 28%),
-        radial-gradient(circle at 82% 20%, rgba(255, 69, 207, .2), transparent 30%),
-        linear-gradient(180deg, #141026, #07111f);
-    }
-
-    .laptop-top {
-      display: flex;
-      gap: 8px;
-      padding: 13px 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-    }
-
-    .laptop-top i {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--danger);
-    }
-
-    .laptop-top i:nth-child(2) {
-      background: var(--gold);
-    }
-
-    .laptop-top i:nth-child(3) {
-      background: var(--green);
-    }
-
-    .laptop-content {
-      display: grid;
-      gap: 16px;
-      padding: 24px;
-    }
-
-    .mock-hero-line {
-      width: 72%;
-      height: 34px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(53, 221, 255, .86), rgba(255, 69, 207, .72));
-    }
-
-    .mock-text-line {
-      width: 58%;
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
-    }
-
-    .mock-text-line.short {
-      width: 38%;
-    }
-
-    .mock-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .mock-mini-card {
-      min-height: 120px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .07);
-    }
-
-    .mock-mini-card b {
-      display: block;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 14px;
-      border-radius: 14px;
-      background: var(--grad);
-    }
-
-    .phone-floating {
-      position: absolute;
-      right: 36px;
-      bottom: 34px;
-      width: 210px;
-      padding: 10px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      border-radius: 34px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)), #080611;
-      box-shadow: 0 28px 80px rgba(0, 0, 0, .4);
-      transform: rotate(4deg);
-    }
-
-    .phone-floating-screen {
-      min-height: 360px;
-      overflow: hidden;
-      border-radius: 26px;
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .72)),
-        radial-gradient(circle at 28% 18%, rgba(255, 192, 97, .68), transparent 30%),
-        radial-gradient(circle at 82% 28%, rgba(255, 69, 207, .36), transparent 28%),
-        #120d16;
-    }
-
-    .phone-floating-head {
-      min-height: 124px;
-      display: flex;
-      align-items: end;
-      padding: 18px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 20px;
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .phone-floating-list {
-      display: grid;
-      gap: 9px;
-      padding: 12px;
-    }
-
-    .phone-floating-item {
-      height: 54px;
-      border: 1px solid rgba(255, 255, 255, .08);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, .09);
-    }
-
-    .live-project-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .project-live-card {
-      min-height: 520px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 18% 14%, rgba(53, 221, 255, .18), transparent 28%),
-        radial-gradient(circle at 84% 16%, rgba(255, 69, 207, .14), transparent 26%),
-        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
-      box-shadow: var(--shadow-xl);
-      overflow: hidden;
-    }
-
-    .project-live-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .project-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .07);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .project-status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 14px rgba(134, 255, 182, .7);
-    }
-
-    .project-browser {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(7, 17, 31, .72);
-    }
-
-    .project-browser-body {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 16px;
-      padding: 18px;
-    }
-
-    .project-preview-panel {
-      min-height: 300px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 20% 16%, rgba(53, 221, 255, .22), transparent 30%),
-        radial-gradient(circle at 80% 18%, rgba(255, 69, 207, .18), transparent 28%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
-    }
-
-    .project-preview-panel strong {
-      display: block;
-      margin-top: 18px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 30px;
-      line-height: 1.06;
-      letter-spacing: -.05em;
-    }
-
-    .project-preview-panel p {
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .project-dashboard {
-      display: grid;
-      gap: 12px;
-    }
-
-    .dash-row,
-    .sector-stat {
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .065);
-    }
-
-    .dash-row small,
-    .sector-stat small {
-      display: block;
-      color: var(--soft);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .dash-row strong,
-    .sector-stat strong {
-      display: block;
-      margin-top: 7px;
-      font-size: 18px;
-      line-height: 1.32;
-    }
-
-    .project-pills {
-      display: grid;
-      gap: 12px;
-    }
-
-    .project-pill {
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 13px;
-      align-items: center;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, .06);
-    }
-
-    .project-pill b {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 17px;
-      background: var(--grad-soft);
-    }
-
-    .project-pill strong {
-      display: block;
-      font-size: 16px;
-      line-height: 1.3;
-    }
-
-    .project-pill span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .before-after-slider {
-      position: relative;
-      min-height: 430px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, .055) 0 50%, rgba(53, 221, 255, .09) 50% 100%),
-        rgba(255, 255, 255, .045);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .before-layer,
-    .after-layer {
-      position: absolute;
-      inset: 0;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .before-layer {
-      width: 52%;
-      background:
-        radial-gradient(circle at 24% 18%, rgba(255, 255, 255, .08), transparent 30%),
-        linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02));
-      color: rgba(247, 251, 255, .72);
-      clip-path: inset(0 0 0 0);
-    }
-
-    .after-layer {
-      left: 48%;
-      background:
-        radial-gradient(circle at 28% 18%, rgba(53, 221, 255, .25), transparent 30%),
-        radial-gradient(circle at 82% 24%, rgba(255, 69, 207, .2), transparent 28%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
-    }
-
-    .slider-handle {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background: var(--grad);
-      box-shadow: 0 0 22px rgba(53, 221, 255, .7);
-    }
-
-    .slider-handle::before {
-      content: "Önce / Sonra";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 118px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: #f8fbff;
-      color: #06111d;
-      font-size: 12px;
-      font-weight: 900;
-      box-shadow: 0 18px 42px rgba(0, 0, 0, .28);
-    }
-
-    .layer-label {
-      width: fit-content;
-      padding: 9px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .08);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .layer-title {
-      max-width: 310px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 30px;
-      line-height: 1.06;
-      letter-spacing: -.05em;
-    }
-
-    .sector-lab {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .sector-tabs {
-      display: grid;
-      gap: 12px;
-    }
-
-    .sector-tab {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      color: var(--text);
-      background: rgba(255, 255, 255, .06);
-      text-align: left;
-      cursor: pointer;
-      transition: .22s ease;
-    }
-
-    .sector-tab:hover,
-    .sector-tab.active {
-      border-color: rgba(53, 221, 255, .36);
-      background: rgba(53, 221, 255, .1);
-      transform: translateY(-2px);
-    }
-
-    .sector-tab b {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: var(--grad);
-      color: #06111d;
-    }
-
-    .sector-tab strong {
-      display: block;
-      font-size: 16px;
-    }
-
-    .sector-tab span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .sector-display {
-      min-height: 560px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 18% 12%, var(--sector-a, rgba(53, 221, 255, .18)), transparent 28%),
-        radial-gradient(circle at 86% 16%, var(--sector-b, rgba(255, 69, 207, .16)), transparent 26%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow-xl);
-    }
-
-    .sector-screen {
-      min-height: 100%;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: rgba(7, 17, 31, .7);
-    }
-
-    .sector-hero {
-      min-height: 250px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background:
-        radial-gradient(circle at 24% 22%, var(--sector-a, rgba(53, 221, 255, .24)), transparent 32%),
-        radial-gradient(circle at 82% 26%, var(--sector-b, rgba(255, 69, 207, .2)), transparent 30%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
-    }
-
-    .sector-hero h3 {
-      max-width: 560px;
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(30px, 4.3vw, 52px);
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
-
-    .sector-body {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding: 18px;
-    }
-
-    .before-after-card,
-    .side-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .compare-box {
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-    }
-
-    .compare-box.before {
-      background: linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025));
-    }
-
-    .compare-box.after {
-      background:
-        radial-gradient(circle at 20% 20%, rgba(53, 221, 255, .2), transparent 32%),
-        linear-gradient(145deg, rgba(255, 69, 207, .17), rgba(49, 93, 255, .08));
-    }
-
-    .compare-box small {
-      color: var(--soft);
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .compare-box strong {
-      font-size: 22px;
-      line-height: 1.12;
-      letter-spacing: -.03em;
-    }
-
-    .big-panel h3 {
-      max-width: 640px;
-      margin-top: 22px;
-      font-family: "Unbounded", sans-serif;
-      font-size: clamp(32px, 4.8vw, 58px);
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
-
-    .big-panel p {
-      max-width: 620px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .meter-list {
-      display: grid;
-      gap: 12px;
-      max-width: 580px;
-      margin-top: 30px;
-    }
-
-    .meter {
-      display: grid;
-      grid-template-columns: 132px 1fr 42px;
-      gap: 12px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .meter-track {
-      height: 10px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .09);
-    }
-
-    .meter-track span {
-      display: block;
-      width: var(--v);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--grad);
-      box-shadow: 0 0 18px rgba(255, 69, 207, .28);
-    }
-
-    .portfolio-visual {
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(53, 221, 255, .2), transparent 30%),
-        radial-gradient(circle at 88% 18%, rgba(255, 69, 207, .15), transparent 30%),
-        linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .04));
-    }
-
-    .portfolio-visual small {
-      color: var(--soft);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .portfolio-visual strong {
-      display: block;
-      max-width: 360px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 28px;
-      line-height: 1.08;
-      letter-spacing: -.045em;
-    }
-
-    .phone-wrap {
-      min-height: 680px;
-      display: grid;
-      place-items: center;
-    }
-
-    .phone {
-      width: min(345px, 82vw);
-      padding: 13px;
-      border: 1px solid rgba(255, 255, 255, .2);
-      border-radius: 44px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .04)), #071320;
-      box-shadow: 0 34px 100px rgba(0, 0, 0, .42);
-    }
-
-    .phone-screen {
-      overflow: hidden;
-      min-height: 590px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: #130f14;
-    }
-
-    .menu-hero {
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, .02), rgba(0, 0, 0, .72)),
-        radial-gradient(circle at 24% 22%, rgba(255, 192, 97, .68), transparent 29%),
-        radial-gradient(circle at 82% 26%, rgba(255, 69, 207, .36), transparent 27%),
-        linear-gradient(135deg, #4a210d, #151020 56%, #062a3d);
-    }
-
-    .menu-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      color: rgba(255, 255, 255, .78);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .menu-hero h3 {
-      max-width: 230px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 27px;
-      line-height: 1.03;
-      letter-spacing: -.04em;
-    }
-
-    .menu-body {
-      display: grid;
-      gap: 14px;
-      padding: 16px;
-    }
-
-    .menu-cats {
-      display: flex;
-      gap: 8px;
-      overflow: hidden;
-    }
-
-    .menu-cats span {
-      flex: 0 0 auto;
-      padding: 8px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .06);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .menu-cats .active {
-      color: #221004;
-      background: linear-gradient(135deg, #ffdb82, #ff784f);
-    }
-
-    .menu-item {
-      display: grid;
-      grid-template-columns: 60px 1fr auto;
-      gap: 11px;
-      align-items: center;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .055);
-    }
-
-    .thumb {
-      width: 60px;
-      height: 60px;
-      border-radius: 17px;
-      background:
-        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .55), transparent 13%),
-        linear-gradient(135deg, #ffcf6d, #ff6547 54%, #6f2018);
-    }
-
-    .thumb.dark {
-      background:
-        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .42), transparent 13%),
-        linear-gradient(135deg, #8b5cff, #2d1744 54%, #090711);
-    }
-
-    .thumb.green {
-      background:
-        radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .45), transparent 13%),
-        linear-gradient(135deg, #7cffb2, #20804a 54%, #092117);
-    }
-
-    .menu-item small {
-      display: block;
-      color: var(--soft);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .menu-item strong {
-      display: block;
-      margin-top: 4px;
-      font-size: 14px;
-      line-height: 1.2;
-    }
-
-    .menu-item p {
-      margin-top: 3px;
-      color: var(--soft);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    .menu-price {
-      color: #ffcf6d;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .price-card.featured {
-      transform: translateY(-12px);
-      border-color: rgba(53, 221, 255, .36);
-      box-shadow: 0 30px 100px rgba(53, 221, 255, .14), 0 0 0 1px rgba(255, 255, 255, .04);
-    }
-
-    .badge {
-      display: inline-flex;
-      width: fit-content;
-      margin-bottom: 14px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255, 192, 97, .24);
-      border-radius: 999px;
-      background: rgba(255, 192, 97, .13);
-      color: #ffddad;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .price {
-      margin-top: 18px;
-      font-family: "Unbounded", sans-serif;
-      font-size: 38px;
-      letter-spacing: -.05em;
-    }
-
-    .price small {
-      color: var(--soft);
-      font-family: "Outfit", sans-serif;
-      font-size: 14px;
-      letter-spacing: 0;
-    }
-
-    .process {
-      display: grid;
-      gap: 16px;
-      counter-reset: process;
-    }
-
-    .process-item {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, .06);
-    }
-
-    .process-item::before {
-      counter-increment: process;
-      content: "0" counter(process);
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 17px;
-      background: var(--grad);
-      color: #06111d;
-      font-weight: 900;
-    }
-
-    .process-item h3 {
-      font-size: 20px;
-      letter-spacing: -.02em;
-    }
-
-    .process-item p {
-      margin-top: 8px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 14px;
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, .055);
-    }
-
-    .faq-btn {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 21px 23px;
-      border: 0;
-      color: var(--text);
-      background: transparent;
-      text-align: left;
-      font-size: 18px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .faq-sign {
-      color: var(--cyan);
-      font-size: 24px;
-      transition: .25s ease;
-    }
-
-    .faq-body {
-      display: none;
-      padding: 0 23px 21px;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .faq-item.active .faq-body {
-      display: block;
-    }
-
-    .faq-item.active .faq-sign {
-      transform: rotate(45deg);
-    }
-
-    .contact-row {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .055);
-    }
-
-    .contact-row + .contact-row {
-      margin-top: 12px;
-    }
-
-    .contact-row b {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border-radius: 15px;
-      background: var(--grad-soft);
-    }
-
-    .contact-row small {
-      display: block;
-      color: var(--soft);
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .contact-row strong {
-      display: block;
-      margin-top: 5px;
-      line-height: 1.45;
-      word-break: break-word;
-    }
-
-    .mobile-action-bar {
-      position: fixed;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      z-index: 2000;
-      display: none;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 9px;
-      border: 1px solid rgba(255, 255, 255, .16);
-      border-radius: 20px;
-      background: rgba(7, 17, 31, .82);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 20px 70px rgba(0, 0, 0, .38);
-    }
-
-    .mobile-action-bar a {
-      min-height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      font-size: 12px;
-      font-weight: 900;
-      text-align: center;
-    }
-
-    .mobile-action-bar .call {
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .1);
-    }
-
-    .mobile-action-bar .wa {
-      color: #071110;
-      background: linear-gradient(135deg, #7cffb2, #35ddff);
-    }
-
-    .mobile-action-bar .offer {
-      color: #06111d;
-      background: var(--grad);
-    }
-
-    .footer {
-      padding: 34px 0 110px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .75s ease, transform .75s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media (max-width: 1120px) {
-      .hero-grid,
-      .agency-showcase,
-      .live-project-grid,
-      .bento,
-      .qr-stage,
-      .contact-layout,
-      .sector-lab,
-      .grid-4,
-      .grid-3,
-      .grid-2,
-      .mock-grid,
-      .project-browser-body,
-      .sector-body {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-shell,
-      .hero-copy {
-        min-height: auto;
-      }
-
-      .stats-band {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .phone-floating {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: min(260px, 100%);
-        margin: 24px auto 0;
-        transform: none;
-      }
-
-      .price-card.featured {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .nav {
-        position: absolute;
-        top: 74px;
-        left: 16px;
-        right: 16px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        border-radius: 24px;
-        background: rgba(7, 17, 31, .96);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .nav a {
-        text-align: center;
-      }
-
-      .menu-btn {
-        display: inline-flex;
-      }
-
-      .header-cta {
-        display: none;
-      }
-    }
-
-    @media (max-width: 720px) {
-      body {
-        padding-bottom: 82px;
-      }
-
-      .mobile-action-bar {
-        display: grid;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: calc(100% - 18px);
-      }
-
-      .section {
-        padding: 68px 0;
-      }
-
-      .hero {
-        padding-top: 16px;
-      }
-
-      .hero-shell,
-      .card-body,
-      .big-panel,
-      .device-wall,
-      .phone-wrap {
-        padding: 17px;
-        border-radius: 26px;
-      }
-
-      .header-inner {
-        min-height: 74px;
-      }
-
-      .brand-logo {
-        width: 46px;
-        height: 46px;
-        border-radius: 15px;
-      }
-
-      .brand-copy strong {
-        font-size: 13px;
-        max-width: 160px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .brand-copy span {
-        display: block;
-        max-width: 180px;
-        font-size: 9px;
-        letter-spacing: .12em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .hero-title {
-        font-size: clamp(31px, 10.5vw, 44px);
-        line-height: 1;
-      }
-
-      .hero-copy p,
-      .section-head p,
-      .big-panel p {
-        font-size: 14px;
-        line-height: 1.68;
-      }
-
-      .hero-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .btn {
-        width: 100%;
-        min-height: 50px;
-        padding: 13px 15px;
-        font-size: 14px;
-      }
-
-      .stats-band,
-      .mock-card-grid,
-      .comparison {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        padding: 16px;
-      }
-
-      .stat strong {
-        font-size: 28px;
-      }
-
-      .section-head h2,
-      .big-panel h3 {
-        font-size: clamp(28px, 9vw, 39px);
-      }
-
-      .meter,
-      .process-item {
-        grid-template-columns: 1fr;
-      }
-
-      .laptop-mockup {
-        margin-top: 10px;
-        padding: 9px;
-        border-radius: 22px;
-      }
-
-      .laptop-screen {
-        min-height: 300px;
-      }
-
-      .project-live-card,
-      .sector-display,
-      .before-after-slider {
-        min-height: auto;
-      }
-
-      .before-after-slider {
-        min-height: 520px;
-      }
-
-      .before-layer,
-      .after-layer {
-        padding: 18px;
-      }
-
-      .before-layer {
-        width: 100%;
-        height: 50%;
-      }
-
-      .after-layer {
-        inset: 50% 0 0 0;
-      }
-
-      .slider-handle {
-        top: 50%;
-        bottom: auto;
-        left: 0;
-        width: 100%;
-        height: 2px;
-      }
-
-      .layer-title {
-        font-size: 23px;
-      }
-
-      .phone-wrap {
-        min-height: auto;
-      }
-
-      .phone-screen {
-        min-height: auto;
-      }
-
-      .menu-item {
-        grid-template-columns: 54px 1fr;
-      }
-
-      .thumb {
-        width: 54px;
-        height: 54px;
-      }
-
-      .menu-price {
-        grid-column: 2;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mehmet Arda Web Tasarım | Profesyonel Web Tasarım Ajansı</title>
+  <meta name="description" content="Mehmet Arda Web Tasarım; kurumsal web sitesi, e-ticaret, restoran web sitesi, randevu takip sistemi, admin panelli sistemler, SEO ve bakım hizmetleri sunar.">
+  <meta name="keywords" content="Mehmet Arda Web Tasarım, web tasarım, kurumsal web sitesi, e-ticaret sitesi, restoran web sitesi, randevu takip sistemi, SEO, admin panel">
+  <meta name="author" content="Mehmet Arda Web Tasarım">
+  <meta property="og:title" content="Mehmet Arda Web Tasarım">
+  <meta property="og:description" content="Modern, hızlı ve yönetilebilir web tasarım çözümleri.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Mehmet Arda Web Tasarım",
+    "description": "Kurumsal web sitesi, e-ticaret sitesi, restoran web sitesi, randevu takip sistemi, admin panelli sistemler, SEO ve bakım hizmetleri.",
+    "url": "https://mehmetardawebtasarim.com",
+    "sameAs": ["https://www.instagram.com/mehmetardastudio"],
+    "areaServed": "TR",
+    "serviceType": ["Web Tasarım", "E-ticaret", "SEO", "Admin Panel", "Randevu Sistemi"]
+  }
+  </script>
 </head>
-
-<body class="is-loading">
-  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
-  <header>
-    <div class="container header-inner">
-      <a href="#anasayfa" class="brand" aria-label="Mehmet Arda Doğan ana sayfa">
-        <div class="brand-logo" aria-hidden="true">MA</div>
-        <div class="brand-copy">
-          <strong>Mehmet Arda Doğan</strong>
-          <span>Ultra Premium Web Studio</span>
-        </div>
-      </a>
-
-      <div class="nav-shell">
-        <nav class="nav" id="navMenu">
-          <a href="#ajans-vitrini">Ajans Vitrini</a>
-          <a href="#hizmetler">Hizmetler</a>
-          <a href="#canli-projeler">Canlı Proje</a>
-          <a href="#sektor-demo">Sektör Demo</a>
-          <a href="#neden-biz">Neden Biz</a>
-          <a href="#projeler">Projeler</a>
-          <a href="#qr-menu">QR Menü</a>
-          <a href="#paketler">Paketler</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
-
-        <button class="btn btn-dark menu-btn" id="menuToggle" type="button">Menü</button>
-        <a href="#iletisim" class="btn btn-primary header-cta">Teklif Al</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="anasayfa">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-shell">
-          <div class="hero-grid">
-            <div class="hero-copy reveal">
-              <div class="eyebrow load-in">Premium Web Tasarım ve Dijital Vitrin</div>
-
-              <h1 class="hero-title load-in">
-                Markanı internette
-                <span class="gradient-text">daha büyük, daha pahalı ve daha güvenilir</span>
-                gösteren web sitesi.
-              </h1>
-
-              <p class="load-in">
-                Mehmet Arda Doğan imzasıyla kurumsal web sitesi, landing page, QR menü ve kişisel marka vitrinlerini
-                sıradan sayfa mantığından çıkarıp hızlı, mobil uyumlu, SEO dostu ve yüksek algılı dijital deneyime dönüştürüyoruz.
-              </p>
-
-              <div class="hero-actions load-in">
-                <a href="#iletisim" class="btn btn-primary">30 Saniyede Teklif Al</a>
-                <a href="https://wa.me/905314668927?text=Merhaba%20ultra%20premium%20web%20sitesi%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp'tan Yaz</a>
-              </div>
-
-              <div class="chips load-in">
-                <span>Kurumsal web sitesi</span>
-                <span>Landing page</span>
-                <span>QR menü</span>
-                <span>Mobil uyumlu arayüz</span>
-                <span>SEO dostu yapı</span>
-              </div>
-            </div>
-
-            <aside class="hero-side reveal">
-              <div class="card lead-panel">
-                <div class="card-body">
-                  <div class="eyebrow">Ücretsiz Analiz</div>
-                  <h2>Projen için hızlı teklif al.</h2>
-                  <p>Bilgilerini bırak, markanı hangi web yapısıyla daha profesyonel gösterebileceğimizi netleştirelim.</p>
-
-                  <form action="https://formspree.io/f/xeevzely" method="POST">
-                    <input type="text" name="name" placeholder="Ad Soyad" required />
-                    <input type="tel" name="phone" placeholder="Telefon Numaran" required />
-                    <input type="email" name="email" placeholder="E-posta Adresin" />
-                    <select name="service" required>
-                      <option value="">İstenen hizmet</option>
-                      <option>Kurumsal Web Sitesi</option>
-                      <option>Landing Page</option>
-                      <option>QR Menü</option>
-                      <option>Özel Premium Proje</option>
-                    </select>
-                    <textarea name="message" placeholder="Projeni kısaca anlat"></textarea>
-                    <button class="btn btn-primary" type="submit">Teklif İste</button>
-                  </form>
-                </div>
-              </div>
-
-              <div class="hero-showcase">
-                <div class="browser-top">
-                  <i></i><i></i><i></i>
-                  <span>mehmetarda.studio / premium-experience</span>
-                </div>
-                <div class="browser-stage">
-                  <div class="mock-hero">
-                    <div class="mini-row">
-                      <span>Brand Power</span>
-                      <span>Luxury UI</span>
-                      <span>SEO Ready</span>
-                    </div>
-                    <strong>İlk ekranda “bu marka profesyonel” dedirten dijital sahne.</strong>
-                    <p>Görsel kalite, güven veren içerik akışı ve net teklif sistemi tek arayüzde birleşir.</p>
-                  </div>
-
-                  <div class="mock-grid">
-                    <div class="mock-card">
-                      <small>Signature System</small>
-                      <strong>Marka algısını büyüten premium bölüm mimarisi.</strong>
-                    </div>
-                    <div class="score">
-                      <div class="score-row"><span>İlk etki</span><strong>9.9</strong></div>
-                      <div class="score-row"><span>Mobil uyum</span><strong>9.8</strong></div>
-                      <div class="score-row"><span>Netlik</span><strong>9.7</strong></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
-
-          <div class="stats-band reveal">
-            <div class="stat">
-              <strong data-count="100">0</strong>
-              <span>Mobil uyumlu, hızlı ve modern görünüm</span>
-            </div>
-            <div class="stat">
-              <strong>SEO</strong>
-              <span>Google dostu başlık, içerik ve section yapısı</span>
-            </div>
-            <div class="stat">
-              <strong>UI/UX</strong>
-              <span>Kullanıcıyı yormayan premium arayüz akışı</span>
-            </div>
-            <div class="stat">
-              <strong data-count="24">0</strong>
-              <span>Form, WhatsApp ve teklif odaklı dönüşüm sistemi</span>
-            </div>
-          </div>
-
-          <div class="marquee-wrap reveal">
-            <div class="marquee">
-              <span>Premium Web Tasarım</span>
-              <span>Kurumsal Site</span>
-              <span>Landing Page</span>
-              <span>QR Menü</span>
-              <span>SEO Uyumlu Altyapı</span>
-              <span>Mobil Kusursuzluk</span>
-              <span>Premium Web Tasarım</span>
-              <span>Kurumsal Site</span>
-              <span>Landing Page</span>
-              <span>QR Menü</span>
-              <span>SEO Uyumlu Altyapı</span>
-              <span>Mobil Kusursuzluk</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="canli-projeler">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Canlı Proje Sunumu</div>
-          <h2>Ajans işi gibi görünen büyük proje kartları ve canlı dashboard hissi.</h2>
-          <p>Bu bölüm siteye “gerçek üretim yapılıyor” algısı katar. Ziyaretçi sadece hizmet okumaz, profesyonel proje ekranı görür.</p>
-        </div>
-
-        <div class="live-project-grid">
-          <article class="project-live-card reveal">
-            <div class="project-live-head">
-              <div>
-                <div class="eyebrow">Featured Project</div>
-              </div>
-              <div class="project-status">Live Preview</div>
-            </div>
-
-            <div class="project-browser">
-              <div class="browser-top">
-                <i></i><i></i><i></i>
-                <span>project-preview / conversion-system</span>
-              </div>
-
-              <div class="project-browser-body">
-                <div class="project-preview-panel">
-                  <div class="mini-row">
-                    <span>Premium UI</span>
-                    <span>Lead Form</span>
-                  </div>
-                  <strong>Kurumsal markayı daha pahalı gösteren açılış ekranı.</strong>
-                  <p>Hero, güven rozetleri, teklif formu ve mobil akış tek bir satış sistemine bağlanır.</p>
-                </div>
-
-                <div class="project-dashboard">
-                  <div class="dash-row">
-                    <small>Hedef</small>
-                    <strong>İlk 5 saniyede güven oluşturmak</strong>
-                  </div>
-                  <div class="dash-row">
-                    <small>CTA</small>
-                    <strong>WhatsApp, arama ve teklif formu</strong>
-                  </div>
-                  <div class="dash-row">
-                    <small>Mobil</small>
-                    <strong>Alt aksiyon barı ile hızlı dönüşüm</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <div class="project-pills reveal">
-            <div class="project-pill">
-              <b>01</b>
-              <div>
-                <strong>Kurumsal Firma</strong>
-                <span>Güven, hizmet anlatımı ve teklif akışı.</span>
-              </div>
-            </div>
-            <div class="project-pill">
-              <b>02</b>
-              <div>
-                <strong>QR Menü</strong>
-                <span>Mobilde premium restoran menüsü.</span>
-              </div>
-            </div>
-            <div class="project-pill">
-              <b>03</b>
-              <div>
-                <strong>Landing Page</strong>
-                <span>Reklamdan gelen kullanıcıyı tek hedefe taşır.</span>
-              </div>
-            </div>
-            <div class="project-pill">
-              <b>04</b>
-              <div>
-                <strong>Kişisel Marka</strong>
-                <span>Uzmanlığı daha güçlü ve profesyonel gösterir.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sektor-demo">
-      <div class="container">
-        <div class="section-head center reveal">
-          <div class="eyebrow">Sektöre Göre Demo</div>
-          <h2>Butona basınca sektör havası değişen interaktif vitrin.</h2>
-          <p>Restoran, kurumsal firma, güzellik merkezi veya e-ticaret için aynı altyapı farklı marka diliyle sunulur.</p>
-        </div>
-
-        <div class="sector-lab">
-          <div class="card reveal">
-            <div class="card-body">
-              <div class="sector-tabs" aria-label="Sektör seçimi">
-                <button class="sector-tab active" type="button" data-sector="restaurant">
-                  <b>R</b>
-                  <span><strong>Restoran / Kafe</strong><span>QR menü, kampanya ve sipariş.</span></span>
-                </button>
-                <button class="sector-tab" type="button" data-sector="corporate">
-                  <b>K</b>
-                  <span><strong>Kurumsal Firma</strong><span>Güven, hizmet ve teklif.</span></span>
-                </button>
-                <button class="sector-tab" type="button" data-sector="beauty">
-                  <b>G</b>
-                  <span><strong>Güzellik Merkezi</strong><span>Randevu, hizmet ve premium algı.</span></span>
-                </button>
-                <button class="sector-tab" type="button" data-sector="commerce">
-                  <b>E</b>
-                  <span><strong>E-ticaret / Ürün</strong><span>Ürün vitrini ve satış odaklı yapı.</span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <article class="sector-display reveal" id="sectorDisplay">
-            <div class="sector-screen">
-              <div class="sector-hero">
-                <div class="mini-row" id="sectorTags">
-                  <span>QR Menü</span>
-                  <span>Popüler Ürün</span>
-                  <span>WhatsApp Sipariş</span>
-                </div>
-                <h3 id="sectorTitle">Restoran için premium QR menü ve sipariş vitrini.</h3>
-              </div>
-
-              <div class="sector-body">
-                <div class="sector-stat">
-                  <small id="sectorMetricOne">Odak</small>
-                  <strong id="sectorMetricOneText">Müşteriyi hızlı seçim ve siparişe taşımak</strong>
-                </div>
-                <div class="sector-stat">
-                  <small id="sectorMetricTwo">Görünüm</small>
-                  <strong id="sectorMetricTwoText">Lezzetli, canlı ve mobil öncelikli</strong>
-                </div>
-                <div class="sector-stat">
-                  <small id="sectorMetricThree">Aksiyon</small>
-                  <strong id="sectorMetricThreeText">WhatsApp sipariş veya rezervasyon</strong>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="hizmetler">
-      <div class="container">
-        <div class="section-head center reveal">
-          <div class="eyebrow">Hizmetler</div>
-          <h2>Sadece site yapmıyoruz; markanın dijital satış vitrinini kuruyoruz.</h2>
-          <p>Web sayfası artık sadece bilgi alanı değil. İnsanlar seni önce tasarım kalitenle yargılıyor. Bu yüzden her projeyi prestij, hız, güven ve teklif dönüşümüyle birlikte düşünüyoruz.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card service-card reveal">
-            <div class="card-body">
-              <div class="icon">01</div>
-              <h3>Kurumsal Web Tasarım</h3>
-              <p>Şirketini daha oturmuş, daha büyük ve daha güvenilir gösteren premium kurumsal web sitesi.</p>
-              <ul class="list">
-                <li>Güçlü ana ekran ve marka anlatımı</li>
-                <li>Hizmet, süreç, güven ve iletişim bölümleri</li>
-                <li>Mobilde kusursuz section akışı</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card service-card reveal">
-            <div class="card-body">
-              <div class="icon">02</div>
-              <h3>Landing Page</h3>
-              <p>Reklam, kampanya veya özel teklif için kullanıcıyı tek hedefe yönlendiren satış sayfası.</p>
-              <ul class="list">
-                <li>Net teklif ve güçlü CTA sistemi</li>
-                <li>Görsel etkisi yüksek kampanya sahnesi</li>
-                <li>Form ve WhatsApp dönüşüm akışı</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card service-card reveal">
-            <div class="card-body">
-              <div class="icon">03</div>
-              <h3>QR Menü ve Dijital Menü</h3>
-              <p>Kafe, restoran ve paket servisler için sıradan PDF yerine premium mobil menü deneyimi.</p>
-              <ul class="list">
-                <li>Kategori, ürün ve kampanya düzeni</li>
-                <li>Mobilde hızlı ve şık menü arayüzü</li>
-                <li>WhatsApp sipariş bağlantısı</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="ajans-vitrini">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Ajans Vitrini</div>
-          <h2>Gerçek ajans hissi veren cihaz mockup’ları, proje ekranları ve önce/sonra sunumu.</h2>
-          <p>Ziyaretçi sadece metin okumaz; ekranda profesyonel bir üretim kalitesi görür. Laptop, telefon, proje kartları ve dönüşüm hissi sayfayı çok daha pahalı gösterir.</p>
-        </div>
-
-        <div class="agency-showcase">
-          <article class="device-wall reveal">
-            <div class="eyebrow">Live Project Preview</div>
-
-            <div class="laptop-mockup">
-              <div class="laptop-screen">
-                <div class="laptop-top">
-                  <i></i><i></i><i></i>
-                </div>
-
-                <div class="laptop-content">
-                  <div class="mock-hero-line"></div>
-                  <div class="mock-text-line"></div>
-                  <div class="mock-text-line short"></div>
-
-                  <div class="mock-card-grid">
-                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
-                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
-                    <div class="mock-mini-card"><b></b><div class="mock-text-line"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="phone-floating">
-              <div class="phone-floating-screen">
-                <div class="phone-floating-head">Premium QR Menü deneyimi</div>
-                <div class="phone-floating-list">
-                  <div class="phone-floating-item"></div>
-                  <div class="phone-floating-item"></div>
-                  <div class="phone-floating-item"></div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <div class="before-after-card">
-            <article class="card reveal">
-              <div class="card-body">
-                <div class="eyebrow">Önce / Sonra</div>
-                <h3 style="font-size: 28px; line-height: 1.15; letter-spacing: -0.03em; margin-top: 16px;">Aynı marka, daha iyi sunulunca daha değerli algılanır.</h3>
-
-                <div class="before-after-slider">
-                  <div class="before-layer">
-                    <span class="layer-label">Önce</span>
-                    <strong class="layer-title">Düz, sıradan ve güven vermekte zorlanan web görünümü.</strong>
-                  </div>
-
-                  <div class="after-layer">
-                    <span class="layer-label">Sonra</span>
-                    <strong class="layer-title">Işıklı, premium, mobil güçlü ve teklif almaya hazır dijital sahne.</strong>
-                  </div>
-
-                  <div class="slider-handle" aria-hidden="true"></div>
-                </div>
-              </div>
-            </article>
-
-            <article class="card reveal">
-              <div class="card-body">
-                <div class="eyebrow">Premium Katmanlar</div>
-                <h3 style="font-size: 26px; line-height: 1.2; letter-spacing: -0.03em; margin-top: 16px;">Sayfanın ajans işi gibi görünmesini sağlayan detaylar</h3>
-
-                <div class="bullet-list">
-                  <span>Laptop ve telefon mockup ile gerçek proje sunumu hissi</span>
-                  <span>Önce / sonra kartları ile dönüşüm algısı</span>
-                  <span>Hover efektleri ile daha canlı premium deneyim</span>
-                  <span>Mobilde sürekli görünen Ara / WhatsApp / Teklif barı</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="neden-biz">
-      <div class="container">
-        <div class="bento">
-          <article class="big-panel reveal">
-            <div class="eyebrow">Neden Biz</div>
-            <h3>Bir web sitesini pahalı gösteren şey sadece renk değil, bütün sistemdir.</h3>
-            <p>Doğru başlık, doğru boşluk, doğru hız, doğru mobil akış, doğru teklif butonu ve doğru marka dili birleşince ziyaretçi sadece site görmez; profesyonel bir marka hisseder.</p>
-
-            <div class="meter-list">
-              <div class="meter">
-                <span>İlk Etki</span>
-                <div class="meter-track"><span style="--v: 97%;"></span></div>
-                <b>97</b>
-              </div>
-              <div class="meter">
-                <span>Premium Algı</span>
-                <div class="meter-track"><span style="--v: 94%;"></span></div>
-                <b>94</b>
-              </div>
-              <div class="meter">
-                <span>Dönüşüm Netliği</span>
-                <div class="meter-track"><span style="--v: 91%;"></span></div>
-                <b>91</b>
-              </div>
-            </div>
-
-            <div class="chips" style="margin-top: 28px;">
-              <span>Yüksek algı</span>
-              <span>Güven veren yapı</span>
-              <span>Hızlı iletişim</span>
-              <span>Profesyonel görünüm</span>
-            </div>
-          </article>
-
-          <div class="side-stack">
-            <article class="card feature-card reveal">
-              <div class="card-body">
-                <div class="icon">A</div>
-                <h3>Hazır tema hissi yok</h3>
-                <p>Sayfa markanın havasına göre özel kurgulanır. Sıradan, ucuz ve kalıp gibi görünmez.</p>
-              </div>
-            </article>
-
-            <article class="card feature-card reveal">
-              <div class="card-body">
-                <div class="icon">B</div>
-                <h3>Mobil öncelikli tasarım</h3>
-                <p>Ziyaretçinin büyük kısmı telefondan geleceği için arayüz mobilde güçlü kalacak şekilde tasarlanır.</p>
-              </div>
-            </article>
-
-            <article class="card feature-card reveal">
-              <div class="card-body">
-                <div class="icon">C</div>
-                <h3>Teklif odaklı akış</h3>
-                <p>Güzel görünen ama iş getirmeyen site değil; form, WhatsApp ve arama yönlendirmesi net olan yapı.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projeler">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Proje Vitrini</div>
-          <h2>Farklı sektörlere premium görünen dijital sahneler.</h2>
-          <p>Her sektörün aynı tasarıma ihtiyacı yok. Restoran başka, kurumsal firma başka, kişisel marka başka görünmeli. Biz tasarımı markanın karakterine göre güçlendiriyoruz.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card portfolio-card reveal">
-            <div class="card-body">
-              <div class="portfolio-visual">
-                <small>Concept 01</small>
-                <strong>Kurumsal hizmet şirketi için premium vitrin.</strong>
-                <div class="chips"><span>Kurumsal</span><span>SEO</span><span>Form</span></div>
-              </div>
-              <p>Hizmeti net anlatan, güven veren ve teklif almaya yönlendiren profesyonel web yapısı.</p>
-            </div>
-          </article>
-
-          <article class="card portfolio-card reveal">
-            <div class="card-body">
-              <div class="portfolio-visual">
-                <small>Concept 02</small>
-                <strong>Restoran ve kafe için QR menü deneyimi.</strong>
-                <div class="chips"><span>QR Menü</span><span>Mobil</span><span>Sipariş</span></div>
-              </div>
-              <p>Ürünleri liste gibi değil, işletmenin kalitesini yansıtan mobil vitrin gibi sunar.</p>
-            </div>
-          </article>
-
-          <article class="card portfolio-card reveal">
-            <div class="card-body">
-              <div class="portfolio-visual">
-                <small>Concept 03</small>
-                <strong>Reklam kampanyası için yüksek dönüşümlü landing page.</strong>
-                <div class="chips"><span>Lead</span><span>CTA</span><span>Satış</span></div>
-              </div>
-              <p>Reklamdan gelen kullanıcıyı hızlıca ikna eden tek hedefli kampanya sayfası.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="qr-menu">
-      <div class="container qr-stage">
-        <article class="card reveal">
-          <div class="card-body">
-            <div class="eyebrow">QR Menü</div>
-            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">Menüyü PDF gibi değil, telefonda gezilen premium bir marka deneyimi gibi tasarlıyoruz.</h2>
-            <p style="margin-top:16px;color:var(--muted);line-height:1.75;">Müşteri masada QR kodu okuttuğunda ilk gördüğü şey senin dijital kaliten olur. Bu yüzden menü sadece çalışmamalı; işletmenin havasını, ürün kalitesini ve sipariş kolaylığını aynı anda hissettirmeli.</p>
-
-            <ul class="list">
-              <li>Kategori, ürün, fiyat ve açıklama düzeni</li>
-              <li>Popüler ürün ve kampanya alanları</li>
-              <li>WhatsApp sipariş veya rezervasyon bağlantısı</li>
-              <li>Mobilde hızlı, net ve şık kullanım</li>
-            </ul>
-
-            <div class="hero-actions" style="margin-top:22px;">
-              <a href="#iletisim" class="btn btn-primary">QR Menü İste</a>
-              <a href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20tasar%C4%B1m%C4%B1%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp Demo Sor</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="phone-wrap reveal">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="menu-hero">
-                <div class="menu-top">
-                  <span>Arda Bistro</span>
-                  <span>QR Live</span>
-                </div>
-                <h3>Chef seçimi burger & özel soslar</h3>
-              </div>
-
-              <div class="menu-body">
-                <div class="menu-cats">
-                  <span class="active">Popüler</span>
-                  <span>Burger</span>
-                  <span>Pizza</span>
-                  <span>İçecek</span>
-                </div>
-
-                <div class="menu-item">
-                  <div class="thumb"></div>
-                  <div>
-                    <small>En çok seçilen</small>
-                    <strong>Smoky House Burger</strong>
-                    <p>Füme sos, cheddar, karamelize soğan.</p>
-                  </div>
-                  <div class="menu-price">₺245</div>
-                </div>
-
-                <div class="menu-item">
-                  <div class="thumb dark"></div>
-                  <div>
-                    <small>Şef önerisi</small>
-                    <strong>Trüf Mantarlı Pizza</strong>
-                    <p>İnce hamur, mozzarella, özel mantar.</p>
-                  </div>
-                  <div class="menu-price">₺310</div>
-                </div>
-
-                <div class="menu-item">
-                  <div class="thumb green"></div>
-                  <div>
-                    <small>Ferahlık</small>
-                    <strong>Lime Fresh Cooler</strong>
-                    <p>Nane, lime, buzlu özel karışım.</p>
-                  </div>
-                  <div class="menu-price">₺95</div>
-                </div>
-
-                <a href="https://wa.me/905314668927?text=Merhaba%20QR%20men%C3%BC%20demosu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-primary">WhatsApp ile Sipariş</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="paketler">
-      <div class="container">
-        <div class="section-head center reveal">
-          <div class="eyebrow">Paketler</div>
-          <h2>İhtiyacına göre net, şık ve profesyonel web paketleri.</h2>
-          <p>Fiyat proje kapsamına göre netleşir. Buradaki paketler sana hangi seviyede bir web deneyimi hazırlanabileceğini gösterir.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card price-card reveal">
-            <div class="card-body">
-              <span class="badge">Başlangıç</span>
-              <h3>Starter Glow</h3>
-              <p>Tek sayfalık, hızlı, şık ve mobil uyumlu profesyonel başlangıç vitrini.</p>
-              <div class="price">Starter <small>/ tek sayfa</small></div>
-              <ul class="list">
-                <li>Hero, hizmetler ve iletişim</li>
-                <li>WhatsApp ve form bağlantısı</li>
-                <li>Mobil uyumlu tasarım</li>
-              </ul>
-              <div class="hero-actions" style="margin-top:22px;">
-                <a href="#iletisim" class="btn btn-dark">Detay Al</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card price-card featured reveal">
-            <div class="card-body">
-              <span class="badge">En Güçlü Paket</span>
-              <h3>Ultra Premium</h3>
-              <p>Markanı büyük gösteren, güven veren ve teklif akışını güçlendiren tam vitrin sistemi.</p>
-              <div class="price">Premium <small>/ kurumsal</small></div>
-              <ul class="list">
-                <li>Detaylı bölüm ve içerik kurgusu</li>
-                <li>Premium UI, animasyon ve vitrin blokları</li>
-                <li>SEO dostu yapı ve güçlü CTA akışı</li>
-                <li>Formspree form ve WhatsApp geçişleri</li>
-              </ul>
-              <div class="hero-actions" style="margin-top:22px;">
-                <a href="#iletisim" class="btn btn-primary">Bu Paketi İste</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card price-card reveal">
-            <div class="card-body">
-              <span class="badge">Özel Proje</span>
-              <h3>Custom Universe</h3>
-              <p>QR menü, landing page veya sektöre özel ekstra tasarım dili isteyenlere özel çözüm.</p>
-              <div class="price">Custom <small>/ özel kapsam</small></div>
-              <ul class="list">
-                <li>Özel sektör ve marka dili</li>
-                <li>Ekstra section ve özel arayüz</li>
-                <li>Kampanya, ürün veya rezervasyon yapısı</li>
-              </ul>
-              <div class="hero-actions" style="margin-top:22px;">
-                <a href="#iletisim" class="btn btn-dark">Özel Teklif Al</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="surec">
-      <div class="container grid-2">
-        <div class="section-head reveal">
-          <div class="eyebrow">Süreç</div>
-          <h2>Projeyi karmaşaya çevirmeden net adımlarla yayına hazırlıyoruz.</h2>
-          <p>Önce markanın nasıl görünmesi gerektiğini çözüyoruz. Sonra tasarım, içerik, mobil akış ve iletişim yapısını tek sistemde topluyoruz.</p>
-          <div class="hero-actions">
-            <a href="#iletisim" class="btn btn-primary">Projeyi Başlat</a>
-            <a href="#sss" class="btn btn-dark">Soruları Gör</a>
-          </div>
-        </div>
-
-        <div class="process reveal">
-          <div class="process-item">
-            <div>
-              <h3>Analiz ve konumlandırma</h3>
-              <p>Markanın tonu, hedef kitlen, hizmetlerin ve nasıl görünmek istediğin netleştirilir.</p>
-            </div>
-          </div>
-
-          <div class="process-item">
-            <div>
-              <h3>Premium tasarım dili</h3>
-              <p>Renk, tipografi, section düzeni ve mobil akış profesyonel algı için hazırlanır.</p>
-            </div>
-          </div>
-
-          <div class="process-item">
-            <div>
-              <h3>Kodlama ve bağlantılar</h3>
-              <p>Form, WhatsApp, telefon, mail, SEO başlıkları ve responsive yapı tamamlanır.</p>
-            </div>
-          </div>
-
-          <div class="process-item">
-            <div>
-              <h3>Kontrol ve yayın hazırlığı</h3>
-              <p>Mobil görünüm, butonlar, form gönderimi ve sayfa akışı kontrol edilerek yayına hazır hale getirilir.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sss">
-      <div class="container">
-        <div class="section-head center reveal">
-          <div class="eyebrow">Sık Sorulan Sorular</div>
-          <h2>Aklına takılanları netleştirelim.</h2>
-          <p>Profesyonel web sitesi yaptırmadan önce en çok merak edilen konular.</p>
-        </div>
-
-        <div class="faq-list">
-          <article class="faq-item reveal active">
-            <button class="faq-btn" type="button">
-              <span>Bu site mobilde de güçlü görünür mü?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Evet. Yapı mobil öncelikli kuruldu. Kartlar, formlar, menü, QR demo ve CTA butonları telefon ekranında daha temiz akacak şekilde düzenlendi.</div>
-          </article>
-
-          <article class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span>Form ve WhatsApp çalışır mı?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Formspree bağlantısı mevcut. WhatsApp butonları da senin numarana yönlenir. İstersen mesaj metinleri sonradan değiştirilebilir.</div>
-          </article>
-
-          <article class="faq-item reveal">
-            <button class="faq-btn" type="button">
-              <span>İçerikleri daha sonra değiştirebilir miyim?</span>
-              <span class="faq-sign">+</span>
-            </button>
-            <div class="faq-body">Evet. Başlıklar, hizmetler, paketler, iletişim bilgileri, QR menü içerikleri ve kampanya alanları sonradan güncellenebilir.</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="iletisim">
-      <div class="container contact-layout">
-        <article class="card reveal">
-          <div class="card-body">
-            <div class="eyebrow">İletişim</div>
-            <h2 style="font-family:'Unbounded',sans-serif;font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin-top:18px;">Markanı internette daha premium gösterelim.</h2>
-            <p style="margin-top:15px;color:var(--muted);line-height:1.75;">Projen birkaç cümleyle başlar. Nasıl görünmek istediğini konuşup sana uygun web yapısını birlikte netleştiririz.</p>
-
-            <div style="margin-top:22px;">
-              <div class="contact-row">
-                <b>01</b>
-                <div>
-                  <small>Telefon</small>
-                  <strong><a href="tel:+905314668927">0531 466 89 27</a></strong>
-                </div>
-              </div>
-
-              <div class="contact-row">
-                <b>02</b>
-                <div>
-                  <small>E-posta</small>
-                  <strong><a href="mailto:mehmetardad068@gmail.com">mehmetardad068@gmail.com</a></strong>
-                </div>
-              </div>
-
-              <div class="contact-row">
-                <b>03</b>
-                <div>
-                  <small>WhatsApp</small>
-                  <strong><a href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." target="_blank" rel="noreferrer">Hemen yaz, projeyi konuşalım</a></strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-body">
-            <div class="eyebrow">Teklif Formu</div>
-            <h3 style="font-size:28px;line-height:1.15;letter-spacing:-.035em;margin-top:18px;">Nasıl bir site istiyorsun?</h3>
-            <p style="margin-top:12px;color:var(--muted);line-height:1.7;">Kurumsal site, landing page, QR menü veya özel proje talebini yaz. En doğru yapıyı sana göre şekillendirelim.</p>
-
-            <form action="https://formspree.io/f/xeevzely" method="POST">
-              <div class="grid-2">
-                <input type="text" name="name" placeholder="Ad Soyad" required />
-                <input type="text" name="business" placeholder="Marka / İşletme Adı" required />
-              </div>
-
-              <div class="grid-2">
-                <input type="tel" name="phone" placeholder="Telefon Numaran" required />
-                <select name="service" required>
-                  <option value="">İstenen hizmet</option>
-                  <option>Ultra Premium Kurumsal Web Sitesi</option>
-                  <option>Landing Page Tasarımı</option>
-                  <option>QR Menü ve Dijital Menü</option>
-                  <option>Özel Premium Proje</option>
-                </select>
-              </div>
-
-              <textarea name="message" placeholder="Nasıl bir hava istiyorsun? Daha kurumsal mı, daha lüks mü, daha teknolojik mi? Projeni kısaca anlat." required></textarea>
-
-              <div class="hero-actions">
-                <button type="submit" class="btn btn-primary">Formu Gönder</button>
-                <a href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20projem%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." target="_blank" rel="noreferrer" class="btn btn-dark">WhatsApp</a>
-              </div>
-            </form>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>Mehmet Arda Doğan</strong>
-        <div>Ultra premium web tasarım, landing page ve QR menü deneyimleri.</div>
-      </div>
-      <div>© 2026 Tüm hakları saklıdır.</div>
-    </div>
-  </footer>
-
-  <div class="mobile-action-bar" aria-label="Mobil hızlı iletişim">
-    <a class="call" href="tel:+905314668927">Ara</a>
-    <a class="wa" href="https://wa.me/905314668927?text=Merhaba%20premium%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noreferrer">WhatsApp</a>
-    <a class="offer" href="#iletisim">Teklif Al</a>
+<body>
+  <svg class="svg-filters" aria-hidden="true" focusable="false">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="gooey"></feColorMatrix>
+      <feBlend in="SourceGraphic" in2="gooey"></feBlend>
+    </filter>
+  </svg>
+  <div class="page-loader" aria-hidden="true">
+    <span>Mehmet Arda</span>
   </div>
 
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.body.classList.remove("is-loading");
-      }, 120);
-    });
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Ana menü">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">Mehmet Arda<span> Web Tasarım</span></a>
+      <div class="nav-actions order-lg-3">
+        <div class="theme-slider" role="group" aria-label="Tema seçimi">
+          <button class="theme-option" type="button" data-theme-choice="light" aria-pressed="false">
+            <span aria-hidden="true">☾</span>
+            <span>Light</span>
+          </button>
+          <button class="theme-option" type="button" data-theme-choice="dark" aria-pressed="true">
+            <span aria-hidden="true">☀</span>
+            <span>Dark</span>
+          </button>
+          <span class="theme-slider-thumb" aria-hidden="true"></span>
+        </div>
+        <button class="sidebar-toggle" type="button" aria-label="Paneli aç" title="Müşteri paneli önizleme">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü aç">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beams">Kimdir?</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#services" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+            <ul class="dropdown-menu glass-dropdown">
+              <li><a class="dropdown-item" href="#services">Kurumsal web sitesi</a></li>
+              <li><a class="dropdown-item" href="#services">E-ticaret sitesi</a></li>
+              <li><a class="dropdown-item" href="#services">Randevu takip sistemi</a></li>
+              <li><a class="dropdown-item" href="#contact">Teklif al</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Projeler</a></li>
+          <li class="nav-item"><a class="nav-link" href="#showcase">Vitrin</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apple-glass">Glass Kartlar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Paketler</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#client-panel">Müşteri Paneli</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    const scrollProgress = document.getElementById("scrollProgress");
-    const updateScrollProgress = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      if (scrollProgress) scrollProgress.style.width = `${Math.min(progress, 100)}%`;
-    };
+  <aside class="side-panel" aria-label="Müşteri paneli önizleme">
+    <button class="side-close" type="button" aria-label="Paneli kapat">&times;</button>
+    <p class="eyebrow">Panel Önizleme</p>
+    <h3>Projeniz tek ekrandan takip edilir.</h3>
+    <div class="panel-metric">
+      <span>Tasarım</span>
+      <strong>%86</strong>
+    </div>
+    <div class="panel-metric">
+      <span>Mobil QA</span>
+      <strong>%72</strong>
+    </div>
+    <div class="panel-metric">
+      <span>SEO zemin</span>
+      <strong>%64</strong>
+    </div>
+    <a class="btn btn-primary w-100" href="#client-panel">Paneli İncele</a>
+  </aside>
+  <div class="panel-backdrop"></div>
 
-    updateScrollProgress();
-    window.addEventListener("scroll", updateScrollProgress, { passive: true });
-    window.addEventListener("resize", updateScrollProgress);
+  <section id="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80">
+      <source src="https://cdn.coverr.co/videos/coverr-working-on-a-laptop-4899/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow" data-anim>Web tasarım ajansı</p>
+        <h1 data-anim>Mehmet Arda Web Tasarım</h1>
+        <p data-anim>Markanız için modern, hızlı, yönetilebilir ve satışa odaklı web deneyimleri tasarlıyorum.</p>
+        <div class="hero-buttons" data-anim>
+          <a href="#portfolio" class="btn btn-primary btn-lg">Projeleri Gör</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg">Teklif Al</a>
+        </div>
+      </div>
+      <div class="hero-widget hero-tech-card" data-anim>
+        <div class="hero-tech-base" aria-hidden="true"></div>
+        <div class="hero-tech-glass">
+          <div class="hero-tech-content">
+            <div id="hero-lottie" aria-hidden="true"></div>
+            <h2>Işık Hızında Altyapı.</h2>
+            <p>Geliştirdiğimiz tüm projeler modern yapay zeka araçları, gelişmiş backend mantığı ve dinamik veri tabanları ile optimize edilir. Sıfır gecikme, maksimum performans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+  <section id="beams" class="beams-section" aria-label="Background beams with collision">
+    <div class="beam beam-one"></div>
+    <div class="beam beam-two"></div>
+    <div class="beam beam-three"></div>
+    <div class="beam beam-four"></div>
+    <div class="collision collision-one"></div>
+    <div class="collision collision-two"></div>
+    <div class="container beams-content" data-anim>
+      <h2>
+        Mehmet Arda kim?
+        <span class="beam-gradient-text" data-text="Mersin&apos;de yaşayan web tasarımcı.">
+          <span>Mersin&apos;de yaşayan web tasarımcı.</span>
+        </span>
+      </h2>
+      <p class="beams-description">
+        Modern, hızlı ve mobil uyumlu web siteleri tasarlar; işletmeler için kurumsal site,
+        e-ticaret, randevu takip sistemi ve admin panelli çözümler geliştirir.
+      </p>
+    </div>
+  </section>
 
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-      });
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title" data-anim>Hizmetler</h2>
+      <div class="service-grid">
+        <article class="glass-card" data-anim><span>01</span><h3>Kurumsal Web Sitesi</h3><p>Güven veren, hızlı açılan ve markanızın dilini taşıyan kurumsal sayfalar.</p><a href="#contact">Teklif al</a></article>
+        <article class="glass-card" data-anim><span>02</span><h3>E-ticaret Sitesi</h3><p>Ürün, sepet ve kampanya akışına hazır dönüşüm odaklı vitrinler.</p><a href="#packages">Paketleri gör</a></article>
+        <article class="glass-card" data-anim><span>03</span><h3>Restoran Web Sitesi</h3><p>Menü, şube, rezervasyon ve görsel sunumu güçlü restoran deneyimleri.</p><a href="#portfolio">Örnekleri incele</a></article>
+        <article class="glass-card" data-anim><span>04</span><h3>Randevu Takip Sistemi</h3><p>Klinik, danışmanlık ve servis işletmeleri için akıcı randevu ekranları.</p><a href="#client-panel">Paneli gör</a></article>
+        <article class="glass-card" data-anim><span>05</span><h3>Admin Panelli Sistemler</h3><p>İçerik, müşteri, sipariş ve durum takibine uygun panel tasarımları.</p><a href="#client-panel">Detaylar</a></article>
+        <article class="glass-card" data-anim><span>06</span><h3>SEO Çalışması</h3><p>Meta, schema, performans ve içerik yapısı ile görünürlük zemini.</p><a href="#contact">SEO iste</a></article>
+        <article class="glass-card" data-anim><span>07</span><h3>Bakım ve Güncelleme</h3><p>Mevcut sitelerde düzenli içerik, güvenlik ve tasarım iyileştirmeleri.</p><a href="#contact">Bakım planla</a></article>
+      </div>
+    </div>
+  </section>
 
-      navMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => navMenu.classList.remove("open"));
-      });
-    }
+  <section id="portfolio" class="alt-section">
+    <div class="container">
+      <h2 class="section-title" data-anim>Projeler</h2>
+      <div class="gooey-search-wrap" data-anim>
+        <label class="visually-hidden" for="projectSearch">Proje ara</label>
+        <div class="gooey-input">
+          <input id="projectSearch" type="search" placeholder="Proje veya hizmet ara..." autocomplete="off">
+          <span class="gooey-blob blob-one"></span>
+          <span class="gooey-blob blob-two"></span>
+          <span class="gooey-blob blob-three"></span>
+        </div>
+      </div>
+      <div class="filter-btns" data-anim>
+        <button class="active" data-filter="all">Tümü</button>
+        <button data-filter="web">Web</button>
+        <button data-filter="commerce">E-ticaret</button>
+        <button data-filter="panel">Panel</button>
+      </div>
+      <div class="portfolio-grid" data-anim>
+        <article class="glass-card" data-category="web" data-title="Kurumsal Ajans Sitesi" data-desc="Marka dili, SEO altyapısı ve hızlı teklif akışı olan kurumsal web sitesi." data-link="#contact">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Kurumsal ajans sitesi" class="lightbox-trigger">
+          <h3>Kurumsal Ajans Sitesi</h3>
+        </article>
+        <article class="glass-card" data-category="commerce" data-title="Butik E-ticaret Vitrini" data-desc="Ürün koleksiyonları, kampanya blokları ve mobil satış odağı." data-link="#contact">
+          <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=900&q=80" alt="E-ticaret sitesi" class="lightbox-trigger">
+          <h3>Butik E-ticaret</h3>
+        </article>
+        <article class="glass-card" data-category="web" data-title="Restoran Menü Sitesi" data-desc="Menü, galeri, rezervasyon ve şube yönlendirmeleri tek sayfada." data-link="#contact">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="Restoran web sitesi" class="lightbox-trigger">
+          <h3>Restoran Menü Sitesi</h3>
+        </article>
+        <article class="glass-card" data-category="panel" data-title="Randevu Takip Paneli" data-desc="Sekreter, doktor ve müşteri akışına uygun randevu paneli." data-link="#client-panel">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Randevu takip paneli" class="lightbox-trigger">
+          <h3>Randevu Takip Paneli</h3>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    const revealItems = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.14 }
-    );
+  <section id="showcase">
+    <div class="container">
+      <div class="macbook-scroll" data-anim>
+        <div class="macbook-copy">
+          <p class="eyebrow">Macbook showcase</p>
+          <h2>Tailwind demosundaki vitrin hissi, ajans sunumuna uyarlandı.</h2>
+          <p>Bu alan; web tasarım, panel ve randevu sistemi örneklerini müşteri sunumunda güçlü göstermek için hazırlandı.</p>
+          <a href="#contact" class="btn btn-primary">Bu görünümü iste</a>
+        </div>
+        <div class="macbook-stage" aria-label="Mehmet Arda Web Tasarım ekran önizlemesi">
+          <a class="showcase-badge" href="https://www.instagram.com/mehmetardastudio" target="_blank" rel="noreferrer" aria-label="Instagram profili">
+            <svg width="24" height="24" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z" fill="#00AA45"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M28 54C42.3594 54 54 42.3594 54 28C54 13.6406 42.3594 2 28 2C13.6406 2 2 13.6406 2 28C2 42.3594 13.6406 54 28 54ZM28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z" fill="#219653"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M27.0769 12H15V46H24.3846V38.8889H27.0769C34.7305 38.8889 41 32.9048 41 25.4444C41 17.984 34.7305 12 27.0769 12ZM24.3846 29.7778V21.1111H27.0769C29.6194 21.1111 31.6154 23.0864 31.6154 25.4444C31.6154 27.8024 29.6194 29.7778 27.0769 29.7778H24.3846Z" fill="#24292E"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H29.0769C36.2141 11 42 16.5716 42 23.4444C42 30.3173 36.2141 35.8889 29.0769 35.8889H25.3846V43H18V11ZM25.3846 28.7778H29.0769C32.1357 28.7778 34.6154 26.39 34.6154 23.4444C34.6154 20.4989 32.1357 18.1111 29.0769 18.1111H25.3846V28.7778Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10H29.0769C36.7305 10 43 15.984 43 23.4444C43 30.9048 36.7305 36.8889 29.0769 36.8889H26.3846V44H17V10ZM19 12V42H24.3846V34.8889H29.0769C35.6978 34.8889 41 29.7298 41 23.4444C41 17.1591 35.6978 12 29.0769 12H19ZM24.3846 17.1111H29.0769C32.6521 17.1111 35.6154 19.9114 35.6154 23.4444C35.6154 26.9775 32.6521 29.7778 29.0769 29.7778H24.3846V17.1111ZM26.3846 19.1111V27.7778H29.0769C31.6194 27.7778 33.6154 25.8024 33.6154 23.4444C33.6154 21.0864 31.6194 19.1111 29.0769 19.1111H26.3846Z" fill="#24292E"></path>
+            </svg>
+          </a>
+          <div class="macbook-lid">
+            <div class="macbook-camera"></div>
+            <div class="macbook-screen">
+              <div class="screen-topbar"><span></span><span></span><span></span></div>
+              <div class="screen-hero">
+                <strong>Mehmet Arda Web Tasarım</strong>
+                <p>Kurumsal site, panel ve SEO odaklı dijital vitrin.</p>
+              </div>
+              <div class="screen-grid">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+  <section id="apple-glass" class="alt-section">
+    <div class="container">
+      <h2 class="section-title" data-anim>Apple Glass Kartlar</h2>
+      <div class="apple-card-grid" data-anim>
+        <article class="apple-glass-card" data-tilt>
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Kurumsal web tasarım sunumu">
+          <div class="apple-glass-overlay">
+            <div class="light-sweep"></div>
+            <div class="apple-card-content">
+              <h3>Kurumsal Vitrin</h3>
+              <p>Markanız için premium web sitesi görünümü.</p>
+              <button type="button" data-scroll-target="#contact">Teklif Al</button>
+            </div>
+          </div>
+        </article>
+        <article class="apple-glass-card" data-tilt>
+          <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=900&q=80" alt="E-ticaret web sitesi kartı">
+          <div class="apple-glass-overlay">
+            <div class="light-sweep"></div>
+            <div class="apple-card-content">
+              <h3>E-ticaret Akışı</h3>
+              <p>Kampanya, ürün ve sipariş deneyimi.</p>
+              <button type="button" data-scroll-target="#packages">Paketleri Aç</button>
+            </div>
+          </div>
+        </article>
+        <article class="apple-glass-card" data-tilt>
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Admin panel ve randevu sistemi kartı">
+          <div class="apple-glass-overlay">
+            <div class="light-sweep"></div>
+            <div class="apple-card-content">
+              <h3>Panel Deneyimi</h3>
+              <p>Randevu, müşteri ve durum takibi için arayüz.</p>
+              <button type="button" data-scroll-target="#client-panel">Paneli Gör</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    const animatedCounters = document.querySelectorAll("[data-count]");
-    if (animatedCounters.length) {
-      const countObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
+  <section id="packages">
+    <div class="container">
+      <h2 class="section-title" data-anim>Paketler</h2>
+      <div class="packages-grid">
+        <article class="glass-card package-card" data-anim>
+          <p class="eyebrow">Başlangıç</p>
+          <h3>Kurumsal Vitrin</h3>
+          <strong>Teklif ile</strong>
+          <ul><li>Tek sayfa modern yapı</li><li>Mobil uyum</li><li>Temel SEO</li></ul>
+          <a href="#contact" class="btn btn-primary">Bu paketi seç</a>
+        </article>
+        <article class="glass-card package-card featured" data-anim>
+          <p class="eyebrow">Popüler</p>
+          <h3>Ajans Plus</h3>
+          <strong>Teklif ile</strong>
+          <ul><li>Çok bölümlü site</li><li>Popup, dropdown, animasyon</li><li>Formspree iletişim</li></ul>
+          <a href="#contact" class="btn btn-primary">Teklif al</a>
+        </article>
+        <article class="glass-card package-card" data-anim>
+          <p class="eyebrow">Gelişmiş</p>
+          <h3>Panel Hazır</h3>
+          <strong>Teklif ile</strong>
+          <ul><li>Müşteri paneli arayüzü</li><li>Admin akış planı</li><li>Backend zemini</li></ul>
+          <a href="#client-panel" class="btn btn-primary">Paneli gör</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            const target = Number(entry.target.dataset.count || "0");
-            const duration = 1200;
-            const start = performance.now();
+  <section id="about" class="alt-section">
+    <div class="container">
+      <h2 class="section-title" data-anim>Hakkımda</h2>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6" data-anim>
+          <p class="lead">Mehmet Arda Web Tasarım, küçük ve orta ölçekli işletmeler için profesyonel web siteleri, yönetilebilir paneller ve dönüşüm odaklı arayüzler üretir.</p>
+          <p>Hazır görünen demo metinleri yerine işletmenizin hizmetini, güvenini ve iletişim akışını öne çıkaran net bir yapı kurulur.</p>
+          <a href="https://www.instagram.com/mehmetardastudio" target="_blank" rel="noreferrer" class="instagram-link">@mehmetardastudio</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="row text-center g-4">
+            <div class="col-sm-4" data-anim><canvas id="skill1" class="skill-chart"></canvas><h3>UI/CSS</h3></div>
+            <div class="col-sm-4" data-anim><canvas id="skill2" class="skill-chart"></canvas><h3>JS</h3></div>
+            <div class="col-sm-4" data-anim><canvas id="skill3" class="skill-chart"></canvas><h3>SEO</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            const animate = (time) => {
-              const progress = Math.min((time - start) / duration, 1);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              entry.target.textContent = Math.floor(eased * target);
+  <section id="client-panel">
+    <div class="container">
+      <h2 class="section-title" data-anim>Müşteri Paneli</h2>
+      <div class="dashboard glass-card" data-anim>
+        <div class="dashboard-top">
+          <div>
+            <p class="eyebrow">Frontend demo</p>
+            <h3>Proje Durum Panosu</h3>
+          </div>
+          <button class="btn btn-outline-light open-popup" type="button">Detay Popup</button>
+        </div>
+        <div class="dashboard-grid">
+          <div><span>Aktif Proje</span><strong>4</strong></div>
+          <div><span>Bekleyen Revize</span><strong>2</strong></div>
+          <div><span>Tamamlanan Sayfa</span><strong>18</strong></div>
+          <div><span>Ortalama Mobil Skor</span><strong>96</strong></div>
+        </div>
+        <div class="task-list">
+          <p><span></span> Ana sayfa hero ve CTA kontrol edildi</p>
+          <p><span></span> Formspree iletişim bağlantısı hazır</p>
+          <p><span></span> Backend için veri alanları korunuyor</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-              if (progress < 1) {
-                requestAnimationFrame(animate);
-              } else {
-                entry.target.textContent = target;
-              }
-            };
+  <section id="contact" class="alt-section">
+    <div class="container">
+      <h2 class="section-title" data-anim>İletişim</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-lg-5" data-anim>
+          <div class="glass-card contact-card">
+            <h3>Projenizi konuşalım.</h3>
+            <p>Kurumsal site, e-ticaret, restoran sitesi veya panel arayüzü için kısa bir mesaj bırakın.</p>
+            <a href="https://www.instagram.com/mehmetardastudio" target="_blank" rel="noreferrer">@mehmetardastudio</a>
+            <div class="social-btns" aria-label="Sosyal medya bağlantıları">
+              <a href="https://www.instagram.com/mehmetardastudio" class="social-btn instagram" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#contact" class="social-btn contact-form" aria-label="İletişim formu">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </a>
+              <a href="#portfolio" class="social-btn portfolio" aria-label="Projeler">
+                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+              </a>
+              <a href="#packages" class="social-btn packages" aria-label="Paketler">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7" data-anim>
+          <form id="contactForm" class="glass-card" action="https://formspree.io/f/xeevzely" method="POST">
+            <div class="row g-3">
+              <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Ad Soyad" required></div>
+              <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="E-posta" required></div>
+              <div class="col-12">
+                <select class="form-select" name="service" required>
+                  <option value="">Hizmet seçin</option>
+                  <option>Kurumsal web sitesi</option>
+                  <option>E-ticaret sitesi</option>
+                  <option>Restoran web sitesi</option>
+                  <option>Randevu takip sistemi</option>
+                  <option>Admin panelli sistemler</option>
+                  <option>SEO çalışması</option>
+                  <option>Bakım ve güncelleme</option>
+                </select>
+              </div>
+              <div class="col-12"><textarea class="form-control" name="message" rows="5" placeholder="Proje detayınız" required></textarea></div>
+              <div class="col-12"><button type="submit" class="btn btn-primary w-100">Mesaj Gönder</button></div>
+              <p class="form-status" role="status"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            requestAnimationFrame(animate);
-            countObserver.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.45 }
-      );
+  <footer>
+    <p>&copy; 2026 Mehmet Arda Web Tasarım. Tüm hakları saklıdır.</p>
+    <a href="https://www.instagram.com/mehmetardastudio" target="_blank" rel="noreferrer">Instagram: mehmetardastudio</a>
+  </footer>
 
-      animatedCounters.forEach((counter) => countObserver.observe(counter));
-    }
+  <div class="trwpwhatsappall" aria-live="polite">
+    <div class="trwpwhatsappballon" id="whatsappBalloon">
+      <button id="kapatac" class="kapat" type="button" aria-label="WhatsApp penceresini kapat">X</button>
+      <div class="trwpwhatsapptitle">
+        WhatsApp destek ekibimiz sorularınızı cevaplıyor.
+      </div>
+      <div class="trwpwhatsappmessage">
+        Merhaba, nasıl yardımcı olabilirim?
+      </div>
+      <div class="trwpwhatsappinput">
+        <form id="whatsappForm" action="https://wa.me/905314668927" method="get" target="_blank">
+          <input type="hidden" name="phone" value="905314668927">
+          <input type="text" name="text" placeholder="Buradan cevap verebilirsiniz." autocomplete="off" aria-label="WhatsApp mesajı">
+          <button class="trwpwhatsappsendbutton" type="submit" aria-label="WhatsApp mesajını gönder">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <button id="ackapa" class="trwpwhatsappbutton" type="button" aria-controls="whatsappBalloon" aria-expanded="false">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      <span>WhatsApp Destek Hattı</span>
+    </button>
+  </div>
 
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach((item) => {
-      const button = item.querySelector(".faq-btn");
-      if (!button) return;
+  <div id="lightbox" aria-hidden="true">
+    <button class="close-btn" type="button" aria-label="Kapat">&times;</button>
+    <button class="nav-btn nav-prev" type="button" aria-label="Önceki">&#10094;</button>
+    <button class="nav-btn nav-next" type="button" aria-label="Sonraki">&#10095;</button>
+    <img src="" alt="Proje önizleme">
+    <div class="project-info">
+      <h3></h3>
+      <p></p>
+      <a href="" target="_blank" rel="noreferrer">Projeyi İncele</a>
+    </div>
+  </div>
 
-      button.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-        faqItems.forEach((faq) => faq.classList.remove("active"));
-        if (!isActive) item.classList.add("active");
-      });
-    });
+  <div class="project-popup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="popupTitle">
+    <div class="popup-card glass-card">
+      <button class="popup-close" type="button" aria-label="Popup kapat">&times;</button>
+      <p class="eyebrow">Backend zemini</p>
+      <h3 id="popupTitle">Panel alanları entegrasyona hazır.</h3>
+      <p>Şimdilik veri kaynağı frontend içinde tutuluyor. Backend aşamasında aynı kartlar API verisiyle beslenebilir.</p>
+      <a class="btn btn-primary" href="#contact">Teklif formuna git</a>
+    </div>
+  </div>
 
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll(".nav a");
-
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => link.classList.remove("active"));
-          const current = document.querySelector(`.nav a[href="#${entry.target.id}"]`);
-          if (current) current.classList.add("active");
-        });
-      },
-      { threshold: 0.42 }
-    );
-
-    sections.forEach((section) => navObserver.observe(section));
-
-    document.querySelectorAll("form").forEach((form) => {
-      form.addEventListener("submit", () => {
-        const submitButton = form.querySelector('button[type="submit"]');
-        if (!submitButton) return;
-        submitButton.textContent = "Gönderiliyor...";
-        submitButton.disabled = true;
-      });
-    });
-
-    const sectorData = {
-      restaurant: {
-        title: "Restoran için premium QR menü ve sipariş vitrini.",
-        tags: ["QR Menü", "Popüler Ürün", "WhatsApp Sipariş"],
-        a: "rgba(255, 192, 97, .24)",
-        b: "rgba(255, 69, 207, .18)",
-        one: "Müşteriyi hızlı seçim ve siparişe taşımak",
-        two: "Lezzetli, canlı ve mobil öncelikli",
-        three: "WhatsApp sipariş veya rezervasyon"
-      },
-      corporate: {
-        title: "Kurumsal firma için güven veren teklif odaklı web sitesi.",
-        tags: ["Kurumsal", "SEO", "Teklif Formu"],
-        a: "rgba(53, 221, 255, .24)",
-        b: "rgba(49, 93, 255, .2)",
-        one: "Hizmeti net anlatıp güven oluşturmak",
-        two: "Ciddi, temiz ve yüksek algılı",
-        three: "Teklif formu, telefon ve WhatsApp"
-      },
-      beauty: {
-        title: "Güzellik merkezi için lüks randevu ve hizmet vitrini.",
-        tags: ["Randevu", "Premium Hizmet", "Görsel Algı"],
-        a: "rgba(255, 69, 207, .24)",
-        b: "rgba(255, 192, 97, .16)",
-        one: "Hizmetleri daha değerli göstermek",
-        two: "Lüks, yumuşak ve güven veren",
-        three: "Randevu ve WhatsApp danışma"
-      },
-      commerce: {
-        title: "Ürün ve e-ticaret için satış odaklı dijital vitrin.",
-        tags: ["Ürün Vitrini", "Kampanya", "Satış CTA"],
-        a: "rgba(134, 255, 182, .2)",
-        b: "rgba(53, 221, 255, .2)",
-        one: "Ürünü hızlıca anlaşılır ve çekici sunmak",
-        two: "Dinamik, net ve satın almaya yakın",
-        three: "Kampanya, sepet veya teklif CTA"
-      }
-    };
-
-    const sectorDisplay = document.getElementById("sectorDisplay");
-    const sectorTitle = document.getElementById("sectorTitle");
-    const sectorTags = document.getElementById("sectorTags");
-    const sectorMetricOneText = document.getElementById("sectorMetricOneText");
-    const sectorMetricTwoText = document.getElementById("sectorMetricTwoText");
-    const sectorMetricThreeText = document.getElementById("sectorMetricThreeText");
-
-    document.querySelectorAll(".sector-tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const data = sectorData[tab.dataset.sector];
-        if (!data || !sectorDisplay || !sectorTitle || !sectorTags) return;
-
-        document.querySelectorAll(".sector-tab").forEach((item) => item.classList.remove("active"));
-        tab.classList.add("active");
-
-        sectorDisplay.style.setProperty("--sector-a", data.a);
-        sectorDisplay.style.setProperty("--sector-b", data.b);
-        sectorTitle.textContent = data.title;
-        sectorTags.innerHTML = data.tags.map((tag) => `<span>${tag}</span>`).join("");
-        if (sectorMetricOneText) sectorMetricOneText.textContent = data.one;
-        if (sectorMetricTwoText) sectorMetricTwoText.textContent = data.two;
-        if (sectorMetricThreeText) sectorMetricThreeText.textContent = data.three;
-      });
-    });
-  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
